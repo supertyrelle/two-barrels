@@ -1,4 +1,5 @@
 @charset "UTF-8";
+@import url("https://unpkg.com/aos@2.3.1/dist/aos.css");
 @import url("https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i|Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap");
 button, hr, input {
   overflow: visible;
@@ -190,7 +191,7 @@ summary {
 }
 
 .transition-corn,
-.transition-cta {
+.transition-cta, .transition-dog {
   transition: 0.6s;
   opacity: 1;
 }
@@ -201,11 +202,15 @@ html.is-animating .transition-fade {
 }
 html.is-animating .transition-corn {
   opacity: 0;
-  transform: translateX(40px);
+  transform: translateY(40px);
 }
 html.is-animating .transition-cta {
   opacity: 0;
   transform: translateX(-40px);
+}
+html.is-animating .transition-dog {
+  opacity: 0;
+  transform: translateY(-200px);
 }
 
 body {
@@ -676,6 +681,7 @@ main {
   position: relative;
   border: 4px solid #0b0237;
   transition: ease all 230ms;
+  color: whitesmoke;
   cursor: pointer;
 }
 .overview .main-cards .cards .card h4 {
@@ -924,6 +930,7 @@ main {
   min-height: 500px;
   filter: opacity(0.3);
   background: #0b0237;
+  border-bottom: 1px solid #b54c19;
 }
 .who-we-are .bg::before {
   content: "";
@@ -936,6 +943,7 @@ main {
   background: url("/groundfloor.2de6e306.jpg") no-repeat;
   background-size: 100%;
   background-position: top -40em center;
+  background-attachment: fixed;
 }
 .who-we-are .bg::after {
   content: "";
@@ -944,9 +952,9 @@ main {
   left: 0;
   width: 100%;
   height: 100%;
-  background: -moz-linear-gradient(to bottom, rgba(11, 2, 55, 0) 60%, #0b0237);
-  background: -webkit-linear-gradient(to bottom, rgba(11, 2, 55, 0) 60%, #0b0237);
-  background: linear-gradient(to bottom, rgba(11, 2, 55, 0) 60%, #0b0237);
+  background: -moz-linear-gradient(to bottom, rgba(11, 2, 55, 0) 100%, #0b0237);
+  background: -webkit-linear-gradient(to bottom, rgba(11, 2, 55, 0) 100%, #0b0237);
+  background: linear-gradient(to bottom, rgba(11, 2, 55, 0) 100%, #0b0237);
 }
 .who-we-are .staff {
   position: relative;
@@ -1028,6 +1036,7 @@ main {
   width: 100%;
   min-height: 500px;
   filter: opacity(1);
+  border-bottom: 1px solid #b54c19;
 }
 .jobs-wrapper .bg::before {
   content: "";
@@ -1040,6 +1049,7 @@ main {
   background-size: 100%;
   background-position: top -70px right;
   filter: opacity(0.3);
+  background-attachment: fixed;
 }
 .jobs-wrapper .bg::after {
   content: "";
@@ -1047,9 +1057,9 @@ main {
   left: 0;
   width: 100%;
   height: 100%;
-  background: -moz-linear-gradient(to bottom, rgba(11, 2, 55, 0) 60%, #0b0237);
-  background: -webkit-linear-gradient(to bottom, rgba(11, 2, 55, 0) 60%, #0b0237);
-  background: linear-gradient(to bottom, rgba(11, 2, 55, 0) 60%, #0b0237);
+  background: -moz-linear-gradient(to bottom, rgba(11, 2, 55, 0) 100%, #0b0237);
+  background: -webkit-linear-gradient(to bottom, rgba(11, 2, 55, 0) 100%, #0b0237);
+  background: linear-gradient(to bottom, rgba(11, 2, 55, 0) 100%, #0b0237);
 }
 .jobs-wrapper .jobs {
   padding-top: 4.5rem;
@@ -1123,6 +1133,7 @@ main {
 .jobs-wrapper .jobs .job-cards .job:hover {
   transform: translate(10px, 10px);
   box-shadow: 0px 0px;
+  cursor: default;
 }
 .jobs-wrapper .jobs .job-cards .job:hover::before {
   box-shadow: 0px 0px;
