@@ -15,19 +15,20 @@
     <script src="https://kit.fontawesome.com/0c82932c82.js"></script>
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.5.6/lottie.js" -->
     <!-- integrity="sha256-E1hp5OOll2m7nD6eRmF0GsJo1+Iwoi3Lb4lgzcQINKY=" crossorigin="anonymous"></script> -->
+    <script src="./utils.js"></script>
 </head>
 
 <body>
     <!-- <script src="./lottie.js"></script> -->
     <header>
-        <div class="container header-wrapper">
+        <div class="container-head header-wrapper">
             <nav>
-                <a class="page-link" href="./index.html">Overview</a>
-                <a class="page-link" href="./who-we-are.html">Who We Are</a>
-                <div class="page-link" id="jobs-link">
-                    <a href="./jobs.html">Jobs</a>
+                <a class="page-link" id="overview-link" href="./index.html">Overview</a>
+                <a class="page-link" id="who-link" href="./who-we-are.html">Who We Are</a>
+                <div class="page-link" id="jobs-dropdown">
+                    <a href="./jobs.html" id="jobs-link">Jobs</a>
                     <div class="dropdown-wrapper">
-                        <div class="jobs-dropdown">
+                        <div class="jobs-menu">
                             <a href="#">How We Work</a>
                             <a href="#">How to Get a Job</a>
                             <a href="#">Apply Now</a>
@@ -35,7 +36,7 @@
                         </div>
                     </div>
                 </div>
-                <a class="page-link" href="#">Contact Us</a>
+                <a class="page-link" id="contact-link" href="./contact.html">Contact Us</a>
             </nav>
             <svg class="hover-svg logo-img" width="335px" height="68px" viewBox="0 0 335 68" version="1.1"
                 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -56,7 +57,7 @@
         </div>
     </header>
     <main id="swup" class="transition-fade overview">
-        <div class="clouds">
+        <div class="clouds transition-dog">
             <div class="x1">
                 <div class="cloud"></div>
             </div>
@@ -77,9 +78,9 @@
                 <div class="cloud"></div>
             </div>
         </div>
-        <div class="calltoaction">
-            <div class="content-wrapper container">
-                <div class="content  transition-cta">
+        <div class="calltoaction transition-dog">
+            <div class="content-wrapper container-home">
+                <div class="content">
                     <h1>We give'em two barrels - Every Day</h1>
                     <p>Proudly located in Spokane, Washington, lorem ipsum dolor sit amet consectetur
                         adipisicing elit.
@@ -89,17 +90,17 @@
             </div>
             <div id="illustration"></div>
         </div>
-        <section class="main-cards container transition-corn">
+        <section class="main-cards container-home transition-corn">
             <h2>Two Barrels: Where one isn't enough</h2>
             <div class="cards">
-                <a class="card" href="./jobs.html">
+                <a class="card" href="./jobs.html" onclick="binky();">
                     <h4>Systems</h4>
                     <p>Are You Passionate About Turning Things Off
                         And On Again? Are You Naturally Tech-Savvy?
                         Let's Talk!</p>
                     <i class="fas fa-cog"></i>
-                    </a>
-                <a class="card" href="./jobs.html">
+                </a>
+                <a class="card" href="./jobs.html" onclick="binky();">
                     <h4>Software</h4>
                     <p>Got Code? Is It Logical And Clean? Do You Feel Passionate About Tabs Or Spaces? If So, We Want
                         Your Skills!</p>
@@ -107,7 +108,7 @@
                         <span>&lt;</span><span>/</span><span>&gt;</span>
                     </div>
                 </a>
-                <a class="card" href="./jobs.html">
+                <a class="card" href="./jobs.html" onclick="binky();">
                     <h4>Creative</h4>
                     <p> Are You Smart? A Little Competitive? Do You Care About Sentences And The Way A Page Looks?
                         Talk To Us!</p>
@@ -118,7 +119,7 @@
                 </a>
             </div>
         </section>
-        <section class="beginnings container">
+        <section class="beginnings container-home">
             <div class="about-wrapper">
                 <!-- <div class="pics-wrapper"> -->
                 <div class="pics">
@@ -161,7 +162,7 @@
                 </div>
             </div>
         </section>
-        <section class="cool-culture container">
+        <section class="cool-culture container-home">
             <div class="cool-wrapper">
                 <!-- <div class="pics-wrapper"> -->
                 <div class="pics">
@@ -204,25 +205,26 @@
                 </div>
             </div>
         </section>
-        <section class="jobs-calltoaction container">
+        <section class="jobs-calltoaction container-home" data-aos="fade-up">
             <div class="jobs-wrapper">
                 <div class="content">
-                    <h2>Do you want to work <span class="head_orange">with</span> us?</h2>
+                    <h2 style="text-align: center !important;">Do you want to <span class="head_orange"
+                            id="replace"></span>
+                        with us?</h2>
                     <hr>
                     <h3>See all current openings and opportunities at Two Barrels.</h3>
                 </div>
 
                 <div class="jobs-cta">
-                    <span></span><i class="fas fa-chevron-right"></i><button>See all Jobs</button><i
-                        class="fas fa-chevron-left"></i></span>
+                    <a href="./jobs.html"><button>See all Jobs</button></a>
                 </div>
             </div>
         </section>
     </main>
     <footer>
-        <div class="footer-wrapper container">
+        <div class="footer-wrapper container-home">
             <div class="logo"><img src="./img/logo.png" alt=""></div>
-
+            
             <div class="social">
                 <a href="#"><i class="fab fa-twitter"></i></a>
                 <a href="#"><i class="fab fa-facebook"></i></a>
@@ -245,10 +247,10 @@
     integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tilt.js/1.2.1/tilt.jquery.js"
     integrity="sha256-bmKpMw7nqXQNfuc0qs7O7grVJjmr06o/cYJAINQiMXc=" crossorigin="anonymous"></script> -->
-    <script src="./illustration.js"></script>
+    <!-- <script src="./illustration.js"></script> -->
     <script src="./app.js"></script>
-    <script src="//instant.page/1.2.2" type="module"
-        integrity="sha384-2xV8M5griQmzyiY3CDqh1dn4z3llDVqZDqzjzcY+jCBCk/a5fXJmuZ/40JJAPeoU"></script>
+    <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.min.js"></script>
+
 </body>
 
 </html>

@@ -1,18 +1,59 @@
+checklocation();
+document.addEventListener('swup:contentReplaced', event => {
+    checklocation();
+});
+console.log(window.location.pathname);
+
+function checklocation() {
+    var endpoint = window.location.pathname;
+    var overviewLink = document.getElementById("overview-link");
+    var whoLink = document.getElementById("who-link");
+    var jobsLink = document.getElementById("jobs-link");
+    var contactLink = document.getElementById("contact-link");
+
+    if (endpoint == "/index.html") {
+        removeactive();
+        overview();
+        overviewLink.classList.add("active");
+    } else if (endpoint == "/who-we-are.html") {
+        removeactive();
+        whoLink.classList.add("active");
+    } else if (endpoint == "/jobs.html") {
+        removeactive();
+        jobsLink.classList.add("active");
+    } else if (endpoint == "/contact.html") {
+        removeactive();
+        contactLink.classList.add("active");
+    }
+
+    function removeactive() {
+        overviewLink.classList.remove("active");
+        whoLink.classList.remove("active");
+        jobsLink.classList.remove("active");
+        contactLink.classList.remove("active");
+    }
+}
+
 // page transitions!
 import Swup from 'swup';
+import SwupScrollPlugin from '@swup/scroll-plugin';
+
 const options = {
     // cache: true,
-    animateHistoryBrowsing: true,
-    containers: ["#swup"]
-
+    animateHistoryBrowsing: true
+    ,plugins: [new SwupScrollPlugin({
+        doScrollingRightAway: true,
+            animateScroll: true,
+            scrollFriction: 0.3,
+            scrollAcceleration: 0.04,
+    })]
 };
 const swup = new Swup(options);
-
+// nice smooth scrolling animations!
 import AOS from 'aos';
 AOS.init();
 
-// You can also pass an optional settings object
-// below listed default settings
+
 AOS.init({
     // Global settings:
     disable: false, // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function
@@ -23,8 +64,6 @@ AOS.init({
     disableMutationObserver: false, // disables automatic mutations' detections (advanced)
     debounceDelay: 50, // the delay on debounce used while resizing window (advanced)
     throttleDelay: 99, // the delay on throttle used while scrolling the page (advanced)
-
-
     // Settings that can be overridden on per-element basis, by `data-aos-*` attributes:
     offset: 0, // offset (in px) from the original trigger point
     delay: 0, // values from 0 to 3000, with step 50ms
@@ -33,45 +72,60 @@ AOS.init({
     once: true, // whether animation should happen only once - while scrolling down
     mirror: false, // whether elements should animate out while scrolling past them
     anchorPlacement: 'top-bottom', // defines which position of the element regarding to window should trigger the animation
-
 });
-// // tilt properties!
-// $('.card').tilt({
-//     glare: true,
-//     maxGlare: 0.08,
-//     disableAxis: X,
-//     perspective: 2000
-// })
 
-// document.querySelectorAll('header a').forEach((elem) => {
+// typing animation for the front page!
+import TypeIt from 'typeit';
+window.onload = function () {
+    // function jobText() {
+    const instance = new TypeIt('#replace', {
+        strings: ["Work", "Create", "Succeed"],
+        speed: 200,
+        cursorSpeed: 1400,
+        waitUntilVisible: true,
+        breakLines: false,
+        loop: true,
+        loopDelay: 3000,
+        waitUntilVisible: true,
+        nextStringDelay: 1950
+    }).go();
+    // }
+}
+function overview() {
+    function jobText() {
+        const instance = new TypeIt('#replace', {
+            strings: ["Work", "Create", "Succeed"],
+            speed: 200,
+            cursorSpeed: 1400,
+            waitUntilVisible: true,
+            breakLines: false,
+            loop: true,
+            loopDelay: 3000,
+            waitUntilVisible: true,
+            nextStringDelay: 1950
+        }).go();
+    }
+    jobText();
+};
 
-//     elem.onmouseenter =
-//         elem.onmouseleave = (e) => {
+// function init() {
+//     if (document.querySelector('#overview')) {
+//         overview();
+//     }
+//     if (document.querySelector('#jobs-wrapper')) {
+//     }
+// }
+// init();
 
-//             const tolerance = 5
+// function unloud() {
+//     if (document.querySelector('#overview')) {
+//         overview();
+//     }
+//     if (document.querySelector('#jobs-wrapper')) {
+//     }
 
-//             const left = 0
-//             const right = elem.clientWidth
+// }
 
-//             let x = e.pageX - elem.offsetLeft
-
-//             if (x - tolerance < left) x = left
-//             if (x + tolerance > right) x = right
-
-//             elem.style.setProperty('--x', `${ x }px`)
-
-//         }
-
-// })
-
-// var params = {
-//     container: document.getElementById('illustration'),
-//     renderer: 'svg',
-//     loop: true,
-//     autoplay: true,
-//     animationData: animationData
-// };
-
-// var anim;
-
-// anim = lottie.loadAnimation(params);
+swup.on('willReplaceContent', unloud);
+// this event runs for every page view after initial load
+swup.on('contentReplaced', init);

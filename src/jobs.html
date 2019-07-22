@@ -13,14 +13,14 @@
 
 <body class="jobs-page">
     <header>
-        <div class="container header-wrapper">
+        <div class="container-head header-wrapper">
             <nav>
-                <a class="page-link" href="./index.html">Overview</a>
-                <a class="page-link" href="./who-we-are.html">Who We Are</a>
-                <div class="page-link" id="jobs-link">
-                    <a href="./jobs.html">Jobs</a>
+                <a class="page-link" id="overview-link" href="./index.html">Overview</a>
+                <a class="page-link" id="who-link" href="./who-we-are.html">Who We Are</a>
+                <div class="page-link" id="jobs-dropdown">
+                    <a href="./jobs.html" id="jobs-link">Jobs</a>
                     <div class="dropdown-wrapper">
-                        <div class="jobs-dropdown">
+                        <div class="jobs-menu">
                             <a href="#">How We Work</a>
                             <a href="#">How to Get a Job</a>
                             <a href="#">Apply Now</a>
@@ -28,7 +28,7 @@
                         </div>
                     </div>
                 </div>
-                <a class="page-link" href="#">Contact Us</a>
+                <a class="page-link" id="contact-link" href="./contact.html">Contact Us</a>
             </nav>
             <svg class="hover-svg logo-img" width="335px" height="68px" viewBox="0 0 335 68" version="1.1"
                 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -47,8 +47,6 @@
                 <a href="mailto:hello@twobarrels.com"><i class="fas fa-envelope"></i>Send an email</a>
             </div>
         </div>
-        <div class="loading"></div>
-
     </header>
     <main id="swup" class="transition-fade jobs-wrapper">
         <section class="jobs container transition-corn">
@@ -258,8 +256,6 @@
         </svg>
     </div>
     <script src="./app.js"></script>
-    <script src="//instant.page/1.2.2" type="module"
-        integrity="sha384-2xV8M5griQmzyiY3CDqh1dn4z3llDVqZDqzjzcY+jCBCk/a5fXJmuZ/40JJAPeoU"></script>
 </body>
 
 </html>

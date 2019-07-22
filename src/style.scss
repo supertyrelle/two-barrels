@@ -19,28 +19,46 @@ header {
             text-transform: uppercase;
             font-weight: 400;
             // background: $white;
-            padding: 0.5em 1em;
+            // padding: 0.5em 1em;
             // border-radius: 100px;
             // box-shadow: black 3px 3px;
             // border-bottom: 2px solid $lavender;
 
             .active {
+                color: $orange;
+                // border-bottom: 3px solid $orange;
+                transition: ease all .3s;
 
-                &::before {
-                    content: "•" !important;
+                &::after {
+                    --scale: 1;
+
+                    content: '';
                     position: absolute;
-                    left: 50%;
-                    top: -20px;
-                    color: $orange;
-                    // font-weight: 900;
+                    left: 0;
+                    right: 0;
+                    top: 100%;
+                    height: 3px;
+                    background: $orange;
+                    transform: scaleX(var(--scale));
+                    transform-origin: var(--x) 50%;
+                    transition: transform .5s cubic-bezier(.535, .05, .355, 1);
                 }
+
+                // &::before {
+                //     content: "•" !important;
+                //     position: absolute;
+                //     left: 50%;
+                //     top: -20px;
+                //     color: $orange;
+                //     // font-weight: 900;
+                // }
             }
 
             a {
                 position: relative;
                 text-decoration: none;
                 color: $white;
-                transition: color .3s ease;
+                transition: color .5s ease;
 
                 &:hover {
                     color: $orange;
@@ -55,7 +73,17 @@ header {
         }
 
         nav {
+            a:active {
+                color: $orange;
+
+                &::after {
+                    --scale: 1;
+                }
+            }
+
             a {
+                transition: ease all .5s;
+
                 &::after {
                     --scale: 0;
 
@@ -68,7 +96,7 @@ header {
                     background: $orange;
                     transform: scaleX(var(--scale));
                     transform-origin: var(--x) 50%;
-                    transition: transform .3s cubic-bezier(.535, .05, .355, 1);
+                    transition: transform .5s cubic-bezier(.535, .05, .355, 1);
                 }
 
                 &:hover {
@@ -78,9 +106,17 @@ header {
                 &:hover::after {
                     --scale: 1;
                 }
+
+                &:active {
+                    color: $orange;
+
+                    &::after {
+                        --scale: 1;
+                    }
+                }
             }
 
-            #jobs-link {
+            #jobs-dropdown {
                 position: relative;
                 display: inline;
 
@@ -96,7 +132,7 @@ header {
                     transition: ease all 230ms;
                     pointer-events: none;
 
-                    .jobs-dropdown {
+                    .jobs-menu {
                         padding: 1em;
                         min-width: 200px;
                         display: flex;
@@ -104,7 +140,8 @@ header {
                         background-color: rgba($lighter-blue, 75%);
                         border: 2px solid $orange;
                         position: relative;
-// border-top:8px solid $orange;
+
+                        // border-top:8px solid $orange;
                         a+a {
                             margin-top: 10px;
                         }
@@ -225,7 +262,7 @@ main {
     }
 
     .main-cards {
-        margin-top: -6em;
+        margin-top: -5em;
         // padding: 3em 0;
         display: flex;
         flex-direction: column;
@@ -233,6 +270,7 @@ main {
         justify-content: center;
         position: relative;
         z-index: 3;
+        padding-bottom: 1em;
 
         h2 {
             // margin-top: -2em;
@@ -250,7 +288,7 @@ main {
                 flex-grow: 1;
                 flex: 1 1 30%;
                 min-width: 280px;
-                max-width: 400px;
+                // max-width: 400px;
                 min-height: 50px;
                 background: linear-gradient(140deg, $lighter-blue, lighten($blue, 5%));
                 // background: $lighter-blue;
@@ -366,11 +404,11 @@ main {
 
     .beginnings {
         position: relative;
-        border-right: 2px solid $lighter-blue;
+        border-right: 2px solid $orange;
 
         .about-wrapper {
             display: flex;
-            flex-direction: row-reverse;
+            flex-direction: row;
             justify-content: space-between;
             width: 100%;
             // align-items: flex-start;
@@ -383,7 +421,7 @@ main {
             top: 0px;
             background: $orange;
             flex: 1 30%;
-            margin-left: 1em;
+            // margin-right: 3em;
             display: flex;
             flex-direction: row;
             align-items: flex-start;
@@ -393,14 +431,21 @@ main {
             background-size: cover;
             background-position: top center;
             background-attachment: scroll;
+
         }
 
         .about {
             // margin: 0 auto;
             // background: lighten($blue, 5%);
-            max-width: 900px;
-            padding: 3em 4em;
+            max-width: 700px;
+            padding: 3em 0em;
             flex: 1 70%;
+
+            p,
+            h2 {
+                margin-right: 30px;
+
+            }
 
             p {
                 line-height: 18pt;
@@ -428,28 +473,28 @@ main {
             content: "";
             bottom: 0px;
             height: 2px;
-            background: -moz-linear-gradient(to left, $lighter-blue, $blue);
-            background: -webkit-linear-gradient(to left, $lighter-blue, $blue);
-            background: linear-gradient(to left, $lighter-blue, $blue);
+            background: -moz-linear-gradient(to left, $orange, $blue);
+            background: -webkit-linear-gradient(to left, $orange, $blue);
+            background: linear-gradient(to left, $orange, $blue);
             width: 100%;
         }
     }
 
     .cool-culture {
         position: relative;
-        border-left: 2px solid $lighter-blue;
+        border-left: 2px solid $orange;
 
         h2 {
             .head_actually {
-                display: block;
-                // margin-left: 2em;
+                // display: block;
+                margin-left: 10px;
                 color: rgba($white, 25%);
             }
         }
 
         .cool-wrapper {
             display: flex;
-            flex-direction: row-reverse;
+            flex-direction: row;
             justify-content: space-between;
             width: 100%;
             // align-items: flex-start;
@@ -468,7 +513,7 @@ main {
             right: 0px;
             background: $orange;
             flex: 1 30%;
-            margin-right: 1em;
+            // margin-left: 3em;
             display: flex;
             flex-direction: row;
             align-items: flex-start;
@@ -483,9 +528,15 @@ main {
         .cool {
             // margin: 0 auto;
             // background: lighten($blue, 5%);
-            max-width: 900px;
-            padding: 3em 4em;
+            max-width: 700px;
+            padding: 3em 0em;
             flex: 1 70%;
+
+            p,
+            h2 {
+                margin-left: 30px;
+
+            }
 
             p {
                 line-height: 18pt;
@@ -513,9 +564,9 @@ main {
             content: "";
             bottom: 0px;
             height: 2px;
-            background: -moz-linear-gradient(to right, $lighter-blue, $blue);
-            background: -webkit-linear-gradient(to right, $lighter-blue, $blue);
-            background: linear-gradient(to right, $lighter-blue, $blue);
+            background: -moz-linear-gradient(to right, $orange, $blue);
+            background: -webkit-linear-gradient(to right, $orange, $blue);
+            background: linear-gradient(to right, $orange, $blue);
             width: 100%;
         }
     }
@@ -539,6 +590,10 @@ main {
             .content {
                 text-align: center;
 
+                .head_orange {
+                    margin-right: -10px;
+                }
+
                 h3 {
                     margin-top: 1em;
 
@@ -557,9 +612,9 @@ main {
             content: "";
             bottom: 0px;
             height: 2px;
-            background: -moz-radial-gradient(to center, $lighter-blue, $blue);
-            background: -webkit-radial-gradient(to right, $lighter-blue, $blue);
-            background: radial-gradient($lighter-blue, $blue 75%);
+            background: -moz-radial-gradient($orange, $blue 75%);
+            background: -webkit-radial-gradient($orange, $blue 75%);
+            background: radial-gradient($orange, $blue 75%);
             width: 100%;
         }
     }
@@ -583,11 +638,12 @@ main {
         top: -7rem;
         left: 0;
         width: 100%;
-        min-height: 500px;
-        filter: opacity(0.3);
+        min-height: 600px;
+        filter: opacity(1);
         // mix-blend-mode: darken;
         background: $blue;
-border-bottom: 1px solid darken($orange, 15%);
+        border-bottom: 1px solid darken($orange, 15%);
+
         &::before {
             content: "";
             position: absolute;
@@ -600,6 +656,7 @@ border-bottom: 1px solid darken($orange, 15%);
             background-size: 100%;
             background-position: top -40em center;
             background-attachment: fixed;
+            filter: opacity(0.3);
 
             // filter: grayscale(100%);
             // filter: hue-rotate(240deg);
@@ -651,7 +708,7 @@ border-bottom: 1px solid darken($orange, 15%);
                 flex: 1 33%;
                 height: 300px;
                 overflow: hidden;
-                max-width: 320px;
+                max-width: 330px;
                 margin: 1em;
 
                 h3 {
@@ -720,10 +777,10 @@ border-bottom: 1px solid darken($orange, 15%);
         top: -7rem;
         left: 0;
         width: 100%;
-        min-height: 500px;
+        min-height: 600px;
         filter: opacity(1);
         // mix-blend-mode: darken;
-            border-bottom: 1px solid darken($orange, 15%);
+        border-bottom: 1px solid darken($orange, 15%);
 
         &::before {
             content: "";
@@ -765,7 +822,7 @@ border-bottom: 1px solid darken($orange, 15%);
         position: relative;
         display: flex;
         flex-direction: column;
-        max-width: 1100px;
+        max-width: 1050px;
         margin: 0 auto;
 
         hr {
@@ -791,11 +848,7 @@ border-bottom: 1px solid darken($orange, 15%);
             width: 1050px;
             margin: 0 auto;
 
-            .subheader {
-                width: 100%;
-                margin: 1em 0 0.5em 0;
-                text-align: left;
-            }
+
 
             .job {
                 position: relative;
@@ -809,6 +862,7 @@ border-bottom: 1px solid darken($orange, 15%);
                 padding: 1.5em 1.5em;
                 // box-shadow: 5px 5px $lighter-blue;
                 transition: ease all 200ms;
+
                 &:nth-child(2n) {
                     background: rgb(233, 233, 233);
                 }
@@ -841,7 +895,7 @@ border-bottom: 1px solid darken($orange, 15%);
                     transform: translate(10px, 10px);
                     box-shadow: 0px 0px;
                     // transition-delay: 300ms;
-cursor:default;
+                    cursor: default;
 
                     &::before {
                         box-shadow: 0px 0px;
@@ -866,7 +920,7 @@ cursor:default;
                         color: $white;
                         padding: 5px 8px;
                         margin: 10px 0px;
-                        font-size: 11pt;
+                        font-size: 10pt;
 
                         i {
                             font-size: inherit;
@@ -915,7 +969,7 @@ cursor:default;
         position: relative;
         display: flex;
         flex-direction: column;
-        max-width: 1100px;
+        max-width: 1050px;
         margin: 0 auto;
 
         .talent-jobs {
@@ -937,6 +991,7 @@ cursor:default;
                 // box-shadow: 10px 10px $lavender;
                 width: 100%;
                 position: relative;
+                background: linear-gradient(140deg, $lighter-blue, lighten($blue, 5%));
 
                 .tab {
                     width: 100%;
@@ -953,14 +1008,15 @@ cursor:default;
                         display: flex;
                         justify-content: space-between;
                         padding: 1em;
-                        background: $lighter-blue;
+                        // background: $lighter-blue;
+                        background: transparent;
                         font-weight: bold;
                         cursor: pointer;
                         border: 1px rgba(255, 255, 255, 0.098) solid;
 
                         /* Icon */
                         &:hover {
-                            background: lighten($lighter-blue, 15%);
+                            background: rgba($lighter-blue, 95%);
                         }
 
                         &::after {
@@ -1042,7 +1098,7 @@ cursor:default;
 
             input:checked {
                 +.tab-label {
-                    background: lighten($lighter-blue, 15%);
+                    background: rgba($lighter-blue, 95%);
 
                     &::after {
                         transform: rotate(90deg);
@@ -1059,6 +1115,469 @@ cursor:default;
     }
 }
 
+.contact-wrapper {
+    position: relative;
+    // min-height: 100vh;
+    z-index: 2;
+    top: 0px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background: $blue;
+
+    .bg {
+        position: absolute;
+        z-index: -4;
+        top: -7rem;
+        left: 0;
+        width: 100%;
+        min-height: 600px;
+        filter: opacity(1);
+        // mix-blend-mode: darken;
+        border-bottom: 1px solid darken($orange, 15%);
+
+        &::before {
+            content: "";
+            position: absolute;
+            // z-index: -3;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('./img/spokane.jpg') no-repeat;
+            background-size: 100%;
+            background-position: bottom 10em center;
+            filter: opacity(0.3);
+            background-attachment: fixed;
+
+            // filter: grayscale(100%);
+            // filter: hue-rotate(240deg);
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            // z-index: -2;
+            // top: -15.5em;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            // background: -moz-linear-gradient(to bottom, rgba($blue, 00%) 60%, $blue);
+            // background: -webkit-linear-gradient(to bottom, rgba($blue, 00%) 60%, $blue);
+            // background: linear-gradient(to bottom, rgba($blue, 00%) 60%, $blue);
+            background: -moz-linear-gradient(to bottom, rgba($blue, 00%) 100%, $blue);
+            background: -webkit-linear-gradient(to bottom, rgba($blue, 00%) 100%, $blue);
+            background: linear-gradient(to bottom, rgba($blue, 00%) 100%, $blue);
+        }
+    }
+
+    .contact-us {
+        padding-top: 4.5rem;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        max-width: 1050px;
+        margin: 0 auto;
+
+        hr {
+            width: 90%;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+            align-self: center;
+        }
+
+        p {
+            text-align: center;
+            font-weight: 300;
+        }
+
+        .contact-info {
+            // margin: 0 2em;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            color: $blue;
+            margin-top: 1em;
+
+            .address,
+            .phone-number {
+                background: $white;
+                display: flex;
+                flex-direction: column;
+                // align-self: stretch;
+                position: relative;
+                width: 230px;
+                overflow: hidden;
+                flex: 1;
+
+                i {
+                    position: absolute;
+                    right: 3rem;
+                    top: 2rem;
+                    z-index: 6;
+                    font-size: 50pt;
+                    //    margin-right:4.5rem;
+                    transform: translateY(-100px);
+                    transition: ease all 230ms;
+                    color: rgba($white, 60%);
+                }
+
+                .fa-map-marker-alt {
+                    margin-right: 2rem;
+                }
+
+                &:hover {
+                    i {
+                        transform: translateY(0px);
+                    }
+
+                    // mix-blend-mode: difference;
+                    color: $white;
+                    transition: ease all 100ms;
+
+                    &::after {
+                        width: 600px;
+                        transition-delay: 100ms;
+
+                    }
+
+                    &::before {
+                        width: 600px;
+
+                    }
+
+                }
+
+            }
+
+            .phone-number {
+                padding: 1em 2em 0em 3em;
+
+                &::before {
+                    position: absolute;
+                    content: '';
+                    z-index: 3;
+                    top: 0px;
+                    left: 0px;
+                    width: 30px;
+                    height: 100%;
+                    background: $orange;
+                    transition: ease all 400ms;
+                }
+
+                &::after {
+                    position: absolute;
+                    content: '';
+                    z-index: 4;
+                    top: 0px;
+                    left: 0px;
+                    width: 10px;
+                    height: 100%;
+                    background: $blue;
+                    transition: ease all 600ms;
+                    transition-delay: 100ms;
+                }
+            }
+
+            .address {
+                padding: 1em 2em 0em 1.5em;
+
+                &::before {
+                    position: absolute;
+                    content: '';
+                    z-index: 3;
+                    top: 0px;
+                    right: 0px;
+                    width: 30px;
+                    height: 100%;
+                    background: $orange;
+                    transition: ease all 400ms;
+                }
+
+                &::after {
+                    position: absolute;
+                    content: '';
+                    z-index: 4;
+                    top: 0px;
+                    right: 0px;
+                    width: 10px;
+                    height: 100%;
+                    background: $blue;
+                    transition: ease all 600ms;
+                    transition-delay: 100ms;
+                }
+            }
+
+            h2,
+            p {
+                position: relative;
+                z-index: 5;
+                transition: ease all 370ms;
+                cursor: default;
+            }
+
+            h2 {
+                margin-top: 1em;
+                font-size: 20pt;
+                line-height: 8pt;
+
+
+                &+h2 {
+                    margin-top: 0em;
+
+                }
+
+                &.hours {
+                    color: rgba(138, 138, 138, 0.6);
+                }
+            }
+
+            p {
+                text-align: left;
+
+            }
+        }
+    }
+
+    .contact-form {
+        margin-top: 1em !important;
+
+        padding-bottom: 2.5rem;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        // margin: 0 auto;
+        // background: $white;
+
+        form {
+            // background: maroon;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            // justify-content: center;
+            // min-width: 600px;
+            padding: 2em;
+            background: $white;
+.form-top {
+    color: $blue;
+    font-weight:300;
+    font-size:18pt;
+    margin-bottom:0.5em;
+}
+            .name {
+                .user-input {
+                    position: relative;
+
+                    input {
+                        text-transform: capitalize;
+
+                    }
+                }
+            }
+
+            .name,
+            .email {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                // justify-content: space-around;
+                margin: 0.5em 0;
+                background: darken($white, 15%);
+                color: $blue;
+                padding: 1em;
+
+                p {
+                    font-weight: 400;
+                    font-size: 14pt;
+                    margin-bottom: 5px;
+
+                }
+
+                .user-input {
+                    position: relative;
+
+                    input {
+                        padding-left: 10px;
+                        width: 100%;
+                        color: $blue;
+                        font-size: 20pt;
+                        font-family: inherit;
+                        background-color: transparent;
+                        border: 2px solid transparent;
+                        border-bottom-color: rgba($orange, 0.2);
+
+                        &:focus {
+                            outline: none;
+                        }
+
+                        &::placeholder {
+                            color: hsla(0, 0%, 51%, 0.7);
+                        }
+
+                    }
+
+                    span {
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        right: 0;
+                        height: 3px;
+                        background-color: $orange;
+                        transform-origin: bottom right;
+                        transform: scaleX(0);
+                        transition: transform 0.5s ease;
+                    }
+
+                    input:focus~span {
+                        transform-origin: bottom left;
+                        transform: scaleX(1);
+                    }
+                }
+            }
+
+            .message {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                // justify-content: space-around;
+                margin: 0.5em 0;
+                background: darken($white, 15%);
+                color: $blue;
+                padding: 1em;
+
+                p {
+                    font-weight: 400;
+                    font-size: 14pt;
+                    margin-bottom: 5px;
+                }
+
+                .user-input {
+                    position: relative;
+
+                    textarea {
+                        width: 100%;
+                        color: $blue;
+                        font-size: 20pt;
+                        background: transparent;
+                        padding: 0.35em 0.45em;
+                        border: 2px solid rgba($orange, 0.2);
+                        transition: background-color 0.3s ease-in-out;
+                        resize: vertical;
+
+                        &:focus {
+                            outline: none;
+                        }
+
+                        &::placeholder {
+                            color: hsla(0, 0%, 51%, 0.7);
+                        }
+
+                    }
+
+                    span {
+                        position: absolute;
+                        background-color: $orange;
+                        transition: transform 0.1s ease;
+
+                        &.bottom,
+                        &.top {
+                            height: 3px;
+                            left: 0;
+                            right: 0;
+                            transform: scaleX(0);
+                        }
+
+                        &.left,
+                        &.right {
+                            width: 3px;
+                            top: 0;
+                            bottom: 0;
+                            transform: scaleY(0);
+                        }
+
+                        &.bottom {
+                            bottom: 0;
+                            transform-origin: bottom right;
+                        }
+
+                        &.right {
+                            right: 0;
+                            transform-origin: top right;
+                            transition-delay: 0.05s;
+                        }
+
+                        &.top {
+                            top: 0;
+                            transform-origin: top left;
+                            transition-delay: 0.15s;
+                        }
+
+                        &.left {
+                            left: 0;
+                            transform-origin: bottom left;
+                            transition-delay: 0.25s;
+                        }
+                    }
+
+                    textarea:focus~.bottom {
+                        transform-origin: bottom left;
+                        transform: scaleX(1);
+                    }
+
+                    textarea:focus~.right {
+                        transform-origin: bottom right;
+                        transform: scaleY(1);
+                    }
+
+                    textarea:focus~.top {
+                        transform-origin: top right;
+                        transform: scaleX(1);
+                    }
+
+                    textarea:focus~.left {
+                        transform-origin: top left;
+                        transform: scaleY(1);
+                    }
+
+                }
+            }
+
+            button {
+                margin-top: 1em;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+
+                i {
+                    font-size: 18pt;
+                    position: relative;
+                    margin-left: 15px;
+                    transition: ease all 230ms;
+                }
+
+                &:hover {
+                    i {
+                        transform: translateX(10px);
+                    }
+                    &::after {
+                        transition: transform 0.50s ease-in-out;
+                        transform: translate3d(500%, 0, 0) rotate(35deg);
+                    }
+                }
+            }
+        }
+    }
+
+    h3 {
+        margin-bottom: 1em;
+    }
+}
+
+
+
 footer {
     background: darken($blue, 3%);
     border-top: 4px solid lighten($lighter-blue, 5%);
@@ -1069,36 +1588,37 @@ footer {
         display: flex;
         flex-direction: row;
         align-items: center;
-        align-content: center;
-        justify-content: space-between;
+        justify-content: space-around;
         padding: 2em 0;
         margin: 0 auto;
 
         .logo {
-            flex: 1;
-            display: inherit;
-            align-content: center;
-            justify-content: center;
+            width: 200px;
 
             img {
-                max-width: 100px;
+                max-width: 80px;
+
             }
 
-            // filter: hue-rotate(180deg);
-            transition: ease filter 200ms;
-            flex:1;
-
-            &:hover {
-                -webkit-filter: grayscale(100%);
-                /* Safari 6.0 - 9.0 */
-                filter: grayscale(100%);
-                filter: brightness(4);
-            }
+            // flex: 1;
         }
 
+        // // filter: hue-rotate(180deg);
+        // transition: ease filter 200ms;
+        // flex:1;
+
+        // &:hover {
+        //     -webkit-filter: grayscale(100%);
+        //     /* Safari 6.0 - 9.0 */
+        //     filter: grayscale(100%);
+        //     filter: brightness(4);
+        // }
+
         .social {
-            flex: 1;
-            display: inherit;
+            // flex: 1;
+            width: 200px;
+            display: flex;
+            flex-direction: row;
             align-content: center;
             justify-content: center;
 
@@ -1118,7 +1638,8 @@ footer {
         }
 
         .address {
-            flex: 1;
+            width: 200px;
+            // flex: 1;
             font-weight: 300;
             color: rgba($white, 85%);
         }

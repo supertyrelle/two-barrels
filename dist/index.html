@@ -13,19 +13,20 @@
     <script src="https://kit.fontawesome.com/0c82932c82.js"></script>
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.5.6/lottie.js" -->
     <!-- integrity="sha256-E1hp5OOll2m7nD6eRmF0GsJo1+Iwoi3Lb4lgzcQINKY=" crossorigin="anonymous"></script> -->
+    <script src="/utils.add54b87.js"></script>
 <script src="/style.97fcb138.js"></script></head>
 
 <body>
     <!-- <script src="./lottie.js"></script> -->
     <header>
-        <div class="container header-wrapper">
+        <div class="container-head header-wrapper">
             <nav>
-                <a class="page-link" href="/index.html">Overview</a>
-                <a class="page-link" href="/who-we-are.html">Who We Are</a>
-                <div class="page-link" id="jobs-link">
-                    <a href="/jobs.html">Jobs</a>
+                <a class="page-link" id="overview-link" href="/index.html">Overview</a>
+                <a class="page-link" id="who-link" href="/who-we-are.html">Who We Are</a>
+                <div class="page-link" id="jobs-dropdown">
+                    <a href="/jobs.html" id="jobs-link">Jobs</a>
                     <div class="dropdown-wrapper">
-                        <div class="jobs-dropdown">
+                        <div class="jobs-menu">
                             <a href="#">How We Work</a>
                             <a href="#">How to Get a Job</a>
                             <a href="#">Apply Now</a>
@@ -33,7 +34,7 @@
                         </div>
                     </div>
                 </div>
-                <a class="page-link" href="#">Contact Us</a>
+                <a class="page-link" id="contact-link" href="/contact.html">Contact Us</a>
             </nav>
             <svg class="hover-svg logo-img" width="335px" height="68px" viewBox="0 0 335 68" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <path d="M171.1,23.3 L171.1,18.5 L153.8,18.5 L153.8,66.3 L172,66.3 L172,43 C172,36.7 175.1,33.5 181.3,33.5 C182.5,33.5 183.9,33.6 185.3,33.8 L185.3,17.8 C179.1,17.8 174.3,19.6 171.1,23.3 Z M204.6,23.3 L204.6,18.5 L187.3,18.5 L187.3,66.3 L205.5,66.3 L205.5,43 C205.5,36.7 208.6,33.5 214.8,33.5 C216,33.5 217.4,33.6 218.8,33.8 L218.8,17.8 C212.6,17.8 207.8,19.6 204.6,23.3 Z M256.4,20.6 C252.7,18.7 248.6,17.7 244.2,17.7 C239.5,17.7 235.2,18.7 231.4,20.8 C227.6,22.9 224.6,25.8 222.5,29.5 C220.3,33.2 219.2,37.5 219.2,42.2 C219.2,46.9 220.3,51.1 222.5,54.8 C224.7,58.6 227.8,61.5 231.8,63.6 C235.8,65.7 240.5,66.8 245.8,66.8 C254.3,66.8 260.8,64.3 265.1,59.2 L255.6,48.9 C254,50.2 252.6,51.1 251.3,51.6 C250,52.1 248.4,52.4 246.4,52.4 C244.1,52.4 242.3,51.9 240.8,51 C239.3,50 238.2,48.7 237.6,46.9 L268.2,46.9 C268.4,44.1 268.4,42.6 268.4,42.3 C268.4,37.2 267.3,32.7 265.1,29.1 C263,25.3 260.1,22.5 256.4,20.6 Z M237.3,37.4 C237.7,35.4 238.5,33.8 239.7,32.7 C240.9,31.6 242.5,31.1 244.4,31.1 C246.3,31.1 247.8,31.7 249.1,32.8 C250.3,33.9 251.1,35.5 251.5,37.4 L237.3,37.4 Z M271,0.8 L289.2,0.8 L289.2,66.4 L271,66.4 L271,0.8 Z M331.2,41.9 C329.3,39.8 327.1,38.4 324.6,37.7 C322.1,37 319.1,36.3 315.5,35.9 C313.2,35.6 311.5,35.3 310.4,35 C309.3,34.7 308.8,34.1 308.8,33.4 C308.8,31.9 310.8,31.1 314.8,31.1 C319.4,31.1 323.7,32.3 327.5,34.6 L332.5,21.7 C330.2,20.4 327.5,19.5 324.3,18.8 C321.1,18.1 317.8,17.8 314.5,17.8 C309.7,17.8 305.6,18.5 302.2,20 C298.8,21.4 296.2,23.4 294.5,25.8 C292.8,28.2 291.9,31 291.9,34 C291.9,37.9 292.9,40.8 294.8,42.9 C296.7,45 298.9,46.4 301.4,47.1 C303.9,47.8 307,48.4 310.6,48.9 C313,49.2 314.7,49.5 315.7,49.8 C316.7,50.1 317.3,50.6 317.3,51.4 C317.3,52.2 316.9,52.7 316.1,53.1 C315.3,53.5 313.8,53.7 311.7,53.7 C309.1,53.7 306.4,53.3 303.6,52.6 C300.8,51.9 298.4,50.8 296.3,49.5 L291.3,62.4 C293.6,63.8 296.5,64.9 300.2,65.8 C303.9,66.7 307.6,67.1 311.3,67.1 C316.2,67.1 320.4,66.4 323.8,64.9 C327.2,63.5 329.8,61.5 331.5,59.1 C333.2,56.7 334.1,54 334.1,51 C334.1,47 333.1,44 331.2,41.9 Z" id="Shape" fill="#FFFFFF"></path>
@@ -47,7 +48,7 @@
         </div>
     </header>
     <main id="swup" class="transition-fade overview">
-        <div class="clouds">
+        <div class="clouds transition-dog">
             <div class="x1">
                 <div class="cloud"></div>
             </div>
@@ -68,9 +69,9 @@
                 <div class="cloud"></div>
             </div>
         </div>
-        <div class="calltoaction">
-            <div class="content-wrapper container">
-                <div class="content  transition-cta">
+        <div class="calltoaction transition-dog">
+            <div class="content-wrapper container-home">
+                <div class="content">
                     <h1>We give'em two barrels - Every Day</h1>
                     <p>Proudly located in Spokane, Washington, lorem ipsum dolor sit amet consectetur
                         adipisicing elit.
@@ -80,17 +81,17 @@
             </div>
             <div id="illustration"></div>
         </div>
-        <section class="main-cards container transition-corn">
+        <section class="main-cards container-home transition-corn">
             <h2>Two Barrels: Where one isn't enough</h2>
             <div class="cards">
-                <a class="card" href="/jobs.html">
+                <a class="card" href="/jobs.html" onclick="binky();">
                     <h4>Systems</h4>
                     <p>Are You Passionate About Turning Things Off
                         And On Again? Are You Naturally Tech-Savvy?
                         Let's Talk!</p>
                     <i class="fas fa-cog"></i>
-                    </a>
-                <a class="card" href="/jobs.html">
+                </a>
+                <a class="card" href="/jobs.html" onclick="binky();">
                     <h4>Software</h4>
                     <p>Got Code? Is It Logical And Clean? Do You Feel Passionate About Tabs Or Spaces? If So, We Want
                         Your Skills!</p>
@@ -98,7 +99,7 @@
                         <span>&lt;</span><span>/</span><span>&gt;</span>
                     </div>
                 </a>
-                <a class="card" href="/jobs.html">
+                <a class="card" href="/jobs.html" onclick="binky();">
                     <h4>Creative</h4>
                     <p> Are You Smart? A Little Competitive? Do You Care About Sentences And The Way A Page Looks?
                         Talk To Us!</p>
@@ -109,7 +110,7 @@
                 </a>
             </div>
         </section>
-        <section class="beginnings container">
+        <section class="beginnings container-home">
             <div class="about-wrapper">
                 <!-- <div class="pics-wrapper"> -->
                 <div class="pics">
@@ -152,7 +153,7 @@
                 </div>
             </div>
         </section>
-        <section class="cool-culture container">
+        <section class="cool-culture container-home">
             <div class="cool-wrapper">
                 <!-- <div class="pics-wrapper"> -->
                 <div class="pics">
@@ -195,24 +196,25 @@
                 </div>
             </div>
         </section>
-        <section class="jobs-calltoaction container">
+        <section class="jobs-calltoaction container-home" data-aos="fade-up">
             <div class="jobs-wrapper">
                 <div class="content">
-                    <h2>Do you want to work <span class="head_orange">with</span> us?</h2>
+                    <h2 style="text-align: center !important;">Do you want to <span class="head_orange" id="replace"></span>
+                        with us?</h2>
                     <hr>
                     <h3>See all current openings and opportunities at Two Barrels.</h3>
                 </div>
 
                 <div class="jobs-cta">
-                    <span></span><i class="fas fa-chevron-right"></i><button>See all Jobs</button><i class="fas fa-chevron-left"></i>
+                    <a href="/jobs.html"><button>See all Jobs</button></a>
                 </div>
             </div>
         </section>
     </main>
     <footer>
-        <div class="footer-wrapper container">
+        <div class="footer-wrapper container-home">
             <div class="logo"><img src="/logo.cecc779a.png" alt=""></div>
-
+            
             <div class="social">
                 <a href="#"><i class="fab fa-twitter"></i></a>
                 <a href="#"><i class="fab fa-facebook"></i></a>
@@ -235,9 +237,10 @@
     integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tilt.js/1.2.1/tilt.jquery.js"
     integrity="sha256-bmKpMw7nqXQNfuc0qs7O7grVJjmr06o/cYJAINQiMXc=" crossorigin="anonymous"></script> -->
-    <script src="/illustration.7dd96208.js"></script>
+    <!-- <script src="./illustration.js"></script> -->
     <script src="/app.c328ef1a.js"></script>
-    <script src="//instant.page/1.2.2" type="module" integrity="sha384-2xV8M5griQmzyiY3CDqh1dn4z3llDVqZDqzjzcY+jCBCk/a5fXJmuZ/40JJAPeoU"></script>
+    <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.min.js"></script>
+
 </body>
 
 </html>
