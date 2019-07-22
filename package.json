@@ -1,0 +1,36 @@
+{
+    "name": "nw-counseling",
+    "version": "0.1.0",
+    "description": "Functional two-page website mockup based on Serhii Polyvanyi's NCWC shot on Dribbble.",
+    "main": "index.js",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/supertyrelle/nw-counseling.git"
+    },
+    "scripts": {
+        "dev": "parcel src/index.html --port 444",
+        "pack": "parcel build src/index.html -d export --public-url ."
+    },
+    "keywords": [
+        "supertyrelle",
+        "northwest counseling"
+    ],
+    "author": "Tyrelle Phillips",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/supertyrelle/nw-counseling/issues"
+    },
+    "homepage": "https://github.com/supertyrelle/nw-counseling#readme",
+    "devDependencies": {
+        "@babel/cli": "^7.5.0",
+        "@babel/core": "^7.5.4",
+        "cssnano": "^4.1.10",
+        "sass": "^1.22.3"
+    },
+    "dependencies": {
+        "bodymovin": "^4.13.0",
+        "freezeframe": "^4.0.0-alpha.7",
+        "lottie-web": "^5.5.6",
+        "swup": "^2.0.4"
+    }
+}

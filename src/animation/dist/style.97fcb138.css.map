@@ -1,0 +1,1 @@
+{"version":3,"sources":["style.scss"],"names":[],"mappings":"AAAA;AAAA;EAGI;EACA;EACA;EACA;;;AAGJ;EACI;EACA","file":"style.97fcb138.css","sourceRoot":"..","sourcesContent":["html,\nbody {\n    // background-color: #000;\n    width: 100%;\n    height: 100%;\n    margin: 0;\n    overflow: hidden;\n}\n\n#motion {\n    width: 100%;\n    height: 100%;\n}"]}
