@@ -366,11 +366,11 @@ main {
 
     .beginnings {
         position: relative;
-        border-left: 2px solid $lighter-blue;
+        border-right: 2px solid $lighter-blue;
 
         .about-wrapper {
             display: flex;
-            flex-direction: row;
+            flex-direction: row-reverse;
             justify-content: space-between;
             width: 100%;
             // align-items: flex-start;
@@ -383,7 +383,7 @@ main {
             top: 0px;
             background: $orange;
             flex: 1 30%;
-            margin-right: 1em;
+            margin-left: 1em;
             display: flex;
             flex-direction: row;
             align-items: flex-start;
@@ -428,16 +428,16 @@ main {
             content: "";
             bottom: 0px;
             height: 2px;
-            background: -moz-linear-gradient(to right, $lighter-blue, $blue);
-            background: -webkit-linear-gradient(to right, $lighter-blue, $blue);
-            background: linear-gradient(to right, $lighter-blue, $blue);
+            background: -moz-linear-gradient(to left, $lighter-blue, $blue);
+            background: -webkit-linear-gradient(to left, $lighter-blue, $blue);
+            background: linear-gradient(to left, $lighter-blue, $blue);
             width: 100%;
         }
     }
 
     .cool-culture {
         position: relative;
-        border-right: 2px solid $lighter-blue;
+        border-left: 2px solid $lighter-blue;
 
         h2 {
             .head_actually {
@@ -449,7 +449,7 @@ main {
 
         .cool-wrapper {
             display: flex;
-            flex-direction: row;
+            flex-direction: row-reverse;
             justify-content: space-between;
             width: 100%;
             // align-items: flex-start;
@@ -468,7 +468,7 @@ main {
             right: 0px;
             background: $orange;
             flex: 1 30%;
-            margin-left: 1em;
+            margin-right: 1em;
             display: flex;
             flex-direction: row;
             align-items: flex-start;
@@ -513,9 +513,9 @@ main {
             content: "";
             bottom: 0px;
             height: 2px;
-            background: -moz-linear-gradient(to left, $lighter-blue, $blue);
-            background: -webkit-linear-gradient(to left, $lighter-blue, $blue);
-            background: linear-gradient(to left, $lighter-blue, $blue);
+            background: -moz-linear-gradient(to right, $lighter-blue, $blue);
+            background: -webkit-linear-gradient(to right, $lighter-blue, $blue);
+            background: linear-gradient(to right, $lighter-blue, $blue);
             width: 100%;
         }
     }

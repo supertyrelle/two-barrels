@@ -307,7 +307,7 @@ section + section {
 .loading {
   position: absolute;
   z-index: -10 !important;
-  top: 20vh;
+  top: 40vh;
   left: 48%;
 }
 .loading svg {
@@ -759,11 +759,11 @@ main {
 }
 .overview .beginnings {
   position: relative;
-  border-left: 2px solid #1f2478;
+  border-right: 2px solid #1f2478;
 }
 .overview .beginnings .about-wrapper {
   display: flex;
-  flex-direction: row;
+  flex-direction: row-reverse;
   justify-content: space-between;
   width: 100%;
   position: relative;
@@ -772,7 +772,7 @@ main {
   top: 0px;
   background: #e37038;
   flex: 1 30%;
-  margin-right: 1em;
+  margin-left: 1em;
   display: flex;
   flex-direction: row;
   align-items: flex-start;
@@ -809,14 +809,14 @@ main {
   content: "";
   bottom: 0px;
   height: 2px;
-  background: -moz-linear-gradient(to right, #1f2478, #0b0237);
-  background: -webkit-linear-gradient(to right, #1f2478, #0b0237);
-  background: linear-gradient(to right, #1f2478, #0b0237);
+  background: -moz-linear-gradient(to left, #1f2478, #0b0237);
+  background: -webkit-linear-gradient(to left, #1f2478, #0b0237);
+  background: linear-gradient(to left, #1f2478, #0b0237);
   width: 100%;
 }
 .overview .cool-culture {
   position: relative;
-  border-right: 2px solid #1f2478;
+  border-left: 2px solid #1f2478;
 }
 .overview .cool-culture h2 .head_actually {
   display: block;
@@ -824,7 +824,7 @@ main {
 }
 .overview .cool-culture .cool-wrapper {
   display: flex;
-  flex-direction: row;
+  flex-direction: row-reverse;
   justify-content: space-between;
   width: 100%;
   position: relative;
@@ -835,7 +835,7 @@ main {
   right: 0px;
   background: #e37038;
   flex: 1 30%;
-  margin-left: 1em;
+  margin-right: 1em;
   display: flex;
   flex-direction: row;
   align-items: flex-start;
@@ -872,9 +872,9 @@ main {
   content: "";
   bottom: 0px;
   height: 2px;
-  background: -moz-linear-gradient(to left, #1f2478, #0b0237);
-  background: -webkit-linear-gradient(to left, #1f2478, #0b0237);
-  background: linear-gradient(to left, #1f2478, #0b0237);
+  background: -moz-linear-gradient(to right, #1f2478, #0b0237);
+  background: -webkit-linear-gradient(to right, #1f2478, #0b0237);
+  background: linear-gradient(to right, #1f2478, #0b0237);
   width: 100%;
 }
 .overview .jobs-calltoaction {
