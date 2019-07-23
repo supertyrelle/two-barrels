@@ -221,7 +221,7 @@ main {
         flex-direction: column;
         align-items: flex-end;
         justify-content: center;
-        background: url('./img/bridge_v2.jpg') no-repeat;
+        background: url('./img/bridge_v2-min.jpg') no-repeat;
         background-size: 100%;
         background-position: bottom left;
 
@@ -428,7 +428,7 @@ main {
             align-items: flex-start;
             max-width: 500px;
             align-self: stretch;
-            background: url('./img/front.jpg') no-repeat;
+            background: url('./img/front-min.jpg') no-repeat;
             background-size: cover;
             background-position: top center;
             background-attachment: scroll;
@@ -520,7 +520,7 @@ main {
             align-items: flex-start;
             max-width: 500px;
             align-self: stretch;
-            background: url('./img/randy.jpg') no-repeat;
+            background: url('./img/randy-min.jpg') no-repeat;
             background-size: cover;
             background-position: top center;
             background-attachment: scroll;
@@ -639,7 +639,7 @@ main {
         top: -7rem;
         left: 0;
         width: 100%;
-        min-height: 600px;
+        min-height: 550px;
         filter: opacity(1);
         // mix-blend-mode: darken;
         background: $blue;
@@ -653,7 +653,7 @@ main {
             left: 0;
             width: 100%;
             height: 100%;
-            background: url('./img/groundfloor.jpg') no-repeat;
+            background: url('./img/groundfloor-min.jpg') no-repeat;
             background-size: 100%;
             background-position: top -40em center;
             background-attachment: fixed;
@@ -778,7 +778,7 @@ main {
         top: -7rem;
         left: 0;
         width: 100%;
-        min-height: 600px;
+        min-height: 550px;
         filter: opacity(1);
         // mix-blend-mode: darken;
         border-bottom: 1px solid darken($orange, 15%);
@@ -791,7 +791,7 @@ main {
             left: 0;
             width: 100%;
             height: 100%;
-            background: url('./img/front-full.jpg') no-repeat;
+            background: url('./img/front-full-min.jpg') no-repeat;
             background-size: 100%;
             background-position: top -70px right;
             filter: opacity(0.3);
@@ -1132,7 +1132,7 @@ main {
         top: -7rem;
         left: 0;
         width: 100%;
-        min-height: 600px;
+        min-height: 550px;
         filter: opacity(1);
         // mix-blend-mode: darken;
         border-bottom: 1px solid darken($orange, 15%);
@@ -1145,7 +1145,7 @@ main {
             left: 0;
             width: 100%;
             height: 100%;
-            background: url('./img/spokane.jpg') no-repeat;
+            background: url('./img/spokane-min.jpg') no-repeat;
             background-size: 100%;
             background-position: bottom 10em center;
             filter: opacity(0.3);

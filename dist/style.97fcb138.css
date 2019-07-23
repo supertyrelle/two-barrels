@@ -682,7 +682,7 @@ main {
   flex-direction: column;
   align-items: flex-end;
   justify-content: center;
-  background: url("/bridge_v2.c0ba4c09.jpg") no-repeat;
+  background: url("/bridge_v2-min.4ed0ca5b.jpg") no-repeat;
   background-size: 100%;
   background-position: bottom left;
 }
@@ -840,7 +840,7 @@ main {
   align-items: flex-start;
   max-width: 500px;
   align-self: stretch;
-  background: url("/front.85875fa1.jpg") no-repeat;
+  background: url("/front-min.acbdbafa.jpg") no-repeat;
   background-size: cover;
   background-position: top center;
   background-attachment: scroll;
@@ -906,7 +906,7 @@ main {
   align-items: flex-start;
   max-width: 500px;
   align-self: stretch;
-  background: url("/randy.eab750d3.jpg") no-repeat;
+  background: url("/randy-min.a2e35b35.jpg") no-repeat;
   background-size: cover;
   background-position: top center;
   background-attachment: scroll;
@@ -999,7 +999,7 @@ main {
   top: -7rem;
   left: 0;
   width: 100%;
-  min-height: 600px;
+  min-height: 550px;
   filter: opacity(1);
   background: #0b0237;
   border-bottom: 1px solid #b54c19;
@@ -1012,7 +1012,7 @@ main {
   left: 0;
   width: 100%;
   height: 100%;
-  background: url("/groundfloor.2de6e306.jpg") no-repeat;
+  background: url("/groundfloor-min.fa577dc9.jpg") no-repeat;
   background-size: 100%;
   background-position: top -40em center;
   background-attachment: fixed;
@@ -1107,7 +1107,7 @@ main {
   top: -7rem;
   left: 0;
   width: 100%;
-  min-height: 600px;
+  min-height: 550px;
   filter: opacity(1);
   border-bottom: 1px solid #b54c19;
 }
@@ -1118,7 +1118,7 @@ main {
   left: 0;
   width: 100%;
   height: 100%;
-  background: url("/front-full.bbd8e016.jpg") no-repeat;
+  background: url("/front-full-min.bfbac186.jpg") no-repeat;
   background-size: 100%;
   background-position: top -70px right;
   filter: opacity(0.3);
@@ -1388,7 +1388,7 @@ main {
   top: -7rem;
   left: 0;
   width: 100%;
-  min-height: 600px;
+  min-height: 550px;
   filter: opacity(1);
   border-bottom: 1px solid #b54c19;
 }
@@ -1399,7 +1399,7 @@ main {
   left: 0;
   width: 100%;
   height: 100%;
-  background: url("/spokane.e2e084b6.jpg") no-repeat;
+  background: url("/spokane-min.da15b6a3.jpg") no-repeat;
   background-size: 100%;
   background-position: bottom 10em center;
   filter: opacity(0.3);
