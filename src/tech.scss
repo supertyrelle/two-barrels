@@ -25,6 +25,11 @@ $white: rgb(245, 245, 245);
     opacity: 1;
 }
 
+html {
+    scroll-behavior: smooth;
+
+}
+
 html.is-animating {
     .transition-fade {
         opacity: 0;
@@ -61,7 +66,7 @@ body {
     box-sizing: border-box;
     margin: 0 auto;
     overflow-y: scroll;
-    overflow-x: hidden;
+    overflow-x: hidden !important;
     position: relative;
 }
 

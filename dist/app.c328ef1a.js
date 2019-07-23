@@ -4587,6 +4587,10 @@ function checklocation() {
     removeactive();
     contact();
     contactLink.classList.add("active");
+  } else {
+    removeactive();
+    overview();
+    overviewLink.classList.add("active");
   }
 
   function removeactive() {
@@ -4604,8 +4608,8 @@ var options = {
   plugins: [new _scrollPlugin.default({
     doScrollingRightAway: true,
     animateScroll: true,
-    scrollFriction: 0.3,
-    scrollAcceleration: 0.04
+    scrollFriction: 0.2,
+    scrollAcceleration: 0.06
   })]
 };
 var swup = new _swup.default(options); // nice smooth scrolling animations!
@@ -4664,20 +4668,47 @@ function overview() {
   }
 
   jobText();
+
+  function ctaScroll() {
+    var moreCTA = document.getElementById("more-cta");
+
+    moreCTA.onclick = function () {
+      var contentTop = document.getElementById('content-top');
+      var contentTopLocation = contentTop.getBoundingClientRect().top + window.pageYOffset;
+      var yOffset = -40;
+      window.scrollTo({
+        top: contentTopLocation + yOffset,
+        behavior: 'smooth'
+      });
+    };
+  }
+
+  ctaScroll();
 }
 
-; // contact form alert
+;
+
+window.onload = function () {
+  overview();
+}; // contact form alert
+
 
 function contact() {
   var oink = document.getElementById("boink");
 
   oink.onclick = function () {
+    function myFunction() {
+      document.getElementById("contact-input").reset();
+    }
+
+    myFunction();
+
     _sweetalert.default.fire({
       title: 'Message sent',
       text: "Thanks for sending us your message. We'll get back to you as soon as possible!",
       type: 'success',
       confirmButtonText: 'Sounds good',
-      // timer: 6000,
+      timer: 6000,
       customClass: {
         container: 'container-class',
         popup: 'popup',
@@ -4732,7 +4763,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61625" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51031" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

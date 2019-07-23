@@ -4,6 +4,7 @@ document.addEventListener('swup:contentReplaced', event => {
 });
 console.log(window.location.pathname);
 
+
 function checklocation() {
     var endpoint = window.location.pathname;
     var overviewLink = document.getElementById("overview-link");
@@ -17,14 +18,21 @@ function checklocation() {
         overviewLink.classList.add("active");
     } else if (endpoint == "/who-we-are.html") {
         removeactive();
+
         whoLink.classList.add("active");
     } else if (endpoint == "/jobs.html") {
         removeactive();
+
         jobsLink.classList.add("active");
     } else if (endpoint == "/contact.html") {
         removeactive();
+
         contact();
         contactLink.classList.add("active");
+    } else {
+        removeactive();
+        overview();
+        overviewLink.classList.add("active");
     }
 
     function removeactive() {
@@ -44,8 +52,8 @@ const options = {
     plugins: [new SwupScrollPlugin({
         doScrollingRightAway: true,
         animateScroll: true,
-        scrollFriction: 0.3,
-        scrollAcceleration: 0.04,
+        scrollFriction: 0.2,
+        scrollAcceleration: 0.06,
     })]
 };
 const swup = new Swup(options);
@@ -76,6 +84,7 @@ AOS.init({
 
 // typing animation for the front page!
 import TypeIt from 'typeit';
+
 function overview() {
     function jobText() {
         const instance = new TypeIt('#replace', {
@@ -91,19 +100,41 @@ function overview() {
         }).go();
     }
     jobText();
-};
 
+    function ctaScroll() {
+        const moreCTA = document.getElementById("more-cta");
+        moreCTA.onclick = function () {
+            const contentTop = document.getElementById('content-top');
+            const contentTopLocation = contentTop.getBoundingClientRect().top + window.pageYOffset;
+            const yOffset = -40;
+
+            window.scrollTo({
+                top: contentTopLocation + yOffset,
+                behavior: 'smooth'
+            });
+        };
+    }
+    ctaScroll();
+};
+window.onload = function () {
+    overview();
+}
 // contact form alert
 import Swal from 'sweetalert2';
+
 function contact() {
     var oink = document.getElementById("boink");
     oink.onclick = function () {
+        function myFunction() {
+            document.getElementById("contact-input").reset();
+        }
+        myFunction();
         Swal.fire({
             title: 'Message sent',
             text: "Thanks for sending us your message. We'll get back to you as soon as possible!",
             type: 'success',
             confirmButtonText: 'Sounds good',
-            // timer: 6000,
+            timer: 6000,
             customClass: {
                 container: 'container-class',
                 popup: 'popup',

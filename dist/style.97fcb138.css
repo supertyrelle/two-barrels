@@ -198,6 +198,10 @@ summary {
   opacity: 1;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 html.is-animating .transition-fade {
   opacity: 0;
   transform: translateY(40px);
@@ -221,7 +225,7 @@ body {
   box-sizing: border-box;
   margin: 0 auto;
   overflow-y: scroll;
-  overflow-x: hidden;
+  overflow-x: hidden !important;
   position: relative;
 }
 
@@ -595,9 +599,11 @@ header .header-wrapper nav a::after {
   transition: transform 0.5s cubic-bezier(0.535, 0.05, 0.355, 1);
 }
 header .header-wrapper nav a:hover {
+  transition-delay: 200ms;
   color: #e37038;
 }
 header .header-wrapper nav a:hover::after {
+  transition-delay: 300ms;
   --scale: 1;
 }
 header .header-wrapper nav a:active {
@@ -606,9 +612,16 @@ header .header-wrapper nav a:active {
 header .header-wrapper nav a:active::after {
   --scale: 1;
 }
+header .header-wrapper nav .dropdown-wrapper * {
+  cursor: not-allowed;
+}
+header .header-wrapper nav .dropdown-wrapper a {
+  pointer-events: none;
+}
 header .header-wrapper nav #jobs-dropdown {
   position: relative;
   display: inline;
+  cursor: not-allowed;
 }
 header .header-wrapper nav #jobs-dropdown .dropdown-wrapper {
   filter: opacity(0);
@@ -859,8 +872,6 @@ main {
   margin-top: 1em;
 }
 .overview .beginnings .about p a {
-  background: #1f2478;
-  padding: 3px 5px;
   color: #e37038;
   transition: ease all 230ms;
 }
@@ -1184,7 +1195,7 @@ main {
   left: 0px;
   width: 100%;
   height: 100%;
-  box-shadow: 6px 6px #6249ae;
+  box-shadow: 0px 0px;
   transition: ease all 200ms;
 }
 .jobs-wrapper .jobs .job-cards .job::after {
@@ -1195,19 +1206,18 @@ main {
   left: 0px;
   width: 100%;
   height: 100%;
-  box-shadow: 10px 10px #e37038;
   transition: ease all 200ms;
 }
 .jobs-wrapper .jobs .job-cards .job:hover {
-  transform: translate(10px, 10px);
+  transform: translate(-10px, -10px);
   box-shadow: 0px 0px;
   cursor: default;
 }
 .jobs-wrapper .jobs .job-cards .job:hover::before {
-  box-shadow: 0px 0px;
+  box-shadow: 6px 6px #6249ae;
 }
 .jobs-wrapper .jobs .job-cards .job:hover::after {
-  box-shadow: 0px 0px;
+  box-shadow: 10px 10px #e37038;
 }
 .jobs-wrapper .jobs .job-cards .job .job-left {
   display: flex;
@@ -1565,27 +1575,27 @@ main {
   display: flex;
   flex-direction: column;
 }
-.contact-wrapper .contact-form .form {
+.contact-wrapper .contact-form form {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 2em;
   background: whitesmoke;
 }
-.contact-wrapper .contact-form .form .form-top {
+.contact-wrapper .contact-form form .form-top {
   color: #0b0237;
   font-weight: 300;
   font-size: 18pt;
   margin-bottom: 0.5em;
 }
-.contact-wrapper .contact-form .form .name .user-input {
+.contact-wrapper .contact-form form .name .user-input {
   position: relative;
 }
-.contact-wrapper .contact-form .form .name .user-input input {
+.contact-wrapper .contact-form form .name .user-input input {
   text-transform: capitalize;
 }
-.contact-wrapper .contact-form .form .name,
-.contact-wrapper .contact-form .form .email {
+.contact-wrapper .contact-form form .name,
+.contact-wrapper .contact-form form .email {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -1594,18 +1604,18 @@ main {
   color: #0b0237;
   padding: 1em;
 }
-.contact-wrapper .contact-form .form .name p,
-.contact-wrapper .contact-form .form .email p {
+.contact-wrapper .contact-form form .name p,
+.contact-wrapper .contact-form form .email p {
   font-weight: 400;
   font-size: 14pt;
   margin-bottom: 5px;
 }
-.contact-wrapper .contact-form .form .name .user-input,
-.contact-wrapper .contact-form .form .email .user-input {
+.contact-wrapper .contact-form form .name .user-input,
+.contact-wrapper .contact-form form .email .user-input {
   position: relative;
 }
-.contact-wrapper .contact-form .form .name .user-input input,
-.contact-wrapper .contact-form .form .email .user-input input {
+.contact-wrapper .contact-form form .name .user-input input,
+.contact-wrapper .contact-form form .email .user-input input {
   padding-left: 10px;
   width: 100%;
   color: #0b0237;
@@ -1615,16 +1625,16 @@ main {
   border: 2px solid transparent;
   border-bottom-color: rgba(227, 112, 56, 0.2);
 }
-.contact-wrapper .contact-form .form .name .user-input input:focus,
-.contact-wrapper .contact-form .form .email .user-input input:focus {
+.contact-wrapper .contact-form form .name .user-input input:focus,
+.contact-wrapper .contact-form form .email .user-input input:focus {
   outline: none;
 }
-.contact-wrapper .contact-form .form .name .user-input input::placeholder,
-.contact-wrapper .contact-form .form .email .user-input input::placeholder {
+.contact-wrapper .contact-form form .name .user-input input::placeholder,
+.contact-wrapper .contact-form form .email .user-input input::placeholder {
   color: rgba(130, 130, 130, 0.7);
 }
-.contact-wrapper .contact-form .form .name .user-input span,
-.contact-wrapper .contact-form .form .email .user-input span {
+.contact-wrapper .contact-form form .name .user-input span,
+.contact-wrapper .contact-form form .email .user-input span {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -1635,12 +1645,12 @@ main {
   transform: scaleX(0);
   transition: transform 0.5s ease;
 }
-.contact-wrapper .contact-form .form .name .user-input input:focus ~ span,
-.contact-wrapper .contact-form .form .email .user-input input:focus ~ span {
+.contact-wrapper .contact-form form .name .user-input input:focus ~ span,
+.contact-wrapper .contact-form form .email .user-input input:focus ~ span {
   transform-origin: bottom left;
   transform: scaleX(1);
 }
-.contact-wrapper .contact-form .form .message {
+.contact-wrapper .contact-form form .message {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -1649,15 +1659,15 @@ main {
   color: #0b0237;
   padding: 1em;
 }
-.contact-wrapper .contact-form .form .message p {
+.contact-wrapper .contact-form form .message p {
   font-weight: 400;
   font-size: 14pt;
   margin-bottom: 5px;
 }
-.contact-wrapper .contact-form .form .message .user-input {
+.contact-wrapper .contact-form form .message .user-input {
   position: relative;
 }
-.contact-wrapper .contact-form .form .message .user-input textarea {
+.contact-wrapper .contact-form form .message .user-input textarea {
   width: 100%;
   color: #0b0237;
   font-size: 20pt;
@@ -1667,80 +1677,80 @@ main {
   transition: background-color 0.3s ease-in-out;
   resize: vertical;
 }
-.contact-wrapper .contact-form .form .message .user-input textarea:focus {
+.contact-wrapper .contact-form form .message .user-input textarea:focus {
   outline: none;
 }
-.contact-wrapper .contact-form .form .message .user-input textarea::placeholder {
+.contact-wrapper .contact-form form .message .user-input textarea::placeholder {
   color: rgba(130, 130, 130, 0.7);
 }
-.contact-wrapper .contact-form .form .message .user-input span {
+.contact-wrapper .contact-form form .message .user-input span {
   position: absolute;
   background-color: #e37038;
   transition: transform 0.1s ease;
 }
-.contact-wrapper .contact-form .form .message .user-input span.bottom, .contact-wrapper .contact-form .form .message .user-input span.top {
+.contact-wrapper .contact-form form .message .user-input span.bottom, .contact-wrapper .contact-form form .message .user-input span.top {
   height: 3px;
   left: 0;
   right: 0;
   transform: scaleX(0);
 }
-.contact-wrapper .contact-form .form .message .user-input span.left, .contact-wrapper .contact-form .form .message .user-input span.right {
+.contact-wrapper .contact-form form .message .user-input span.left, .contact-wrapper .contact-form form .message .user-input span.right {
   width: 3px;
   top: 0;
   bottom: 0;
   transform: scaleY(0);
 }
-.contact-wrapper .contact-form .form .message .user-input span.bottom {
+.contact-wrapper .contact-form form .message .user-input span.bottom {
   bottom: 0;
   transform-origin: bottom right;
 }
-.contact-wrapper .contact-form .form .message .user-input span.right {
+.contact-wrapper .contact-form form .message .user-input span.right {
   right: 0;
   transform-origin: top right;
   transition-delay: 0.05s;
 }
-.contact-wrapper .contact-form .form .message .user-input span.top {
+.contact-wrapper .contact-form form .message .user-input span.top {
   top: 0;
   transform-origin: top left;
   transition-delay: 0.15s;
 }
-.contact-wrapper .contact-form .form .message .user-input span.left {
+.contact-wrapper .contact-form form .message .user-input span.left {
   left: 0;
   transform-origin: bottom left;
   transition-delay: 0.25s;
 }
-.contact-wrapper .contact-form .form .message .user-input textarea:focus ~ .bottom {
+.contact-wrapper .contact-form form .message .user-input textarea:focus ~ .bottom {
   transform-origin: bottom left;
   transform: scaleX(1);
 }
-.contact-wrapper .contact-form .form .message .user-input textarea:focus ~ .right {
+.contact-wrapper .contact-form form .message .user-input textarea:focus ~ .right {
   transform-origin: bottom right;
   transform: scaleY(1);
 }
-.contact-wrapper .contact-form .form .message .user-input textarea:focus ~ .top {
+.contact-wrapper .contact-form form .message .user-input textarea:focus ~ .top {
   transform-origin: top right;
   transform: scaleX(1);
 }
-.contact-wrapper .contact-form .form .message .user-input textarea:focus ~ .left {
+.contact-wrapper .contact-form form .message .user-input textarea:focus ~ .left {
   transform-origin: top left;
   transform: scaleY(1);
 }
-.contact-wrapper .contact-form .form button {
+.contact-wrapper .contact-form form button {
   margin-top: 1em;
   display: flex;
   flex-direction: row;
   align-items: center;
 }
-.contact-wrapper .contact-form .form button i {
+.contact-wrapper .contact-form form button i {
   font-size: 18pt;
   position: relative;
   margin-left: 15px;
   transition: ease all 230ms;
 }
-.contact-wrapper .contact-form .form button:hover i {
+.contact-wrapper .contact-form form button:hover i {
   transform: translateX(10px);
 }
-.contact-wrapper .contact-form .form button:hover::after {
+.contact-wrapper .contact-form form button:hover::after {
   transition: transform 0.5s ease-in-out;
   transform: translate3d(500%, 0, 0) rotate(35deg);
 }
