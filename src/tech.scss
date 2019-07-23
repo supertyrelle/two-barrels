@@ -1,6 +1,7 @@
 // normalize!
 @import 'normalize';
 @import url('https://unpkg.com/aos@2.3.1/dist/aos.css');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/8.11.8/sweetalert2.min.css');
 // fonts!
 @import url('https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i|Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap');
 
@@ -389,4 +390,37 @@ section+section {
     z-index: 3;
     transform: scale(0.65);
     pointer-events: none;
+}
+
+// popup styles!
+
+
+
+
+.popup {
+    border-radius: 0px !important;
+    background: $white !important;
+
+    .title {
+        font-family: 'Raleway',
+            sans-serif !important;
+
+    }
+
+    .swal2-success-ring {
+        border-color: rgba($blue, 70%) !important;
+
+    }
+
+    .popup-confirm {
+        background: $lighter-blue !important;
+        border: none !important;
+        border-radius: 0px !important;
+        padding: 1em 1.5em !important;
+        font-size: 14pt !important;
+
+        &:hover {
+            background: lighten($lighter-blue, 5%) !important;
+        }
+    }
 }

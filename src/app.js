@@ -23,6 +23,7 @@ function checklocation() {
         jobsLink.classList.add("active");
     } else if (endpoint == "/contact.html") {
         removeactive();
+        contact();
         contactLink.classList.add("active");
     }
 
@@ -37,15 +38,14 @@ function checklocation() {
 // page transitions!
 import Swup from 'swup';
 import SwupScrollPlugin from '@swup/scroll-plugin';
-
 const options = {
     // cache: true,
-    animateHistoryBrowsing: true
-    ,plugins: [new SwupScrollPlugin({
+    animateHistoryBrowsing: true,
+    plugins: [new SwupScrollPlugin({
         doScrollingRightAway: true,
-            animateScroll: true,
-            scrollFriction: 0.3,
-            scrollAcceleration: 0.04,
+        animateScroll: true,
+        scrollFriction: 0.3,
+        scrollAcceleration: 0.04,
     })]
 };
 const swup = new Swup(options);
@@ -76,21 +76,6 @@ AOS.init({
 
 // typing animation for the front page!
 import TypeIt from 'typeit';
-window.onload = function () {
-    // function jobText() {
-    const instance = new TypeIt('#replace', {
-        strings: ["Work", "Create", "Succeed"],
-        speed: 200,
-        cursorSpeed: 1400,
-        waitUntilVisible: true,
-        breakLines: false,
-        loop: true,
-        loopDelay: 3000,
-        waitUntilVisible: true,
-        nextStringDelay: 1950
-    }).go();
-    // }
-}
 function overview() {
     function jobText() {
         const instance = new TypeIt('#replace', {
@@ -108,24 +93,38 @@ function overview() {
     jobText();
 };
 
-// function init() {
-//     if (document.querySelector('#overview')) {
-//         overview();
-//     }
-//     if (document.querySelector('#jobs-wrapper')) {
-//     }
-// }
-// init();
+// contact form alert
+import Swal from 'sweetalert2';
+function contact() {
+    var oink = document.getElementById("boink");
+    oink.onclick = function () {
+        Swal.fire({
+            title: 'Message sent',
+            text: "Thanks for sending us your message. We'll get back to you as soon as possible!",
+            type: 'success',
+            confirmButtonText: 'Sounds good',
+            // timer: 6000,
+            customClass: {
+                container: 'container-class',
+                popup: 'popup',
+                header: 'header-class',
+                title: 'title-class',
+                closeButton: 'close-button-class',
+                icon: 'icon-class',
+                image: 'image-class',
+                content: 'content-class',
+                input: 'input-class',
+                actions: 'actions-class',
+                confirmButton: 'popup-confirm',
+                cancelButton: 'cancel-button-class',
+                footer: 'footer-class'
+            },
+            onAfterClose: () => window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            })
 
-// function unloud() {
-//     if (document.querySelector('#overview')) {
-//         overview();
-//     }
-//     if (document.querySelector('#jobs-wrapper')) {
-//     }
+        });
 
-// }
-
-swup.on('willReplaceContent', unloud);
-// this event runs for every page view after initial load
-swup.on('contentReplaced', init);
+    };
+};

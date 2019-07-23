@@ -2,7 +2,7 @@
     "name": "nw-counseling",
     "version": "0.1.0",
     "description": "Functional two-page website mockup based on Serhii Polyvanyi's NCWC shot on Dribbble.",
-    "main": "index.js",
+    "main": "index.html",
     "repository": {
         "type": "git",
         "url": "git+https://github.com/supertyrelle/nw-counseling.git"
@@ -33,6 +33,7 @@
         "bodymovin": "^4.13.0",
         "freezeframe": "^4.0.0-alpha.7",
         "lottie-web": "^5.5.6",
+        "sweetalert2": "^8.14.0",
         "swup": "^2.0.4",
         "typeit": "^6.0.3"
     }
