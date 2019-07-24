@@ -4583,6 +4583,14 @@ function checklocation() {
   } else if (endpoint == "/jobs.html") {
     removeactive();
     jobsLink.classList.add("active");
+  } else if (endpoint == "/job.html") {
+    removeactive();
+    job();
+    jobsLink.classList.add("active");
+  } else if (endpoint == "/apply.html") {
+    removeactive();
+    apply();
+    jobsLink.classList.add("active");
   } else if (endpoint == "/contact.html") {
     removeactive();
     contact();
@@ -4693,15 +4701,252 @@ window.onload = function () {
 }; // contact form alert
 
 
+function job() {
+  function jobBenefits() {
+    var greatWage = document.getElementById("great-wage");
+    var paidTime = document.getElementById("paid-time");
+    var paidHolidays = document.getElementById("paid-holidays");
+    var retMatching = document.getElementById("ret-matching");
+    var paidMedical = document.getElementById("paid-medical");
+    var matpatLeave = document.getElementById("mat-leave");
+    var flexHours = document.getElementById("flex-hours");
+    var pizzaStreet = document.getElementById("pizza-street");
+    var crappyParking = document.getElementById("crappy-parking");
+
+    greatWage.onclick = function () {
+      greatWagePopup();
+    };
+
+    paidTime.onclick = function () {
+      paidTimePopup();
+    };
+
+    paidHolidays.onclick = function () {
+      paidHolidaysPopup();
+    };
+
+    retMatching.onclick = function () {
+      retMatchingPopup();
+    };
+
+    paidMedical.onclick = function () {
+      paidMedicalPopup();
+    };
+
+    matpatLeave.onclick = function () {
+      matpatLeavePopup();
+    };
+
+    flexHours.onclick = function () {
+      flexHoursPopup();
+    };
+
+    pizzaStreet.onclick = function () {
+      pizzaStreetPopup();
+    };
+
+    crappyParking.onclick = function () {
+      crappyParkingPopup();
+    };
+
+    function greatWagePopup() {
+      _sweetalert.default.fire({
+        title: 'Wages',
+        html: '<p class="paragraph">Two Barrels pays well, and we care about the people who work here, which is why we conduct annual performance reviews with a raise option to provide opportunities for candid discussion.</p> <p class="paragraph">These reviews allow our employees to demonstrate how they excelled in the previous year and discuss their goals for the year to come.</p>',
+        // type: 'success',
+        confirmButtonText: 'Close',
+        imageUrl: 'https://supertyrelle.com/2b/icons/dollar.svg',
+        customClass: {
+          popup: 'job-popup',
+          header: 'header-class',
+          title: 'title',
+          image: 'popup-icon',
+          content: 'popup-content',
+          confirmButton: 'popup-confirm'
+        }
+      });
+    }
+
+    ;
+
+    function paidTimePopup() {
+      _sweetalert.default.fire({
+        title: 'Paid Time Off (PTO)',
+        html: "<p class=\"paragraph\">Two Barrels employees can earn up to 18 days paid time off each year, and this time starts accruing on your first day. Once earned, your PTO doesn\u2019t expire, so you can even carry it over to the next calendar year. You can use your PTO for sick days, vacations, or personal days. You can also take additional unpaid time off, including extended unpaid time, if your work is getting done.</p> <p class=\"paragraph\">To request time off, you\u2019ll first talk to the people you\u2019re working with on your current projects and work out what you need to do to make your time off happen. You can then tell the HR department when you\u2019ll be gone. Our goal is always to plan extended time off beforehand. Time off is important, and it always works better with better planning.</p>",
+        // type: 'success',
+        confirmButtonText: 'Close',
+        imageUrl: 'https://supertyrelle.com/2b/icons/calendar.svg',
+        customClass: {
+          popup: 'job-popup',
+          header: 'header-class',
+          title: 'title',
+          image: 'popup-icon',
+          content: 'popup-content',
+          confirmButton: 'popup-confirm'
+        }
+      });
+    }
+
+    ;
+
+    function paidHolidaysPopup() {
+      _sweetalert.default.fire({
+        title: 'Paid Time Off (PTO)',
+        html: "<p class=\"paragraph\">Two Barrels offers its employees 4 paid holidays off annually. We recognize that everyone celebrates holidays differently and what may be an important holiday for one employee is different for another. So employees get to choose which holidays they want to work and which ones they want off.</p>",
+        // type: 'success',
+        confirmButtonText: 'Close',
+        imageUrl: 'https://supertyrelle.com/2b/icons/holly.svg',
+        customClass: {
+          popup: 'job-popup',
+          header: 'header-class',
+          title: 'title',
+          image: 'popup-icon',
+          content: 'popup-content',
+          confirmButton: 'popup-confirm'
+        }
+      });
+    }
+
+    ;
+
+    function retMatchingPopup() {
+      _sweetalert.default.fire({
+        title: 'Retirement',
+        html: "<p class=\"paragraph\">Two Barrels provides an optional Simple IRA plan managed by Fidelity and makes matching contributions of up to 3% of an employee\u2019s annual compensation. Employees can enroll on their first day and take advantage of the Simple IRA\u2019s tax-deferred growth potential with pretax contributions.</p><p class=\"paragraph\">The plan offers employees self-directed investment options, including a wide range of mutual funds, stocks, bonds, ETFs, and FDIC-insured CDs. Fidelity also offers its support and guidance to help you choose your investments wisely and create a long-term plan.</p>",
+        // type: 'success',
+        confirmButtonText: 'Close',
+        imageUrl: 'https://supertyrelle.com/2b/icons/hand.svg',
+        customClass: {
+          popup: 'job-popup',
+          header: 'header-class',
+          title: 'title',
+          image: 'popup-icon',
+          content: 'popup-content',
+          confirmButton: 'popup-confirm'
+        }
+      });
+    }
+
+    ;
+
+    function paidMedicalPopup() {
+      _sweetalert.default.fire({
+        title: 'Health Insurance',
+        html: "<p class=\"paragraph\">Two Barrels is proud to offer its employees 100% employer-paid medical, dental and vision insurance through Premera Blue Cross. There is a 60 day waiting period for new employees, and coverage begins the first of the month following the end of the waiting period.</p><div class=\"insurance-details\"><p class=\"paragraph\">Read through the following items if you'd like to learn more:</p>" + "<a href=\"http://www.twobarrels.com/wp-content/uploads/2017/06/High-Level-Summary.pdf\" target=\"_blank\"><i class=\"fas fa-briefcase-medical\"></i>Insurance Plan High Level Summary</a>" + "<a href=\"http://www.twobarrels.com/wp-content/uploads/2017/06/employee-medical-costs.pdf\" target=\"_blank\"><i class=\"fas fa-money-bill-wave\"></i>Cost for Adding Dependents</a>" + "<a href=\"http://www.twobarrels.com/wp-content/uploads/2017/06/Premera-Summary-Plan.pdf\" target=\"_blank\"><i class=\"fas fa-building\"></i>Premera Blue Cross Summary Plan</a>" + "<a href=\"http://www.twobarrels.com/wp-content/uploads/2017/06/SBC-uniform-glossary-final.pdf.pdf\" target=\"_blank\"><i class=\"fas fa-file-alt\"></i>Glossary of Health Coverage & Medical Terms</a>" + "</div>",
+        // type: 'success',
+        confirmButtonText: 'Close',
+        imageUrl: 'https://supertyrelle.com/2b/icons/hand.svg',
+        customClass: {
+          popup: 'job-popup',
+          header: 'header-class',
+          title: 'title',
+          image: 'popup-icon',
+          content: 'popup-content',
+          confirmButton: 'popup-confirm'
+        }
+      });
+    }
+
+    ;
+
+    function matpatLeavePopup() {
+      _sweetalert.default.fire({
+        title: 'Maternity and Paternity Leave',
+        html: "<p class=\"paragraph\">Having a child join your family is a big deal! We want you to take some time and enjoy this new chapter in life, so we offer three weeks of paid Maternity and Paternity Leave. This leave is for biological or adopted children.</p>",
+        // type: 'success',
+        confirmButtonText: 'Close',
+        imageUrl: 'https://supertyrelle.com/2b/icons/stroller.svg',
+        customClass: {
+          popup: 'job-popup',
+          header: 'header-class',
+          title: 'title',
+          image: 'popup-icon',
+          content: 'popup-content',
+          confirmButton: 'popup-confirm'
+        }
+      });
+    }
+
+    ;
+
+    function flexHoursPopup() {
+      _sweetalert.default.fire({
+        title: 'Flexible Hours',
+        html: "<p class=\"paragraph\">Hey, some people are morning people and some people aren\u2019t, so we don\u2019t really care when you start your day\u2026 but you need to be able to coordinate your schedule with your team. If most of your team gets to the office at 7 am and you\u2019re showing up at 11 am, that probably won\u2019t be sustainable. It\u2019s common sense. You\u2019ll need to show up when you\u2019re needed or convince your team to sleep in a little later.</p>" + "<p class=\"paragraph\">We\u2019re all \u201CComputer Employees\u201D exempt from overtime pay, but our goal is to never have to ask you to work over 40 hours. We know continually working a ton of hours is not sustainable. We\u2019d like to think you can get more done when you\u2019re fresh and happy.</p>" + "<p class=\"paragraph\">We also all work onsite, and we don\u2019t hire remote workers. We like to think that we\u2019re smarter when we work together. Collaboration and teamwork are key to how we work at Two Barrels.</p>",
+        // type: 'success',
+        confirmButtonText: 'Close',
+        imageUrl: 'https://supertyrelle.com/2b/icons/clock.svg',
+        customClass: {
+          popup: 'job-popup',
+          header: 'header-class',
+          title: 'title',
+          image: 'popup-icon',
+          content: 'popup-content',
+          confirmButton: 'popup-confirm'
+        }
+      });
+    }
+
+    ;
+
+    function pizzaStreetPopup() {
+      _sweetalert.default.fire({
+        title: 'Pizza!',
+        html: "<p class=\"paragraph\">Not only do we have pizza across the street, we are centrally located in downtown Spokane within walking distance from the area\u2019s best cafes, restaurants, and bars.</p>",
+        // type: 'success',
+        confirmButtonText: 'Close',
+        imageUrl: 'https://supertyrelle.com/2b/icons/pizza.svg',
+        customClass: {
+          popup: 'job-popup',
+          header: 'header-class',
+          title: 'title',
+          image: 'popup-icon',
+          content: 'popup-content',
+          confirmButton: 'popup-confirm'
+        }
+      });
+    }
+
+    ;
+
+    function crappyParkingPopup() {
+      _sweetalert.default.fire({
+        title: 'Parking',
+        html: "<img src=\"https://media.giphy.com/media/geLZzq5cskAHC/giphy.gif\">",
+        // type: 'success',
+        confirmButtonText: 'Close',
+        imageUrl: 'https://supertyrelle.com/2b/icons/parking.svg',
+        customClass: {
+          popup: 'job-popup',
+          header: 'header-class',
+          title: 'title',
+          image: 'popup-icon',
+          content: 'popup-content',
+          confirmButton: 'popup-confirm'
+        }
+      });
+    }
+
+    ;
+  }
+
+  ;
+  jobBenefits();
+}
+
+;
+
+function apply() {}
+
 function contact() {
   var oink = document.getElementById("boink");
 
   oink.onclick = function () {
-    function myFunction() {
+    function emptyForm() {
       document.getElementById("contact-input").reset();
     }
 
-    myFunction();
+    emptyForm();
 
     _sweetalert.default.fire({
       title: 'Message sent',
@@ -4711,18 +4956,12 @@ function contact() {
       timer: 6000,
       customClass: {
         container: 'container-class',
-        popup: 'popup',
+        popup: 'contact-popup',
         header: 'header-class',
-        title: 'title-class',
+        title: 'popup-title',
         closeButton: 'close-button-class',
         icon: 'icon-class',
-        image: 'image-class',
-        content: 'content-class',
-        input: 'input-class',
-        actions: 'actions-class',
-        confirmButton: 'popup-confirm',
-        cancelButton: 'cancel-button-class',
-        footer: 'footer-class'
+        confirmButton: 'popup-confirm'
       },
       onAfterClose: function onAfterClose() {
         return window.scrollTo({
@@ -4735,7 +4974,7 @@ function contact() {
 }
 
 ;
-},{"swup":"../node_modules/swup/lib/index.js","@swup/scroll-plugin":"../node_modules/@swup/scroll-plugin/lib/index.js","aos":"../node_modules/aos/dist/aos.js","typeit":"../node_modules/typeit/dist/typeit.min.js","sweetalert2":"../node_modules/sweetalert2/dist/sweetalert2.all.js"}],"../../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"swup":"../node_modules/swup/lib/index.js","@swup/scroll-plugin":"../node_modules/@swup/scroll-plugin/lib/index.js","aos":"../node_modules/aos/dist/aos.js","typeit":"../node_modules/typeit/dist/typeit.min.js","sweetalert2":"../node_modules/sweetalert2/dist/sweetalert2.all.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -4763,7 +5002,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51031" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56528" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
@@ -4938,5 +5177,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["../../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js","app.js"], null)
+},{}]},{},["../node_modules/parcel-bundler/src/builtins/hmr-runtime.js","app.js"], null)
 //# sourceMappingURL=/app.c328ef1a.js.map

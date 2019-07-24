@@ -25,26 +25,24 @@
         "@babel/cli": "^7.5.0",
         "@babel/core": "^7.5.4",
         "cssnano": "^4.1.10",
+        "parcel-plugin-imagemin": "^3.0.0",
+        "postcss-modules": "^1.4.1",
         "sass": "^1.22.3"
     },
     "dependencies": {
         "@swup/scroll-plugin": "^1.0.6",
         "aos": "^3.0.0-beta.6",
+        "autoprefixer": "^9.6.1",
+        "awesomplete-es6": "^1.2.2",
         "bodymovin": "^4.13.0",
         "ease-component": "^1.0.0",
         "freezeframe": "^4.0.0-alpha.7",
         "lottie-web": "^5.5.6",
-        "normalize-range": "^0.1.2",
         "postcss": "^7.0.17",
-        "postcss-value-parser": "^4.0.0",
         "scroll": "^3.0.1",
         "scroll-doc": "^0.2.1",
         "sweetalert2": "^8.14.0",
         "swup": "^2.0.4",
         "typeit": "^6.0.3"
-    },
-    "modules": true,
-    "plugins": {
-        "autoprefixer": true
     }
 }
