@@ -29,12 +29,17 @@
                         </div>
                     </div>
                 </div>
-                <a class="page-link" id="contact-link" href="/contact.html">Contact Us</a>
             </nav>
             <img src="/logo.f1d8a4c6.svg" alt="Two Barrels">
-            <div class="menu">
+            <!-- <div class="menu">
                 <a href=""><i class="fas fa-phone-alt"></i>Give us a call</a>
                 <a href="mailto:hello@twobarrels.com"><i class="fas fa-envelope"></i>Send an email</a>
+            </div> -->
+            <div class="menu-apply">
+                <div class="apply-cta">
+                    <a href="/apply.html" class="apply-link"><i class="fas fa-file-import"></i>Apply Now</a>
+                </div>
+                <a class="page-link" id="contact-link" href="/contact.html">Contact Us</a>
             </div>
         </div>
     </header>
@@ -44,15 +49,11 @@
             <hr>
         </section>
         <section class="apply-form container transition-corn">
-            <h3 class="subheader"><a href="/jobs.html"><i class="fas fa-angle-left"></i>Back to all listings</a></h3>
+            <h3 class="subheader"><a href="/jobs.html"><i class="fas fa-angle-left"></i>All job listings</a></h3>
             <form id="apply-input">
-                <p class="form-top">Have a question? Wonder where we’re located? You’ve come to the right place. To get
-                    in touch with us and more, use the form below.
-                </p>
-                <hr>
                 <div class="name">
                     <p>Name: </p>
-                    <div class="name-inputs">
+                    <div class="dual-inputs">
                         <div class="user-input">
                             <input type="text" placeholder="First Name">
                             <span></span>
@@ -78,17 +79,104 @@
                         <span></span>
                     </div>
                 </div>
+                <div class="upload-area">
+                    <div class="dual-inputs">
+                        <div class="user-input">
+                            <p>Upload Resume</p>
+                            <div class="upload-wrapper">
+                                <input type="file" name="myfile">
+                            </div>
+                        </div>
+                        <div class="user-input">
+                            <p>Upload Cover Letter</p>
+                            <div class="upload-wrapper">
+                                <input type="file" name="myfile">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="code-links">
+                    <div class="dual-inputs">
+                        <div class="user-input">
+                            <p>Github Link (Optional)</p>
+                            <input type="text" placeholder="github.com/">
+                            <span></span>
+                        </div>
+                        <div class="user-input">
+                            <p>CodePen Link (Optional)</p>
+
+                            <input type="text" placeholder="codepen.io/">
+                            <span></span>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="projects">
+                    <p>Projects</p>
+                    <div class="project" id="project-1">
+                        <div class="proj-url">
+                            <p>Project URL</p>
+                            <div class="user-input">
+                                <input type="tel" placeholder="exampledomain.com/project">
+                                <span></span>
+                            </div>
+                        </div>
+                        <div class="message">
+                            <p>Details</p>
+                            <div class="user-input">
+                                <textarea rows="4" placeholder="What you did"></textarea>
+                                <span class="bottom"></span>
+                                <span class="right"></span>
+                                <span class="top"></span>
+                                <span class="left"></span>
+                            </div>
+                        </div>
+                        <!-- <p class="del-project">delete project</p> -->
+                    </div>
+                    <div class="project" id="project-2">
+                        <div class="proj-url">
+                            <p>Project URL</p>
+                            <div class="user-input">
+                                <input type="tel" placeholder="exampledomain.com/project">
+                                <span></span>
+                            </div>
+                        </div>
+                        <div class="message">
+                            <p>Details</p>
+                            <div class="user-input">
+                                <textarea rows="4" placeholder="What you did"></textarea>
+                                <span class="bottom"></span>
+                                <span class="right"></span>
+                                <span class="top"></span>
+                                <span class="left"></span>
+                            </div>
+                        </div>
+                        <!-- <p class="del-project">delete project</p> -->
+                    </div>
+                    <!-- <p id="add-project">Add project</p> -->
+                </div>
                 <div class="message">
-                    <p>Message:</p>
+                    <p>Anything Else You Want Us to Know About You:</p>
                     <div class="user-input">
-                        <textarea rows="8" placeholder="Message goes here!"></textarea>
+                        <textarea rows="5" placeholder="Say your last words!"></textarea>
                         <span class="bottom"></span>
                         <span class="right"></span>
                         <span class="top"></span>
                         <span class="left"></span>
                     </div>
                 </div>
+                <div class="checkboxes">
 
+                </div>
+                <label class="">One
+                    <input type="checkbox" checked="checked">
+                    <span class="checkmark"></span>
+                </label>
+                <label class="">Two
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                </label>
                 <button type="button" id="boink">Send message<i class="fas fa-angle-right"></i></button>
             </form>
         </section>

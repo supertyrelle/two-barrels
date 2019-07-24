@@ -121,11 +121,14 @@ function overview() {
     }
     ctaScroll();
 };
-window.onload = function () {
-    overview();
-}
+// window.onload = function () {
+//     overview();
+// }
 // contact form alert
 import Swal from 'sweetalert2';
+import {
+    Duplex
+} from 'stream';
 
 function job() {
     function jobBenefits() {
@@ -347,8 +350,9 @@ function job() {
 };
 
 function apply() {
-  
-}
+    console.log("Apply Yourself!")
+
+};
 
 function contact() {
     const oink = document.getElementById("boink");
@@ -361,12 +365,14 @@ function contact() {
             title: 'Message sent',
             text: "Thanks for sending us your message. We'll get back to you as soon as possible!",
             type: 'success',
+            position: 'bottom-end',
             confirmButtonText: 'Sounds good',
-            timer: 6000,
+            timer: 4200,
             customClass: {
                 container: 'container-class',
                 popup: 'contact-popup',
                 header: 'header-class',
+                backdrop: false,
                 title: 'popup-title',
                 closeButton: 'close-button-class',
                 icon: 'icon-class',

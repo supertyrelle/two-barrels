@@ -1,0 +1,413 @@
+.overview {
+    position: relative;
+    height: auto;
+    background: $blue;
+
+    .calltoaction {
+        position: relative;
+        margin-top: -7.5em;
+        min-height: 108vh;
+        // max-height:1200px;
+        z-index: 2;
+        top: 0px;
+        width: 100%;
+        background: $lighter-blue;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: center;
+        background: url('./img/bridge_v2-min.jpg') no-repeat;
+        background-size: 100%;
+        background-position: bottom left;
+
+        // background-attachment: fixed;
+        #illustration {
+            background-color: $lighter-blue;
+            width: 100%;
+            height: auto;
+            display: block;
+            // overflow: hidden;
+            transform: translate3d(0, 0, 0);
+            text-align: center;
+            opacity: 1;
+            z-index: -1;
+            // top:-5em;
+            position: absolute;
+        }
+
+        .content-wrapper {
+            // background: red;
+            height: auto;
+            width: 100%;
+            display: flex;
+            justify-content: flex-start;
+
+            .content {
+                // background: lime;
+                max-width: 500px;
+                padding: 2em 3em;
+                border: 6px solid $white;
+                background: rgba($blue, 85%);
+
+                p {
+                    margin-bottom: 1.5em;
+                    line-height: 18pt;
+                }
+            }
+        }
+    }
+
+    .main-cards {
+        margin-top: -5em;
+        // padding: 3em 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        z-index: 3;
+        padding-bottom: 1em;
+
+        .cards {
+            display: inherit;
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-items: stretch;
+            justify-content: space-around;
+            width: 100%;
+
+            .card {
+                flex-grow: 1;
+                flex: 1 1 30%;
+                min-width: 280px;
+                // max-width: 400px;
+                min-height: 50px;
+                background: linear-gradient(140deg, $lighter-blue, lighten($blue, 5%));
+                // background: $lighter-blue;
+                display: flex;
+                flex-direction: column;
+                padding: 3em 1.5em 2em 1.5em;
+                overflow: hidden;
+                position: relative;
+                border: 4px solid $blue;
+                transition: ease all 230ms;
+                color: $white;
+                cursor: pointer;
+                // &:nth-child(1) {
+                //     background: linear-gradient(140deg, $lighter-blue, lighten($blue, 5%));
+                // }
+
+                h4 {
+                    font-size: 20pt;
+                    line-height: 10pt;
+                    margin: 1em 0;
+                    text-align: center;
+                }
+
+                p {
+                    text-align: center;
+                    margin: 0 2em;
+                    line-height: 16pt;
+                    // padding: 0 30%;
+                }
+
+                .fa-cog {
+                    position: absolute;
+                    font-size: 11em;
+                    line-height: 0pt;
+                    left: -.5em;
+                    top: 10px;
+                    transition: ease all 3s;
+                    color: rgba($white, 10%);
+                }
+
+                .code-symbol {
+                    position: absolute;
+                    color: rgba($white, 10%);
+                    top: -20px;
+                    left: -15px;
+                    font-size: 75pt;
+                    font-weight: 800;
+                    letter-spacing: -8pt;
+                    transition: ease all 1.5s;
+
+                }
+
+                .bulbs {
+                    transform: rotate(180deg);
+                    position: absolute;
+                    font-size: 8em;
+                    line-height: 0pt;
+                    left: 0.7em;
+                    top: 1em;
+                    transition: ease all 1s;
+                    color: rgba($white, 10%);
+
+                    i {
+                        position: absolute;
+
+                        &.far {
+                            filter: opacity(1);
+                            transition: ease all 1s;
+                        }
+
+                        &.fas {
+                            filter: opacity(0);
+                            transition: ease all 1s;
+
+                        }
+                    }
+                }
+
+                &:hover {
+                    border-color: $orange;
+
+                    .fa-cog {
+                        transform: rotate(70deg);
+                    }
+
+                    .code-symbol {
+                        letter-spacing: -10pt;
+                        transform: rotate(10deg);
+                    }
+
+                    .bulbs {
+                        i {
+                            transform: translateY(10px);
+
+                            &.far {
+                                filter: opacity(0);
+                            }
+
+                            &.fas {
+                                filter: opacity(1);
+
+                            }
+                        }
+                    }
+                }
+
+                &+.card {
+                    margin-left: 1em;
+                }
+            }
+        }
+    }
+
+    .beginnings {
+        position: relative;
+        border-right: 2px solid $orange;
+
+        .about-wrapper {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            width: 100%;
+            // align-items: flex-start;
+            position: relative;
+        }
+
+        // .pics-wrapper {}
+
+        .pics {
+            top: 0px;
+            background: $orange;
+            flex: 1 30%;
+            // margin-right: 3em;
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            max-width: 500px;
+            align-self: stretch;
+            background: url('./img/front-min.jpg') no-repeat;
+            background-size: cover;
+            background-position: top center;
+            background-attachment: scroll;
+
+        }
+
+        .about {
+            // margin: 0 auto;
+            // background: lighten($blue, 5%);
+            max-width: 700px;
+            padding: 3em 0em;
+            flex: 1 70%;
+
+            p,
+            h2 {
+                margin-right: 30px;
+
+            }
+
+            p {
+                line-height: 18pt;
+                margin-top: 1em;
+
+                a {
+                    // background: $lighter-blue;
+                    // padding: 3px 5px;
+                    color: $orange;
+                    transition: ease all 230ms;
+
+                    &:hover {
+                        color: $white;
+                    }
+                }
+
+                &+p {
+                    margin-top: 1.5em;
+                }
+            }
+        }
+
+        &::after {
+            position: absolute;
+            content: "";
+            bottom: 0px;
+            height: 2px;
+            background: -moz-linear-gradient(to left, $orange, $blue);
+            background: -webkit-linear-gradient(to left, $orange, $blue);
+            background: linear-gradient(to left, $orange, $blue);
+            width: 100%;
+        }
+    }
+
+    .cool-culture {
+        position: relative;
+        border-left: 2px solid $orange;
+
+        h2 {
+            .head_actually {
+                // display: block;
+                margin-left: 10px;
+                color: rgba($white, 25%);
+            }
+        }
+
+        .cool-wrapper {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            width: 100%;
+            // align-items: flex-start;
+            position: relative;
+        }
+
+        // .pics-wrapper {
+        //     position: absolute;
+        //     top: 0;
+        //     left: -240px;
+        // }
+
+        .pics {
+            order: 2;
+            top: 0px;
+            right: 0px;
+            background: $orange;
+            flex: 1 30%;
+            // margin-left: 3em;
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            max-width: 500px;
+            align-self: stretch;
+            background: url('./img/randy-min.jpg') no-repeat;
+            background-size: cover;
+            background-position: top center;
+            background-attachment: scroll;
+        }
+
+        .cool {
+            // margin: 0 auto;
+            // background: lighten($blue, 5%);
+            max-width: 700px;
+            padding: 3em 0em;
+            flex: 1 70%;
+
+            p,
+            h2 {
+                margin-left: 30px;
+
+            }
+
+            p {
+                line-height: 18pt;
+                margin-top: 1em;
+
+                a {
+                    background: $lighter-blue;
+                    padding: 3px 5px;
+                    color: $orange;
+                    transition: ease all 230ms;
+
+                    &:hover {
+                        color: $white;
+                    }
+                }
+
+                &+p {
+                    margin-top: 1.5em;
+                }
+            }
+        }
+
+        &::after {
+            position: absolute;
+            content: "";
+            bottom: 0px;
+            height: 2px;
+            background: -moz-linear-gradient(to right, $orange, $blue);
+            background: -webkit-linear-gradient(to right, $orange, $blue);
+            background: linear-gradient(to right, $orange, $blue);
+            width: 100%;
+        }
+    }
+
+
+    .jobs-calltoaction {
+        display: flex;
+        // background: lighten($blue, 5%);
+        // justify-content: center;
+        position: relative;
+        overflow: none;
+        padding: 3em 0em;
+
+        .jobs-wrapper {
+            display: inherit;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-around;
+            width: 100%;
+
+            .content {
+                text-align: center;
+
+                .head_orange {
+                    margin-right: -10px;
+                }
+
+                h3 {
+                    margin-top: 1em;
+
+                }
+            }
+
+            .jobs-cta {
+                button {
+                    transform: scale(1.75);
+                }
+            }
+        }
+
+        &::after {
+            position: absolute;
+            content: "";
+            bottom: 0px;
+            height: 2px;
+            background: -moz-radial-gradient($orange, $blue 75%);
+            background: -webkit-radial-gradient($orange, $blue 75%);
+            background: radial-gradient($orange, $blue 75%);
+            width: 100%;
+        }
+    }
+}
