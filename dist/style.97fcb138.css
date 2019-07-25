@@ -225,7 +225,6 @@ body {
   box-sizing: border-box;
   margin: 0 auto;
   overflow-y: scroll;
-  overflow-x: hidden !important;
   position: relative;
 }
 
@@ -513,6 +512,7 @@ section + section {
   z-index: 3;
   transform: scale(0.65);
   pointer-events: none;
+  overflow-x: hidden !important;
 }
 
 .job-popup {
@@ -941,6 +941,11 @@ header .header-wrapper img {
   display: flex;
   justify-content: flex-start;
 }
+@media (min-width: 1200px) and (max-width: 1600px) {
+  .overview .calltoaction .content-wrapper {
+    width: 90vw;
+  }
+}
 .overview .calltoaction .content-wrapper .content {
   max-width: 500px;
   padding: 2em 3em;
@@ -960,6 +965,11 @@ header .header-wrapper img {
   position: relative;
   z-index: 3;
   padding-bottom: 1em;
+}
+@media (min-width: 1200px) and (max-width: 1600px) {
+  .overview .main-cards {
+    margin-top: -2em;
+  }
 }
 .overview .main-cards .cards {
   display: inherit;
@@ -995,6 +1005,11 @@ header .header-wrapper img {
   text-align: center;
   margin: 0 2em;
   line-height: 16pt;
+}
+@media (min-width: 1200px) and (max-width: 1600px) {
+  .overview .main-cards .cards .card p {
+    margin: 0 1em;
+  }
 }
 .overview .main-cards .cards .card .fa-cog {
   position: absolute;
@@ -1069,7 +1084,7 @@ header .header-wrapper img {
   width: 100%;
   position: relative;
 }
-.overview .beginnings .pics {
+.overview .beginnings .about-wrapper .pics {
   top: 0px;
   background: #e37038;
   flex: 1 30%;
@@ -1083,38 +1098,53 @@ header .header-wrapper img {
   background-position: top center;
   background-attachment: scroll;
 }
-.overview .beginnings .about {
+@media (min-width: 1200px) and (max-width: 1600px) {
+  .overview .beginnings .about-wrapper .pics {
+    flex: 1 50%;
+  }
+}
+.overview .beginnings .about-wrapper .about {
+  position: relative;
   max-width: 700px;
   padding: 3em 0em;
   flex: 1 70%;
 }
-.overview .beginnings .about p,
-.overview .beginnings .about h2 {
+@media (min-width: 1200px) and (max-width: 1600px) {
+  .overview .beginnings .about-wrapper .about {
+    flex: 1 50%;
+    padding: 3em 0em 3em 3em;
+  }
+}
+.overview .beginnings .about-wrapper .about p,
+.overview .beginnings .about-wrapper .about h2 {
   margin-right: 30px;
 }
-.overview .beginnings .about p {
+.overview .beginnings .about-wrapper .about p {
   line-height: 18pt;
   margin-top: 1em;
 }
-.overview .beginnings .about p a {
+.overview .beginnings .about-wrapper .about p a {
   color: #e37038;
   transition: ease all 230ms;
 }
-.overview .beginnings .about p a:hover {
+.overview .beginnings .about-wrapper .about p a:hover {
   color: #e99065;
 }
-.overview .beginnings .about p + p {
+.overview .beginnings .about-wrapper .about p + p {
   margin-top: 1.5em;
 }
-.overview .beginnings::after {
+.overview .beginnings .about-wrapper::after {
   position: absolute;
   content: "";
   bottom: 0px;
   height: 2px;
-  background: -moz-linear-gradient(to left, #e37038, #0b0237);
-  background: -webkit-linear-gradient(to left, #e37038, #0b0237);
   background: linear-gradient(to left, #e37038, #0b0237);
   width: 100%;
+}
+@media (min-width: 1200px) and (max-width: 1600px) {
+  .overview .beginnings .about-wrapper::after {
+    background: linear-gradient(to left, #e37038, #0b0237 55%);
+  }
 }
 .overview .cool-culture {
   position: relative;
@@ -1124,6 +1154,12 @@ header .header-wrapper img {
   margin-left: 10px;
   color: rgba(245, 245, 245, 0.25);
 }
+@media (min-width: 1200px) and (max-width: 1600px) {
+  .overview .cool-culture h2 .head_actually {
+    display: block;
+    margin-left: 0px;
+  }
+}
 .overview .cool-culture .cool-wrapper {
   display: flex;
   flex-direction: row;
@@ -1131,7 +1167,7 @@ header .header-wrapper img {
   width: 100%;
   position: relative;
 }
-.overview .cool-culture .pics {
+.overview .cool-culture .cool-wrapper .pics {
   order: 2;
   top: 0px;
   right: 0px;
@@ -1147,40 +1183,55 @@ header .header-wrapper img {
   background-position: top center;
   background-attachment: scroll;
 }
-.overview .cool-culture .cool {
+@media (min-width: 1200px) and (max-width: 1600px) {
+  .overview .cool-culture .cool-wrapper .pics {
+    background-position: top right;
+    flex: 1 50%;
+  }
+}
+.overview .cool-culture .cool-wrapper .cool {
   max-width: 700px;
   padding: 3em 0em;
   flex: 1 70%;
 }
-.overview .cool-culture .cool p,
-.overview .cool-culture .cool h2 {
+@media (min-width: 1200px) and (max-width: 1600px) {
+  .overview .cool-culture .cool-wrapper .cool {
+    flex: 1 50%;
+    padding: 3em 3em 3em 0em;
+  }
+}
+.overview .cool-culture .cool-wrapper .cool p,
+.overview .cool-culture .cool-wrapper .cool h2 {
   margin-left: 30px;
 }
-.overview .cool-culture .cool p {
+.overview .cool-culture .cool-wrapper .cool p {
   line-height: 18pt;
   margin-top: 1em;
 }
-.overview .cool-culture .cool p a {
+.overview .cool-culture .cool-wrapper .cool p a {
   background: #1f2478;
   padding: 3px 5px;
   color: #e37038;
   transition: ease all 230ms;
 }
-.overview .cool-culture .cool p a:hover {
+.overview .cool-culture .cool-wrapper .cool p a:hover {
   color: whitesmoke;
 }
-.overview .cool-culture .cool p + p {
+.overview .cool-culture .cool-wrapper .cool p + p {
   margin-top: 1.5em;
 }
-.overview .cool-culture::after {
+.overview .cool-culture .cool-wrapper::after {
   position: absolute;
   content: "";
   bottom: 0px;
   height: 2px;
-  background: -moz-linear-gradient(to right, #e37038, #0b0237);
-  background: -webkit-linear-gradient(to right, #e37038, #0b0237);
   background: linear-gradient(to right, #e37038, #0b0237);
   width: 100%;
+}
+@media (min-width: 1200px) and (max-width: 1600px) {
+  .overview .cool-culture .cool-wrapper::after {
+    background: linear-gradient(to right, #e37038, #0b0237 55%);
+  }
 }
 .overview .jobs-calltoaction {
   display: flex;

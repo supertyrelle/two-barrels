@@ -37,11 +37,16 @@
             display: flex;
             justify-content: flex-start;
 
+            @include lg {
+                width: 90vw;
+            }
+
             .content {
                 max-width: 500px;
                 padding: 2em 3em;
                 border: 6px solid $white;
                 background: rgba($blue, 85%);
+
 
                 p {
                     margin-bottom: 1.5em;
@@ -60,6 +65,10 @@
         position: relative;
         z-index: 3;
         padding-bottom: 1em;
+
+        @include lg {
+            margin-top: -2em;
+        }
 
         .cards {
             display: inherit;
@@ -96,6 +105,11 @@
                     text-align: center;
                     margin: 0 2em;
                     line-height: 16pt;
+
+                    @include lg {
+                        margin: 0 1em;
+
+                    }
                 }
 
                 .fa-cog {
@@ -191,64 +205,77 @@
             justify-content: space-between;
             width: 100%;
             position: relative;
-        }
 
-        .pics {
-            top: 0px;
-            background: $orange;
-            flex: 1 30%;
-            display: flex;
-            flex-direction: row;
-            align-items: flex-start;
-            max-width: 500px;
-            align-self: stretch;
-            background: url('./img/front-min.jpg') no-repeat;
-            background-size: cover;
-            background-position: top center;
-            background-attachment: scroll;
+            .pics {
+                top: 0px;
+                background: $orange;
+                flex: 1 30%;
+                display: flex;
+                flex-direction: row;
+                align-items: flex-start;
+                max-width: 500px;
+                align-self: stretch;
+                background: url('./img/front-min.jpg') no-repeat;
+                background-size: cover;
+                background-position: top center;
+                background-attachment: scroll;
 
-        }
-
-        .about {
-            max-width: 700px;
-            padding: 3em 0em;
-            flex: 1 70%;
-
-            p,
-            h2 {
-                margin-right: 30px;
+                @include lg {
+                    flex: 1 50%;
+                }
 
             }
 
-            p {
-                line-height: 18pt;
-                margin-top: 1em;
+            .about {
+                position: relative;
+                max-width: 700px;
+                padding: 3em 0em;
+                flex: 1 70%;
 
-                a {
+                @include lg {
+                    flex: 1 50%;
+                    padding: 3em 0em 3em 3em;
+                }
 
-                    color: $orange;
-                    transition: ease all 230ms;
+                p,
+                h2 {
+                    margin-right: 30px;
 
-                    &:hover {
-                        color: lighten($orange, 10%);
+                }
+
+                p {
+                    line-height: 18pt;
+                    margin-top: 1em;
+
+                    a {
+
+                        color: $orange;
+                        transition: ease all 230ms;
+
+                        &:hover {
+                            color: lighten($orange, 10%);
+                        }
+                    }
+
+                    &+p {
+                        margin-top: 1.5em;
                     }
                 }
+            }
 
-                &+p {
-                    margin-top: 1.5em;
+            &::after {
+                position: absolute;
+                content: "";
+                bottom: 0px;
+                height: 2px;
+                background: linear-gradient(to left, $orange, $blue);
+                width: 100%;
+
+                @include lg {
+                background: linear-gradient(to left, $orange, $blue 55%);
+
                 }
             }
-        }
-
-        &::after {
-            position: absolute;
-            content: "";
-            bottom: 0px;
-            height: 2px;
-            background: -moz-linear-gradient(to left, $orange, $blue);
-            background: -webkit-linear-gradient(to left, $orange, $blue);
-            background: linear-gradient(to left, $orange, $blue);
-            width: 100%;
         }
     }
 
@@ -261,6 +288,11 @@
                 // display: block;
                 margin-left: 10px;
                 color: rgba($white, 25%);
+
+                @include lg {
+                    display: block;
+                    margin-left: 0px;
+                }
             }
         }
 
@@ -270,69 +302,81 @@
             justify-content: space-between;
             width: 100%;
             position: relative;
-        }
 
-        .pics {
-            order: 2;
-            top: 0px;
-            right: 0px;
-            background: $orange;
-            flex: 1 30%;
-            display: flex;
-            flex-direction: row;
-            align-items: flex-start;
-            max-width: 500px;
-            align-self: stretch;
-            background: url('./img/randy-min.jpg') no-repeat;
-            background-size: cover;
-            background-position: top center;
-            background-attachment: scroll;
-        }
+            .pics {
+                order: 2;
+                top: 0px;
+                right: 0px;
+                background: $orange;
+                flex: 1 30%;
+                display: flex;
+                flex-direction: row;
+                align-items: flex-start;
+                max-width: 500px;
+                align-self: stretch;
+                background: url('./img/randy-min.jpg') no-repeat;
+                background-size: cover;
+                background-position: top center;
+                background-attachment: scroll;
 
-        .cool {
-            max-width: 700px;
-            padding: 3em 0em;
-            flex: 1 70%;
+                @include lg {
+                    background-position: top right;
+                    flex: 1 50%;
 
-            p,
-            h2 {
-                margin-left: 30px;
-
+                }
             }
 
-            p {
-                line-height: 18pt;
-                margin-top: 1em;
+            .cool {
+                max-width: 700px;
+                padding: 3em 0em;
+                flex: 1 70%;
 
-                a {
-                    background: $lighter-blue;
-                    padding: 3px 5px;
-                    color: $orange;
-                    transition: ease all 230ms;
+                @include lg {
+                    flex: 1 50%;
+                    padding: 3em 3em 3em 0em;
+                }
 
-                    &:hover {
-                        color: $white;
+                p,
+                h2 {
+                    margin-left: 30px;
+
+                }
+
+                p {
+                    line-height: 18pt;
+                    margin-top: 1em;
+
+                    a {
+                        background: $lighter-blue;
+                        padding: 3px 5px;
+                        color: $orange;
+                        transition: ease all 230ms;
+
+                        &:hover {
+                            color: $white;
+                        }
+                    }
+
+                    &+p {
+                        margin-top: 1.5em;
                     }
                 }
+            }
 
-                &+p {
-                    margin-top: 1.5em;
+            &::after {
+                position: absolute;
+                content: "";
+                bottom: 0px;
+                height: 2px;
+                background: linear-gradient(to right, $orange, $blue);
+                width: 100%;
+                @include lg {
+                                    background: linear-gradient(to right, $orange, $blue 55%);
+
                 }
             }
         }
-
-        &::after {
-            position: absolute;
-            content: "";
-            bottom: 0px;
-            height: 2px;
-            background: -moz-linear-gradient(to right, $orange, $blue);
-            background: -webkit-linear-gradient(to right, $orange, $blue);
-            background: linear-gradient(to right, $orange, $blue);
-            width: 100%;
-        }
     }
-
 
     .jobs-calltoaction {
         display: flex;

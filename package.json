@@ -36,11 +36,13 @@
         "awesomplete-es6": "^1.2.2",
         "bodymovin": "^4.13.0",
         "ease-component": "^1.0.0",
+        "footer": "^1.0.0",
         "freezeframe": "^4.0.0-alpha.7",
         "lottie-web": "^5.5.6",
         "postcss": "^7.0.17",
         "scroll": "^3.0.1",
         "scroll-doc": "^0.2.1",
+        "style.css": "^1.0.0",
         "sweetalert2": "^8.14.0",
         "swup": "^2.0.4",
         "typeit": "^6.0.3"
