@@ -15,7 +15,6 @@ $white: rgb(245, 245, 245);
 
 // responsive mixins
     // define variables
-    $screen-sm-min: 576px;
     $screen-sm-max: 768px;
     $screen-md-min: 769px;
     $screen-md-max: 1199px;
@@ -24,7 +23,7 @@ $white: rgb(245, 245, 245);
     $screen-xl-min: 1601px;
     // specify mixins
     @mixin sm {
-        @media (min-width: #{$screen-sm-min}) and (max-width: #{$screen-sm-max}) {
+        @media (max-width: #{$screen-sm-max}) {
             @content;
         }
     }
@@ -43,6 +42,11 @@ $white: rgb(245, 245, 245);
 
     @mixin xl {
         @media (min-width: #{$screen-xl-min}) {
+            @content;
+        }
+    }
+    @mixin tab {
+        @media (min-width: 1023px) and (min-height:800px) {
             @content;
         }
     }
@@ -102,6 +106,10 @@ body {
     margin: 0 auto;
     overflow-y: scroll;
     position: relative;
+    @include sm {
+        max-width:100vw;
+        overflow-x:hidden;
+    }
 }
 
 * {

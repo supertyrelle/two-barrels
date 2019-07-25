@@ -227,6 +227,12 @@ body {
   overflow-y: scroll;
   position: relative;
 }
+@media (max-width: 768px) {
+  body {
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
+}
 
 * {
   font-family: "Lato", sans-serif;
@@ -617,6 +623,12 @@ header .header-wrapper .menu {
   text-transform: uppercase;
   font-weight: 400;
 }
+@media (max-width: 768px) {
+  header .header-wrapper nav,
+header .header-wrapper .menu {
+    flex: none;
+  }
+}
 header .header-wrapper nav .active,
 header .header-wrapper .menu .active {
   color: #e37038;
@@ -901,6 +913,148 @@ header .header-wrapper svg,
 header .header-wrapper img {
   max-width: 200px;
   flex-grow: 1;
+}
+@media (max-width: 768px) {
+  header {
+    padding-top: 0em;
+    overflow-x: hidden;
+    position: relative;
+  }
+  header .header-wrapper {
+    display: none;
+  }
+  header .content-area {
+    width: 100vw;
+    padding: 0 1em;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 200;
+    overflow: hidden;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    pointer-events: none;
+  }
+  header .content-area::before {
+    content: "";
+    position: absolute;
+    z-index: 3;
+    width: 100vw;
+    height: 75px;
+    background: rgba(11, 2, 55, 0.9);
+    top: 0px;
+    left: 0px;
+  }
+  header img {
+    position: relative;
+    margin-top: 1.5em;
+    height: 30px;
+    z-index: 5;
+  }
+  header nav.main {
+    float: right;
+  }
+  header .menu-items {
+    position: absolute;
+    right: -100%;
+    z-index: 0;
+    list-style: none;
+    pointer-events: all;
+    bottom: 0px;
+    width: 100%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: flex-start;
+    align-items: center;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 600;
+    background: rgba(31, 36, 120, 0.9);
+    text-transform: uppercase;
+    padding: 15px;
+    transition: right 530ms ease;
+  }
+  header .menu-items .bang {
+    margin-top: 5em;
+  }
+  header .menu-items li {
+    padding: 8px 10px;
+    background: transparent;
+    border: 2px solid #e37038;
+  }
+  header .menu-items li a {
+    color: whitesmoke;
+    font-size: 20pt;
+  }
+  header .menu-items li a i {
+    display: none;
+  }
+  header .menu-items li + li {
+    margin-top: 1em;
+  }
+  header .menu-items.visible {
+    right: 0;
+    transition: right 430ms ease;
+  }
+  header .mobile-menu-btn {
+    display: inline-block;
+    position: relative;
+    width: 18px;
+    height: 14px;
+    cursor: pointer;
+    pointer-events: all;
+    z-index: 20;
+    transform: scale(2);
+    margin: 2em;
+    background: #e37038;
+  }
+  header .mobile-menu-btn span {
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 18px;
+    height: 2px;
+    background-color: white;
+    opacity: 1;
+    transition: opacity 0.5s ease;
+  }
+  header .mobile-menu-btn:before, header .mobile-menu-btn:after {
+    content: "";
+    display: inline-block;
+    width: 18px;
+    height: 2px;
+    background-color: white;
+    position: absolute;
+  }
+  header .mobile-menu-btn:before {
+    top: 0;
+    transform: rotate(0deg);
+    transition: transform 0.25s ease, top 0.25s ease 0.25s;
+  }
+  header .mobile-menu-btn:after {
+    bottom: 0;
+    transform: rotate(0deg);
+    transition: transform 0.25s ease, bottom 0.25s ease 0.25s;
+  }
+  header .mobile-menu-btn.open span {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+  }
+  header .mobile-menu-btn.open:before {
+    top: 6px;
+    transform: rotate(45deg);
+    transition: transform 0.25s ease 0.25s, top 0.25s ease;
+  }
+  header .mobile-menu-btn.open:after {
+    bottom: 6px;
+    transform: rotate(-45deg);
+    transition: transform 0.25s ease 0.25s, bottom 0.25s ease;
+  }
 }
 
 .overview {
@@ -1246,6 +1400,11 @@ header .header-wrapper img {
   justify-content: space-around;
   width: 100%;
 }
+@media (max-width: 768px) {
+  .overview .jobs-calltoaction .jobs-wrapper {
+    flex-wrap: wrap;
+  }
+}
 .overview .jobs-calltoaction .jobs-wrapper .content {
   text-align: center;
 }
@@ -1315,6 +1474,11 @@ footer .footer-wrapper .address {
 main {
   min-height: 600px;
 }
+@media (max-width: 768px) {
+  main {
+    padding-top: 3em;
+  }
+}
 
 .who-we-are {
   position: relative;
@@ -1332,7 +1496,7 @@ main {
   z-index: -4;
   top: -7rem;
   left: 0;
-  width: 100%;
+  width: 105%;
   min-height: 550px;
   filter: opacity(1);
   background: #0b0237;
@@ -1392,6 +1556,11 @@ main {
   overflow: hidden;
   max-width: 330px;
   margin: 1em;
+}
+@media (min-width: 1200px) and (max-width: 1600px) {
+  .who-we-are .staff .staff-cards .card {
+    flex: 1 30%;
+  }
 }
 .who-we-are .staff .staff-cards .card h3 {
   position: absolute;
@@ -2454,6 +2623,18 @@ main {
   border-radius: 0px !important;
   background: transparent;
 }
+@media (min-width: 1200px) and (max-width: 1600px) {
+  .apply-wrapper .apply-form form .name .user-input select,
+.apply-wrapper .apply-form form .email .user-input select,
+.apply-wrapper .apply-form form .phone .user-input select,
+.apply-wrapper .apply-form form .position-select .user-input select,
+.apply-wrapper .apply-form form .code-links .user-input select,
+.apply-wrapper .apply-form form .upload-area .user-input select,
+.apply-wrapper .apply-form form .projects .user-input select,
+.apply-wrapper .apply-form form .project .user-input select {
+    height: auto !important;
+  }
+}
 .apply-wrapper .apply-form form .name .user-input span,
 .apply-wrapper .apply-form form .email .user-input span,
 .apply-wrapper .apply-form form .phone .user-input span,
@@ -2526,12 +2707,6 @@ main {
   font-size: 16pt;
   border-left: 0px solid transparent;
   border-right: 0px solid transparent;
-}
-.apply-wrapper .apply-form form .projects .project .del-project {
-  background: lime;
-}
-.apply-wrapper .apply-form form .projects .project .del-project:first-child {
-  background: red;
 }
 .apply-wrapper .apply-form form .name .user-input {
   position: relative;

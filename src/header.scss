@@ -17,6 +17,10 @@ header {
             text-transform: uppercase;
             font-weight: 400;
 
+            @include sm {
+                flex: none;
+            }
+
             .active {
                 color: $orange;
                 transition: ease all .3s;
@@ -108,6 +112,7 @@ header {
             #jobs-dropdown {
                 position: relative;
                 display: inline;
+
                 .dropdown-wrapper {
                     filter: opacity(0);
                     position: absolute;
@@ -118,7 +123,7 @@ header {
                     z-index: 1;
                     left: 0px;
                     transition: ease all 230ms;
-pointer-events: none;
+                    pointer-events: none;
 
 
                     .jobs-menu {
@@ -379,6 +384,180 @@ pointer-events: none;
         img {
             max-width: 200px;
             flex-grow: 1;
+        }
+    }
+
+    @include sm {
+        padding-top: 0em;
+        overflow-x: hidden;
+        position: relative;
+
+        .header-wrapper {
+            display: none;
+        }
+
+        .content-area {
+            width: 100vw;
+            padding: 0 1em;
+            position: fixed;
+            top: 0px;
+            left: 0px;
+            z-index: 200;
+            overflow: hidden;
+            height: 100vh;
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            justify-content: space-between;
+            // background:lime;
+            pointer-events: none;
+
+            &::before {
+                content: '';
+                position: absolute;
+                z-index: 3;
+                width: 100vw;
+                height: 75px;
+                background: rgba($blue, 0.9);
+                top: 0px;
+                left: 0px;
+            }
+
+        }
+
+        img {
+            position: relative;
+            margin-top: 1.5em;
+            height: 30px;
+            z-index: 5;
+
+        }
+
+        nav.main {
+            float: right;
+        }
+
+        .menu-items {
+            position: absolute;
+            right: -100%;
+            z-index: 0;
+            list-style: none;
+            pointer-events: all;
+            bottom: 0px;
+            width: 100%;
+            height: 90%;
+            display: flex;
+            flex-direction: column;
+            align-content: center;
+            justify-content: flex-start;
+            align-items: center;
+
+            .bang {
+                margin-top: 5em;
+            }
+
+            font: {
+                family: 'Open Sans', sans-serif;
+                weight: 600;
+            }
+
+            background: rgba($lighter-blue, 0.9);
+            text-transform: uppercase;
+            padding: 15px;
+            transition: right 530ms ease;
+
+            li {
+                padding: 8px 10px;
+                background: transparent;
+                border: 2px solid $orange;
+
+                a {
+                    color: $white;
+                    font-size: 20pt;
+
+                    i {
+                        display: none;
+                    }
+                }
+
+                // &:not(:first-child) {
+                //     border-top: 1px solid black;
+                // }
+                &+li {
+                    margin-top: 1em;
+                }
+            }
+
+            &.visible {
+                right: 0;
+                transition: right 430ms ease;
+            }
+        }
+
+        .mobile-menu-btn {
+            display: inline-block;
+            position: relative;
+            width: 18px;
+            height: 14px;
+            cursor: pointer;
+            pointer-events: all;
+            z-index: 20;
+            transform: scale(2);
+            margin: 2em;
+            background: $orange;
+            span {
+                display: inline-block;
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 18px;
+                height: 2px;
+                background-color: white;
+                opacity: 1;
+                transition: opacity .5s ease;
+            }
+
+            &:before,
+            &:after {
+                content: '';
+                display: inline-block;
+                width: 18px;
+                height: 2px;
+                background-color: white;
+                position: absolute;
+            }
+
+            &:before {
+                top: 0;
+                transform: rotate(0deg);
+                transition: transform .25s ease, top .25s ease .25s;
+            }
+
+            &:after {
+                bottom: 0;
+                transform: rotate(0deg);
+                transition: transform .25s ease, bottom .25s ease .25s;
+            }
+
+            &.open {
+
+                span {
+                    opacity: 0;
+                    transition: opacity .5s ease;
+                }
+
+                &:before {
+                    top: 6px;
+                    transform: rotate(45deg);
+                    transition: transform .25s ease .25s, top .25s ease;
+                }
+
+                &:after {
+                    bottom: 6px;
+                    transform: rotate(-45deg);
+                    transition: transform .25s ease .25s, bottom .25s ease;
+                }
+            }
         }
     }
 }
