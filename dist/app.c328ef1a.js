@@ -10280,6 +10280,12 @@ function checklocation() {
   } else if (endpoint == "/jobs.html") {
     removeactive();
     jobsLink.classList.add("active");
+  } else if (endpoint == "/get-a-job.html") {
+    removeactive();
+    jobsLink.classList.add("active");
+  } else if (endpoint == "/how-we-hire.html") {
+    removeactive();
+    jobsLink.classList.add("active");
   } else if (endpoint == "/job.html") {
     removeactive();
     job();
@@ -10633,14 +10639,48 @@ function job() {
 
 function apply() {
   console.log("Apply Yourself!");
+  var sendAppButton = document.getElementById("send-app");
+
+  sendAppButton.onclick = function () {
+    function emptyForm() {
+      document.getElementById("apply-input").reset();
+    }
+
+    emptyForm();
+
+    _sweetalert.default.fire({
+      title: 'Application Recieved',
+      text: "Thank you for your interest in Two Barrels. Please await our signal.",
+      type: 'success',
+      // position: 'bottom-end',
+      confirmButtonText: 'Sounds good',
+      // timer: 4200,
+      customClass: {
+        container: 'container-class',
+        popup: 'contact-popup',
+        header: 'header-class',
+        backdrop: false,
+        title: 'popup-title',
+        closeButton: 'close-button-class',
+        icon: 'icon-class',
+        confirmButton: 'popup-confirm'
+      },
+      onAfterClose: function onAfterClose() {
+        return window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      }
+    });
+  };
 }
 
 ;
 
 function contact() {
-  var oink = document.getElementById("boink");
+  var sendMsgButton = document.getElementById("send-msg");
 
-  oink.onclick = function () {
+  sendMsgButton.onclick = function () {
     function emptyForm() {
       document.getElementById("contact-input").reset();
     }
@@ -10651,7 +10691,7 @@ function contact() {
       title: 'Message sent',
       text: "Thanks for sending us your message. We'll get back to you as soon as possible!",
       type: 'success',
-      position: 'bottom-end',
+      // position: 'top-end',
       confirmButtonText: 'Sounds good',
       timer: 4200,
       customClass: {
@@ -10703,7 +10743,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50043" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63139" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

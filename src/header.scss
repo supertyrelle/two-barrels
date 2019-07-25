@@ -16,15 +16,9 @@ header {
             flex: 1;
             text-transform: uppercase;
             font-weight: 400;
-            // background: $white;
-            // padding: 0.5em 1em;
-            // border-radius: 100px;
-            // box-shadow: black 3px 3px;
-            // border-bottom: 2px solid $lavender;
 
             .active {
                 color: $orange;
-                // border-bottom: 3px solid $orange;
                 transition: ease all .3s;
 
                 &::after {
@@ -41,15 +35,6 @@ header {
                     transform-origin: var(--x) 50%;
                     transition: transform .5s cubic-bezier(.535, .05, .355, 1);
                 }
-
-                // &::before {
-                //     content: "•" !important;
-                //     position: absolute;
-                //     left: 50%;
-                //     top: -20px;
-                //     color: $orange;
-                //     // font-weight: 900;
-                // }
             }
 
             a {
@@ -61,7 +46,6 @@ header {
                 &:hover {
                     color: $orange;
                 }
-
 
             }
 
@@ -98,7 +82,6 @@ header {
                     transform: scaleX(var(--scale));
                     transform-origin: var(--x) 50%;
                     transition: transform .5s cubic-bezier(.535, .05, .355, 1);
-                    // transition-delay: 200ms;
 
                 }
 
@@ -122,19 +105,9 @@ header {
                 }
             }
 
-            .dropdown-wrapper * {
-                cursor: not-allowed;
-            }
-
-            .dropdown-wrapper a {
-                pointer-events: none;
-            }
-
             #jobs-dropdown {
                 position: relative;
                 display: inline;
-                cursor: not-allowed;
-
                 .dropdown-wrapper {
                     filter: opacity(0);
                     position: absolute;
@@ -145,7 +118,8 @@ header {
                     z-index: 1;
                     left: 0px;
                     transition: ease all 230ms;
-                    pointer-events: none;
+pointer-events: none;
+
 
                     .jobs-menu {
                         padding: 1em;
@@ -156,21 +130,26 @@ header {
                         border: 2px solid $orange;
                         position: relative;
 
-                        // border-top:8px solid $orange;
-                        a+a {
-                            margin-top: 10px;
+                        a {
+                            transition: ease all 230ms;
+                            color: $white;
+
+                            &:hover {
+                                color: $orange;
+                            }
+
+                            &::after {
+                                content: '';
+                                position: absolute;
+                                height: 0px;
+                                transform-origin: 0%;
+                            }
+
+                            &+a {
+                                margin-top: 10px;
+                            }
                         }
 
-                        // &::before {
-                        //     position: absolute;
-                        //     z-index: 2;
-                        //     top: 0px;
-                        //     left: 0px;
-                        //     content: '';
-                        //     height:5px;
-                        //     width:30px;
-                        //     background: $orange;
-                        // }
                     }
                 }
 
@@ -247,11 +226,6 @@ header {
             flex: 1;
             text-transform: uppercase;
             font-weight: 400;
-            // background: $white;
-            // padding: 0.5em 1em;
-            // border-radius: 100px;
-            // box-shadow: black 3px 3px;
-            // border-bottom: 2px solid $lavender;
 
             #contact-link {
                 position: relative;
@@ -282,7 +256,6 @@ header {
                     transform: scaleX(var(--scale));
                     transform-origin: var(--x) 50%;
                     transition: transform .5s cubic-bezier(.535, .05, .355, 1);
-                    // transition-delay: 200ms;
 
                 }
 
@@ -338,7 +311,7 @@ header {
 
 
 
-            .apply-cta {
+            .apply-cta-link {
                 position: relative;
                 margin-right: 20px;
 
@@ -357,18 +330,6 @@ header {
                         background: rgba($white, 10%);
 
                     }
-
-                    // &:hover {
-                    //     outline: none;
-                    // }
-                    // &:hover~.top,
-                    // &:hover~.bottom {
-                    //     transform: scaleX(1);
-                    // }
-                    // &:hover~.left,
-                    // &:hover~.right {
-                    //     transform: scaleY(1);
-                    // }
                 }
 
                 span {

@@ -181,7 +181,20 @@ section+section {
 
 
 }
+.apply-cta {
+    margin-top: 10px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    h2,
+    p {
+        text-align: center;
+    }
 
+}
 .loading {
     position: absolute;
     z-index: -10 !important;
@@ -407,11 +420,10 @@ section+section {
         font-family: 'Lato',
             sans-serif;
         text-transform: uppercase;
-        color: $white;
-        background: $orange;
+        color: $blue;
+        // background: $orange;
         padding:5px 8px;
         font-size:20pt !important;
-        width:100%;
         text-align: center !important;
         align-self: center;
     }

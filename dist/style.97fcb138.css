@@ -324,6 +324,20 @@ section + section {
   border-bottom: 2px solid linear-gradient(to bottom, red, rgba(0, 0, 0, 0)) 1 100%;
 }
 
+.apply-cta {
+  margin-top: 10px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.apply-cta h2,
+.apply-cta p {
+  text-align: center;
+}
+
 .loading {
   position: absolute;
   z-index: -10 !important;
@@ -508,11 +522,9 @@ section + section {
 .job-popup h2 {
   font-family: "Lato", sans-serif;
   text-transform: uppercase;
-  color: whitesmoke;
-  background: #e37038;
+  color: #0b0237;
   padding: 5px 8px;
   font-size: 20pt !important;
-  width: 100%;
   text-align: center !important;
   align-self: center;
 }
@@ -676,16 +688,9 @@ header .header-wrapper nav a:active {
 header .header-wrapper nav a:active::after {
   --scale: 1;
 }
-header .header-wrapper nav .dropdown-wrapper * {
-  cursor: not-allowed;
-}
-header .header-wrapper nav .dropdown-wrapper a {
-  pointer-events: none;
-}
 header .header-wrapper nav #jobs-dropdown {
   position: relative;
   display: inline;
-  cursor: not-allowed;
 }
 header .header-wrapper nav #jobs-dropdown .dropdown-wrapper {
   filter: opacity(0);
@@ -707,6 +712,19 @@ header .header-wrapper nav #jobs-dropdown .dropdown-wrapper .jobs-menu {
   background-color: rgba(31, 36, 120, 0.75);
   border: 2px solid #e37038;
   position: relative;
+}
+header .header-wrapper nav #jobs-dropdown .dropdown-wrapper .jobs-menu a {
+  transition: ease all 230ms;
+  color: whitesmoke;
+}
+header .header-wrapper nav #jobs-dropdown .dropdown-wrapper .jobs-menu a:hover {
+  color: #e37038;
+}
+header .header-wrapper nav #jobs-dropdown .dropdown-wrapper .jobs-menu a::after {
+  content: "";
+  position: absolute;
+  height: 0px;
+  transform-origin: 0%;
 }
 header .header-wrapper nav #jobs-dropdown .dropdown-wrapper .jobs-menu a + a {
   margin-top: 10px;
@@ -830,53 +848,53 @@ header .header-wrapper .menu-apply #contact-link.active::after {
   transform-origin: var(--x) 50%;
   transition: transform 0.5s cubic-bezier(0.535, 0.05, 0.355, 1);
 }
-header .header-wrapper .menu-apply .apply-cta {
+header .header-wrapper .menu-apply .apply-cta-link {
   position: relative;
   margin-right: 20px;
 }
-header .header-wrapper .menu-apply .apply-cta .apply-link {
+header .header-wrapper .menu-apply .apply-cta-link .apply-link {
   background-color: none;
   color: whitesmoke;
   padding: 0.8em 1em;
   border: 1px solid #e37038;
   transition: all 0.3s ease-in-out;
 }
-header .header-wrapper .menu-apply .apply-cta .apply-link i {
+header .header-wrapper .menu-apply .apply-cta-link .apply-link i {
   margin-right: 8px;
 }
-header .header-wrapper .menu-apply .apply-cta .apply-link:hover {
+header .header-wrapper .menu-apply .apply-cta-link .apply-link:hover {
   background: rgba(245, 245, 245, 0.1);
 }
-header .header-wrapper .menu-apply .apply-cta span {
+header .header-wrapper .menu-apply .apply-cta-link span {
   position: absolute;
   background-color: #e37038;
   transform-origin: center;
   transition: transform 0.5s ease;
 }
-header .header-wrapper .menu-apply .apply-cta span span.bottom,
-header .header-wrapper .menu-apply .apply-cta span span.top {
+header .header-wrapper .menu-apply .apply-cta-link span span.bottom,
+header .header-wrapper .menu-apply .apply-cta-link span span.top {
   height: 3px;
   left: 0;
   right: 0;
   transform: scaleX(0);
 }
-header .header-wrapper .menu-apply .apply-cta span span.left,
-header .header-wrapper .menu-apply .apply-cta span span.right {
+header .header-wrapper .menu-apply .apply-cta-link span span.left,
+header .header-wrapper .menu-apply .apply-cta-link span span.right {
   width: 3px;
   top: 0;
   bottom: 0;
   transform: scaleY(0);
 }
-header .header-wrapper .menu-apply .apply-cta span span.top {
+header .header-wrapper .menu-apply .apply-cta-link span span.top {
   top: -1em;
 }
-header .header-wrapper .menu-apply .apply-cta span span.bottom {
+header .header-wrapper .menu-apply .apply-cta-link span span.bottom {
   bottom: -1em;
 }
-header .header-wrapper .menu-apply .apply-cta span span.left {
+header .header-wrapper .menu-apply .apply-cta-link span span.left {
   left: -1em;
 }
-header .header-wrapper .menu-apply .apply-cta span span.right {
+header .header-wrapper .menu-apply .apply-cta-link span span.right {
   right: -1em;
 }
 header .header-wrapper svg,
@@ -1083,7 +1101,7 @@ header .header-wrapper img {
   transition: ease all 230ms;
 }
 .overview .beginnings .about p a:hover {
-  color: whitesmoke;
+  color: #e99065;
 }
 .overview .beginnings .about p + p {
   margin-top: 1.5em;
@@ -1198,6 +1216,49 @@ header .header-wrapper img {
   background: -webkit-radial-gradient(#e37038, #0b0237 75%);
   background: radial-gradient(#e37038, #0b0237 75%);
   width: 100%;
+}
+
+footer {
+  background: #080128;
+  border-top: 4px solid #242a8c;
+  margin-top: 4em !important;
+}
+footer .footer-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  padding: 2em 0;
+  margin: 0 auto;
+}
+footer .footer-wrapper .logo {
+  width: 200px;
+}
+footer .footer-wrapper .logo img {
+  max-width: 80px;
+}
+footer .footer-wrapper .social {
+  width: 200px;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: center;
+}
+footer .footer-wrapper .social a {
+  color: white;
+  font-size: 20pt;
+  transition: ease all 230ms;
+}
+footer .footer-wrapper .social a + a {
+  margin-left: 20px;
+}
+footer .footer-wrapper .social a:hover {
+  color: #e37038;
+}
+footer .footer-wrapper .address {
+  width: 200px;
+  font-weight: 300;
+  color: rgba(245, 245, 245, 0.85);
 }
 
 main {
@@ -1516,7 +1577,6 @@ main {
   font-weight: bold;
   cursor: pointer;
   border: 1px rgba(255, 255, 255, 0.098) solid;
-  /* Icon */
 }
 .jobs-wrapper .talent .talent-jobs .tabs .tab-label:hover {
   background: rgba(31, 36, 120, 0.95);
@@ -1536,7 +1596,7 @@ main {
   padding: 0 1em;
   color: #0b0237;
   background: white;
-  transition: ease 500ms;
+  transition: ease all 500ms;
 }
 .jobs-wrapper .talent .talent-jobs .tabs .tab-content a {
   flex: 1 30%;
@@ -1569,7 +1629,6 @@ main {
   left: 0px;
   width: 100%;
   height: 100%;
-  box-shadow: 6px 6px #6249ae;
   transition: ease all 200ms;
 }
 .jobs-wrapper .talent .talent-jobs .tabs::after {
@@ -1580,7 +1639,6 @@ main {
   left: 0px;
   width: 100%;
   height: 100%;
-  box-shadow: 10px 10px #e37038;
   transition: ease all 200ms;
 }
 .jobs-wrapper .talent .talent-jobs input:checked + .tab-label {
@@ -1592,6 +1650,155 @@ main {
 .jobs-wrapper .talent .talent-jobs input:checked ~ .tab-content {
   max-height: 100vh;
   padding: 1em;
+}
+
+.office-culture-wrapper {
+  position: relative;
+  z-index: 2;
+  top: 0px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background: #0b0237;
+}
+.office-culture-wrapper .bg {
+  position: absolute;
+  z-index: -4;
+  top: -7rem;
+  left: 0;
+  width: 100%;
+  min-height: 550px;
+  filter: opacity(1);
+  border-bottom: 1px solid #b54c19;
+}
+.office-culture-wrapper .bg::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("/front-full-min.bfbac186.jpg") no-repeat;
+  background-size: 100%;
+  background-position: top -70px right;
+  filter: opacity(0.3);
+  background-attachment: absolute;
+}
+.office-culture-wrapper .bg::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: -moz-linear-gradient(to bottom, rgba(11, 2, 55, 0) 100%, #0b0237);
+  background: -webkit-linear-gradient(to bottom, rgba(11, 2, 55, 0) 100%, #0b0237);
+  background: linear-gradient(to bottom, rgba(11, 2, 55, 0) 100%, #0b0237);
+}
+.office-culture-wrapper .content {
+  padding-top: 4.5rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  max-width: 1050px;
+  margin: 0 auto;
+}
+.office-culture-wrapper .content hr {
+  width: 90%;
+  margin: 0 auto;
+}
+.office-culture-wrapper .content h1 {
+  text-align: center;
+  align-self: center;
+}
+.office-culture-wrapper .content p {
+  text-align: center;
+  font-weight: 300;
+}
+.office-culture-wrapper .content .subheader {
+  margin-bottom: 0px;
+}
+.office-culture-wrapper .content .subheader a {
+  color: whitesmoke;
+  transition: ease all 230ms;
+}
+.office-culture-wrapper .content .subheader a i {
+  margin-right: 10px;
+  transition: ease transform 230ms;
+}
+.office-culture-wrapper .content .subheader a:hover i {
+  color: #e37038;
+  transform: translateX(-5px);
+}
+.office-culture-wrapper .content .details {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  color: #0b0237;
+  margin-top: 1em;
+  align-items: flex-start;
+  background: whitesmoke;
+  padding: 2em 3em 3em 3em;
+}
+.office-culture-wrapper .content .details h2,
+.office-culture-wrapper .content .details p {
+  text-align: left;
+}
+.office-culture-wrapper .content .details .white-text h2 {
+  color: whitesmoke;
+}
+.office-culture-wrapper .content .details h2 {
+  margin: 0.5em 0 0.5em 0;
+  font-family: "Lato", sans-serif;
+  font-size: 21pt;
+  position: relative;
+  z-index: 5;
+  padding: 5px 10px;
+}
+.office-culture-wrapper .content .details h2 .h2-bg {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  bottom: 0px;
+  left: 0px;
+  padding: 10px;
+  background: #e37038;
+  z-index: -1;
+}
+.office-culture-wrapper .content .details p {
+  font-weight: 300;
+  font-size: 13pt;
+  line-height: 18pt;
+}
+.office-culture-wrapper .content .details p + p {
+  margin-top: 0.5em;
+}
+.office-culture-wrapper .content .details hr {
+  margin: 1em 0;
+  width: 100%;
+  border-color: rgba(31, 36, 120, 0.2);
+}
+.office-culture-wrapper .content .details ul,
+.office-culture-wrapper .content .details ol {
+  margin-top: 0px;
+}
+.office-culture-wrapper .content .details ul li,
+.office-culture-wrapper .content .details ol li {
+  margin: 1em 0 0.5em 0;
+  font-size: 13pt;
+  font-weight: 300;
+}
+.office-culture-wrapper .content .details .bold-ul li {
+  font-weight: 400;
+}
+.office-culture-wrapper .content .details ul {
+  list-style-type: square;
+}
+.office-culture-wrapper .content .details ul p {
+  margin-left: 1em;
+}
+.office-culture-wrapper h3 {
+  margin: 1.5em 0 0.2em 0;
 }
 
 .job-wrapper {
@@ -1685,11 +1892,28 @@ main {
 .job-wrapper .position-info .details p {
   text-align: left;
 }
+.job-wrapper .position-info .details .white-text h2 {
+  color: whitesmoke;
+}
 .job-wrapper .position-info .details h2 {
   margin: 10px 0;
   font-family: "Lato", sans-serif;
   font-weight: 400;
   font-size: 21pt;
+  position: relative;
+  z-index: 5;
+  padding: 5px 10px;
+}
+.job-wrapper .position-info .details h2 .h2-bg {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  bottom: 0px;
+  left: 0px;
+  padding: 10px;
+  background: #e37038;
+  z-index: -1;
 }
 .job-wrapper .position-info .details p {
   font-weight: 300;
@@ -1709,7 +1933,7 @@ main {
   margin-top: 0px;
 }
 .job-wrapper .position-info .details ul li {
-  margin: 1em 0;
+  margin: 0.5em 0 1em 0;
   font-weight: 300;
   font-size: 13pt;
 }
@@ -1954,6 +2178,7 @@ main {
 .apply-wrapper .apply-form form .name,
 .apply-wrapper .apply-form form .email,
 .apply-wrapper .apply-form form .phone,
+.apply-wrapper .apply-form form .position-select,
 .apply-wrapper .apply-form form .code-links,
 .apply-wrapper .apply-form form .upload-area,
 .apply-wrapper .apply-form form .projects,
@@ -1970,6 +2195,7 @@ main {
 .apply-wrapper .apply-form form .name p,
 .apply-wrapper .apply-form form .email p,
 .apply-wrapper .apply-form form .phone p,
+.apply-wrapper .apply-form form .position-select p,
 .apply-wrapper .apply-form form .code-links p,
 .apply-wrapper .apply-form form .upload-area p,
 .apply-wrapper .apply-form form .projects p,
@@ -1977,10 +2203,13 @@ main {
   font-weight: 400;
   font-size: 14pt;
   margin-bottom: 5px;
+  padding-left: 10px;
+  text-transform: capitalize;
 }
 .apply-wrapper .apply-form form .name .dual-inputs,
 .apply-wrapper .apply-form form .email .dual-inputs,
 .apply-wrapper .apply-form form .phone .dual-inputs,
+.apply-wrapper .apply-form form .position-select .dual-inputs,
 .apply-wrapper .apply-form form .code-links .dual-inputs,
 .apply-wrapper .apply-form form .upload-area .dual-inputs,
 .apply-wrapper .apply-form form .projects .dual-inputs,
@@ -1991,6 +2220,7 @@ main {
 .apply-wrapper .apply-form form .name .dual-inputs .user-input,
 .apply-wrapper .apply-form form .email .dual-inputs .user-input,
 .apply-wrapper .apply-form form .phone .dual-inputs .user-input,
+.apply-wrapper .apply-form form .position-select .dual-inputs .user-input,
 .apply-wrapper .apply-form form .code-links .dual-inputs .user-input,
 .apply-wrapper .apply-form form .upload-area .dual-inputs .user-input,
 .apply-wrapper .apply-form form .projects .dual-inputs .user-input,
@@ -2001,6 +2231,7 @@ main {
 .apply-wrapper .apply-form form .name .dual-inputs .user-input:nth-child(1),
 .apply-wrapper .apply-form form .email .dual-inputs .user-input:nth-child(1),
 .apply-wrapper .apply-form form .phone .dual-inputs .user-input:nth-child(1),
+.apply-wrapper .apply-form form .position-select .dual-inputs .user-input:nth-child(1),
 .apply-wrapper .apply-form form .code-links .dual-inputs .user-input:nth-child(1),
 .apply-wrapper .apply-form form .upload-area .dual-inputs .user-input:nth-child(1),
 .apply-wrapper .apply-form form .projects .dual-inputs .user-input:nth-child(1),
@@ -2010,6 +2241,7 @@ main {
 .apply-wrapper .apply-form form .name .dual-inputs .user-input:nth-child(2),
 .apply-wrapper .apply-form form .email .dual-inputs .user-input:nth-child(2),
 .apply-wrapper .apply-form form .phone .dual-inputs .user-input:nth-child(2),
+.apply-wrapper .apply-form form .position-select .dual-inputs .user-input:nth-child(2),
 .apply-wrapper .apply-form form .code-links .dual-inputs .user-input:nth-child(2),
 .apply-wrapper .apply-form form .upload-area .dual-inputs .user-input:nth-child(2),
 .apply-wrapper .apply-form form .projects .dual-inputs .user-input:nth-child(2),
@@ -2019,6 +2251,7 @@ main {
 .apply-wrapper .apply-form form .name .dual-inputs .user-input input[type=text],
 .apply-wrapper .apply-form form .email .dual-inputs .user-input input[type=text],
 .apply-wrapper .apply-form form .phone .dual-inputs .user-input input[type=text],
+.apply-wrapper .apply-form form .position-select .dual-inputs .user-input input[type=text],
 .apply-wrapper .apply-form form .code-links .dual-inputs .user-input input[type=text],
 .apply-wrapper .apply-form form .upload-area .dual-inputs .user-input input[type=text],
 .apply-wrapper .apply-form form .projects .dual-inputs .user-input input[type=text],
@@ -2035,6 +2268,7 @@ main {
 .apply-wrapper .apply-form form .name .dual-inputs .user-input input[type=text]:focus,
 .apply-wrapper .apply-form form .email .dual-inputs .user-input input[type=text]:focus,
 .apply-wrapper .apply-form form .phone .dual-inputs .user-input input[type=text]:focus,
+.apply-wrapper .apply-form form .position-select .dual-inputs .user-input input[type=text]:focus,
 .apply-wrapper .apply-form form .code-links .dual-inputs .user-input input[type=text]:focus,
 .apply-wrapper .apply-form form .upload-area .dual-inputs .user-input input[type=text]:focus,
 .apply-wrapper .apply-form form .projects .dual-inputs .user-input input[type=text]:focus,
@@ -2044,6 +2278,7 @@ main {
 .apply-wrapper .apply-form form .name .dual-inputs .user-input input[type=text]::placeholder,
 .apply-wrapper .apply-form form .email .dual-inputs .user-input input[type=text]::placeholder,
 .apply-wrapper .apply-form form .phone .dual-inputs .user-input input[type=text]::placeholder,
+.apply-wrapper .apply-form form .position-select .dual-inputs .user-input input[type=text]::placeholder,
 .apply-wrapper .apply-form form .code-links .dual-inputs .user-input input[type=text]::placeholder,
 .apply-wrapper .apply-form form .upload-area .dual-inputs .user-input input[type=text]::placeholder,
 .apply-wrapper .apply-form form .projects .dual-inputs .user-input input[type=text]::placeholder,
@@ -2053,6 +2288,7 @@ main {
 .apply-wrapper .apply-form form .name .dual-inputs .user-input span,
 .apply-wrapper .apply-form form .email .dual-inputs .user-input span,
 .apply-wrapper .apply-form form .phone .dual-inputs .user-input span,
+.apply-wrapper .apply-form form .position-select .dual-inputs .user-input span,
 .apply-wrapper .apply-form form .code-links .dual-inputs .user-input span,
 .apply-wrapper .apply-form form .upload-area .dual-inputs .user-input span,
 .apply-wrapper .apply-form form .projects .dual-inputs .user-input span,
@@ -2070,6 +2306,7 @@ main {
 .apply-wrapper .apply-form form .name .dual-inputs .user-input input:focus ~ span,
 .apply-wrapper .apply-form form .email .dual-inputs .user-input input:focus ~ span,
 .apply-wrapper .apply-form form .phone .dual-inputs .user-input input:focus ~ span,
+.apply-wrapper .apply-form form .position-select .dual-inputs .user-input input:focus ~ span,
 .apply-wrapper .apply-form form .code-links .dual-inputs .user-input input:focus ~ span,
 .apply-wrapper .apply-form form .upload-area .dual-inputs .user-input input:focus ~ span,
 .apply-wrapper .apply-form form .projects .dual-inputs .user-input input:focus ~ span,
@@ -2080,6 +2317,7 @@ main {
 .apply-wrapper .apply-form form .name .upload,
 .apply-wrapper .apply-form form .email .upload,
 .apply-wrapper .apply-form form .phone .upload,
+.apply-wrapper .apply-form form .position-select .upload,
 .apply-wrapper .apply-form form .code-links .upload,
 .apply-wrapper .apply-form form .upload-area .upload,
 .apply-wrapper .apply-form form .projects .upload,
@@ -2089,6 +2327,7 @@ main {
 .apply-wrapper .apply-form form .name .upload-wrapper input[type=file],
 .apply-wrapper .apply-form form .email .upload-wrapper input[type=file],
 .apply-wrapper .apply-form form .phone .upload-wrapper input[type=file],
+.apply-wrapper .apply-form form .position-select .upload-wrapper input[type=file],
 .apply-wrapper .apply-form form .code-links .upload-wrapper input[type=file],
 .apply-wrapper .apply-form form .upload-area .upload-wrapper input[type=file],
 .apply-wrapper .apply-form form .projects .upload-wrapper input[type=file],
@@ -2100,6 +2339,7 @@ main {
 .apply-wrapper .apply-form form .name .user-input,
 .apply-wrapper .apply-form form .email .user-input,
 .apply-wrapper .apply-form form .phone .user-input,
+.apply-wrapper .apply-form form .position-select .user-input,
 .apply-wrapper .apply-form form .code-links .user-input,
 .apply-wrapper .apply-form form .upload-area .user-input,
 .apply-wrapper .apply-form form .projects .user-input,
@@ -2109,6 +2349,7 @@ main {
 .apply-wrapper .apply-form form .name .user-input input,
 .apply-wrapper .apply-form form .email .user-input input,
 .apply-wrapper .apply-form form .phone .user-input input,
+.apply-wrapper .apply-form form .position-select .user-input input,
 .apply-wrapper .apply-form form .code-links .user-input input,
 .apply-wrapper .apply-form form .upload-area .user-input input,
 .apply-wrapper .apply-form form .projects .user-input input,
@@ -2125,6 +2366,7 @@ main {
 .apply-wrapper .apply-form form .name .user-input input:focus,
 .apply-wrapper .apply-form form .email .user-input input:focus,
 .apply-wrapper .apply-form form .phone .user-input input:focus,
+.apply-wrapper .apply-form form .position-select .user-input input:focus,
 .apply-wrapper .apply-form form .code-links .user-input input:focus,
 .apply-wrapper .apply-form form .upload-area .user-input input:focus,
 .apply-wrapper .apply-form form .projects .user-input input:focus,
@@ -2134,15 +2376,37 @@ main {
 .apply-wrapper .apply-form form .name .user-input input::placeholder,
 .apply-wrapper .apply-form form .email .user-input input::placeholder,
 .apply-wrapper .apply-form form .phone .user-input input::placeholder,
+.apply-wrapper .apply-form form .position-select .user-input input::placeholder,
 .apply-wrapper .apply-form form .code-links .user-input input::placeholder,
 .apply-wrapper .apply-form form .upload-area .user-input input::placeholder,
 .apply-wrapper .apply-form form .projects .user-input input::placeholder,
 .apply-wrapper .apply-form form .project .user-input input::placeholder {
   color: rgba(130, 130, 130, 0.7);
 }
+.apply-wrapper .apply-form form .name .user-input select,
+.apply-wrapper .apply-form form .email .user-input select,
+.apply-wrapper .apply-form form .phone .user-input select,
+.apply-wrapper .apply-form form .position-select .user-input select,
+.apply-wrapper .apply-form form .code-links .user-input select,
+.apply-wrapper .apply-form form .upload-area .user-input select,
+.apply-wrapper .apply-form form .projects .user-input select,
+.apply-wrapper .apply-form form .project .user-input select {
+  margin-left: 10px;
+  width: 100%;
+  height: 50px !important;
+  padding: 1em 0;
+  color: #0b0237;
+  font-size: 13pt;
+  font-family: inherit;
+  border: 2px solid transparent !important;
+  border-bottom-color: rgba(227, 112, 56, 0.2) !important;
+  border-radius: 0px !important;
+  background: transparent;
+}
 .apply-wrapper .apply-form form .name .user-input span,
 .apply-wrapper .apply-form form .email .user-input span,
 .apply-wrapper .apply-form form .phone .user-input span,
+.apply-wrapper .apply-form form .position-select .user-input span,
 .apply-wrapper .apply-form form .code-links .user-input span,
 .apply-wrapper .apply-form form .upload-area .user-input span,
 .apply-wrapper .apply-form form .projects .user-input span,
@@ -2160,6 +2424,7 @@ main {
 .apply-wrapper .apply-form form .name .user-input input:focus ~ span,
 .apply-wrapper .apply-form form .email .user-input input:focus ~ span,
 .apply-wrapper .apply-form form .phone .user-input input:focus ~ span,
+.apply-wrapper .apply-form form .position-select .user-input input:focus ~ span,
 .apply-wrapper .apply-form form .code-links .user-input input:focus ~ span,
 .apply-wrapper .apply-form form .upload-area .user-input input:focus ~ span,
 .apply-wrapper .apply-form form .projects .user-input input:focus ~ span,
@@ -2197,6 +2462,9 @@ main {
 .apply-wrapper .apply-form form .projects .project p {
   font-size: 12pt;
 }
+.apply-wrapper .apply-form form .projects .project input {
+  font-size: 16pt;
+}
 .apply-wrapper .apply-form form .projects .project .message {
   background: none;
   padding: 0px;
@@ -2204,6 +2472,7 @@ main {
 .apply-wrapper .apply-form form .projects .project .message textarea {
   border-top: 2px solid rgba(227, 112, 56, 0.2);
   border-bottom: 2px solid rgba(227, 112, 56, 0.2);
+  font-size: 16pt;
   border-left: 0px solid transparent;
   border-right: 0px solid transparent;
 }
@@ -2221,7 +2490,7 @@ main {
   display: flex;
   flex-direction: column;
   margin: 1em 0 0.5em 0;
-  background: #cfcfcf;
+  background: #e8e8e8;
   color: #0b0237;
   padding: 1em;
   position: relative;
@@ -2288,6 +2557,12 @@ main {
 .apply-wrapper .apply-form form .message .user-input textarea:focus ~ .right {
   transform: scaleY(1);
 }
+.apply-wrapper .apply-form form .anything-else {
+  border: 2px solid #e1e1e1;
+}
+.apply-wrapper .apply-form form .anything-else p {
+  padding-left: 10px;
+}
 .apply-wrapper .apply-form form button {
   margin-top: 1em;
   display: flex;
@@ -2308,13 +2583,7 @@ main {
   transform: translate3d(500%, 0, 0) rotate(35deg);
 }
 .apply-wrapper .apply-form .checkboxes {
-  /* Hide the browser's default checkbox */
-  /* Create a custom checkbox */
-  /* On mouse-over, add a grey background color */
-  /* When the checkbox is checked, add a blue background */
-  /* Create the checkmark/indicator (hidden when not checked) */
-  /* Show the checkmark when checked */
-  /* Style the checkmark/indicator */
+  margin-top: 1em;
 }
 .apply-wrapper .apply-form .checkboxes label {
   display: block;
@@ -2323,10 +2592,15 @@ main {
   margin-bottom: 12px;
   cursor: pointer;
   font-size: 22px;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
+  color: #0b0237;
+}
+.apply-wrapper .apply-form .checkboxes label a {
+  color: #1f2478;
+  transition: ease all 230ms;
+}
+.apply-wrapper .apply-form .checkboxes label a:hover {
+  color: #e37038;
 }
 .apply-wrapper .apply-form .checkboxes label input {
   position: absolute;
@@ -2341,13 +2615,13 @@ main {
   left: 0;
   height: 25px;
   width: 25px;
-  background-color: #eee;
+  background-color: gainsboro;
 }
 .apply-wrapper .apply-form .checkboxes label:hover input ~ .checkmark {
-  background-color: #ccc;
+  background-color: #cfcfcf;
 }
 .apply-wrapper .apply-form .checkboxes label input:checked ~ .checkmark {
-  background-color: #2196F3;
+  background-color: #1f2478;
 }
 .apply-wrapper .apply-form .checkboxes .checkmark:after {
   content: "";
@@ -2758,49 +3032,6 @@ main {
 }
 .contact-wrapper h3 {
   margin-bottom: 10px;
-}
-
-footer {
-  background: #080128;
-  border-top: 4px solid #242a8c;
-  margin-top: 4em !important;
-}
-footer .footer-wrapper {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-around;
-  padding: 2em 0;
-  margin: 0 auto;
-}
-footer .footer-wrapper .logo {
-  width: 200px;
-}
-footer .footer-wrapper .logo img {
-  max-width: 80px;
-}
-footer .footer-wrapper .social {
-  width: 200px;
-  display: flex;
-  flex-direction: row;
-  align-content: center;
-  justify-content: center;
-}
-footer .footer-wrapper .social a {
-  color: white;
-  font-size: 20pt;
-  transition: ease all 230ms;
-}
-footer .footer-wrapper .social a + a {
-  margin-left: 20px;
-}
-footer .footer-wrapper .social a:hover {
-  color: #e37038;
-}
-footer .footer-wrapper .address {
-  width: 200px;
-  font-weight: 300;
-  color: rgba(245, 245, 245, 0.85);
 }
 
 /*# sourceMappingURL=/style.97fcb138.css.map */
