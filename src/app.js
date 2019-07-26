@@ -1,21 +1,3 @@
-function woof() {
-    var menuButton = document.querySelector('.mobile-menu-btn');
-
-    var menu = document.querySelector('.menu-items');
-var mainContainer = document.getElementById("more-cta")
-    var toggleMobile = function () {
-        menuButton.classList.toggle('open');
-        menu.classList.toggle('visible');
-    }
-
-    menuButton.addEventListener('click', toggleMobile);
-    menu.addEventListener('click', toggleMobile);
-    console.log("BARk");
-}
-woof();
-
-
-
 checklocation();
 document.addEventListener('swup:contentReplaced', event => {
     checklocation();
@@ -143,6 +125,21 @@ function overview() {
             });
         };
     }
+    function woof() {
+        var menuButton = document.querySelector('.mobile-menu-btn');
+
+        var menu = document.querySelector('.menu-items');
+        var mainContainer = document.getElementById("more-cta")
+        var toggleMobile = function () {
+            menuButton.classList.toggle('open');
+            menu.classList.toggle('visible');
+        }
+
+        menuButton.addEventListener('click', toggleMobile);
+        menu.addEventListener('click', toggleMobile);
+        console.log("BARk");
+    }
+    woof();
     ctaScroll();
 };
 // window.onload = function () {

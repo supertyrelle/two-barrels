@@ -6,7 +6,7 @@
 main {
     min-height: 600px;
     @include sm {
-        padding-top:3em;
+        padding-top:0em;
     }
 }
 

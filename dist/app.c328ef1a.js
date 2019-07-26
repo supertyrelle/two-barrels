@@ -10257,22 +10257,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-function woof() {
-  var menuButton = document.querySelector('.mobile-menu-btn');
-  var menu = document.querySelector('.menu-items');
-  var mainContainer = document.getElementById("more-cta");
-
-  var toggleMobile = function toggleMobile() {
-    menuButton.classList.toggle('open');
-    menu.classList.toggle('visible');
-  };
-
-  menuButton.addEventListener('click', toggleMobile);
-  menu.addEventListener('click', toggleMobile);
-  console.log("BARk");
-}
-
-woof();
 checklocation();
 document.addEventListener('swup:contentReplaced', function (event) {
   checklocation();
@@ -10410,6 +10394,22 @@ function overview() {
     };
   }
 
+  function woof() {
+    var menuButton = document.querySelector('.mobile-menu-btn');
+    var menu = document.querySelector('.menu-items');
+    var mainContainer = document.getElementById("more-cta");
+
+    var toggleMobile = function toggleMobile() {
+      menuButton.classList.toggle('open');
+      menu.classList.toggle('visible');
+    };
+
+    menuButton.addEventListener('click', toggleMobile);
+    menu.addEventListener('click', toggleMobile);
+    console.log("BARk");
+  }
+
+  woof();
   ctaScroll();
 }
 
@@ -10759,7 +10759,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54125" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61916" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

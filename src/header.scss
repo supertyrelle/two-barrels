@@ -387,6 +387,10 @@ header {
         }
     }
 
+    .mobile-menu {
+        display: none;
+    }
+
     @include sm {
         padding-top: 0em;
         overflow-x: hidden;
@@ -396,7 +400,7 @@ header {
             display: none;
         }
 
-        .content-area {
+        .mobile-menu {
             width: 100vw;
             padding: 0 1em;
             position: fixed;
@@ -434,7 +438,8 @@ header {
         }
 
         nav.main {
-            float: right;
+            // float: right;
+            height: 400px;
         }
 
         .menu-items {
@@ -467,17 +472,18 @@ header {
             transition: right 530ms ease;
 
             li {
-                padding: 8px 10px;
                 background: transparent;
+
+                .page-link-m {
+                        color: $white;
+                        font-size: 20pt;                padding: 8px 10px;
+
                 border: 2px solid $orange;
 
-                a {
-                    color: $white;
-                    font-size: 20pt;
+                        i {
+                            display: none;
+                        }
 
-                    i {
-                        display: none;
-                    }
                 }
 
                 // &:not(:first-child) {
@@ -505,6 +511,7 @@ header {
             transform: scale(2);
             margin: 2em;
             background: $orange;
+
             span {
                 display: inline-block;
                 position: absolute;

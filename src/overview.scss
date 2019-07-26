@@ -19,6 +19,17 @@
         background-size: 100%;
         background-position: bottom left;
 
+        @include sm {
+            min-height: 100px;
+            height: auto;
+            align-items: flex-start;
+            background: none;
+            margin-top: 5em;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+        }
+
         #illustration {
             background-color: $lighter-blue;
             width: 100%;
@@ -42,11 +53,41 @@
             }
 
             .content {
-                max-width: 500px;
+                max-width: 800px;
                 padding: 2em 3em;
                 border: 6px solid $white;
                 background: rgba($blue, 85%);
 
+                @include sm {
+                    justify-content: center;
+                    background: url('./img/bridge_v2-min.jpg') no-repeat;
+                    background-size: cover;
+                    background-position: bottom right;
+                    position: relative;
+                    z-index: 1;
+                    padding: 5em 2em 5em 2em;
+
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        height: 100%;
+                        width: 100%;
+                        background: rgba($blue, 35%);
+                        top: 0px;
+                        left: 0px;
+                        z-index: 0;
+                    }
+
+                    #more-cta {
+                        display: none;
+                    }
+                }
+
+                h1,
+                p {
+                    position: relative;
+                    z-index: 1;
+                }
 
                 p {
                     margin-bottom: 1.5em;
@@ -66,6 +107,17 @@
         z-index: 3;
         padding-bottom: 1em;
 
+        @include sm {
+            margin-top: 2em;
+        padding-bottom: 0em;
+
+            h2 {
+                text-align: center;
+                font-size: 22pt;
+                margin-bottom: 0.5em;
+            }
+        }
+
         @include lg {
             margin-top: -2em;
         }
@@ -77,6 +129,8 @@
             align-items: stretch;
             justify-content: space-around;
             width: 100%;
+
+            @include sm {}
 
             .card {
                 flex-grow: 1;
@@ -94,6 +148,11 @@
                 color: $white;
                 cursor: pointer;
 
+                @include sm {
+                    flex: 1;
+                    border: none;
+                }
+
                 h4 {
                     font-size: 20pt;
                     line-height: 10pt;
@@ -105,6 +164,10 @@
                     text-align: center;
                     margin: 0 2em;
                     line-height: 16pt;
+
+                    @include sm {
+                        margin: 0;
+                    }
 
                     @include lg {
                         margin: 0 1em;
@@ -190,6 +253,11 @@
 
                 &+.card {
                     margin-left: 1em;
+
+                    @include sm {
+                        margin-left: 0px;
+                        margin-top: 1em;
+                    }
                 }
             }
         }
@@ -206,6 +274,26 @@
             width: 100%;
             position: relative;
 
+            @include sm {
+                z-index: 2;
+                flex-wrap: wrap;
+                background: rgba($blue, 85%);
+
+
+                &::before {
+                    content: '';
+                    width: 100%;
+                    height: 100%;
+                    position: absolute;
+                    background: url('./img/front-min.jpg') no-repeat;
+                    background-size: cover;
+                    background-position: top center;
+                    background-attachment: scroll;
+                    z-index: 0;
+                    filter: opacity(.15);
+                }
+            }
+
             .pics {
                 top: 0px;
                 background: $orange;
@@ -220,6 +308,10 @@
                 background-position: top center;
                 background-attachment: scroll;
 
+                @include sm {
+                    display: none;
+                }
+
                 @include lg {
                     flex: 1 50%;
                 }
@@ -231,6 +323,7 @@
                 max-width: 700px;
                 padding: 3em 0em;
                 flex: 1 70%;
+
 
                 @include lg {
                     flex: 1 50%;
@@ -261,6 +354,22 @@
                         margin-top: 1.5em;
                     }
                 }
+
+                @include sm {
+                    h2 {
+                        text-align: center;
+                    }
+
+                    p {
+                        padding: 0 1em;
+                    }
+
+                    p,
+                    h2 {
+                        margin-right: 0px;
+                    }
+                }
+
             }
 
             &::after {
@@ -272,7 +381,7 @@
                 width: 100%;
 
                 @include lg {
-                background: linear-gradient(to left, $orange, $blue 55%);
+                    background: linear-gradient(to left, $orange, $blue 55%);
 
                 }
             }
@@ -303,6 +412,26 @@
             width: 100%;
             position: relative;
 
+            @include sm {
+                z-index: 2;
+                flex-wrap: wrap;
+                background: rgba($blue, 85%);
+
+
+                &::before {
+                    content: '';
+                    width: 100%;
+                    height: 100%;
+                    position: absolute;
+                    background: url('./img/randy-min.jpg') no-repeat;
+                    background-size: cover;
+                    background-position: top center;
+                    background-attachment: scroll;
+                    z-index: 0;
+                    filter: opacity(.15);
+                }
+            }
+
             .pics {
                 order: 2;
                 top: 0px;
@@ -318,6 +447,10 @@
                 background-size: cover;
                 background-position: top center;
                 background-attachment: scroll;
+
+                @include sm {
+                    display: none;
+                }
 
                 @include lg {
                     background-position: top right;
@@ -361,6 +494,21 @@
                         margin-top: 1.5em;
                     }
                 }
+
+                @include sm {
+                    h2 {
+                        text-align: center;
+                    }
+
+                    p {
+                        padding: 0 1em;
+                    }
+
+                    p,
+                    h2 {
+                        margin-left: 0px;
+                    }
+                }
             }
 
             &::after {
@@ -370,8 +518,9 @@
                 height: 2px;
                 background: linear-gradient(to right, $orange, $blue);
                 width: 100%;
+
                 @include lg {
-                                    background: linear-gradient(to right, $orange, $blue 55%);
+                    background: linear-gradient(to right, $orange, $blue 55%);
 
                 }
             }
@@ -384,31 +533,68 @@
         overflow: none;
         padding: 3em 0em;
 
+        @include sm {
+            border: 2px solid $orange;
+            padding: 1.5em 0em 2.5em 0;
+        }
+
         .jobs-wrapper {
             display: inherit;
             flex-direction: row;
             align-items: center;
             justify-content: space-around;
             width: 100%;
-@include sm {
-    flex-wrap: wrap;
-}
+
+            @include sm {
+                flex-wrap: wrap;
+
+                h2 {
+                    font-size: 18pt;
+                    margin-bottom: 0.6rem;
+                    margin-top:0px;
+                    padding: 0em 0em;
+
+                }
+            }
+
             .content {
                 text-align: center;
 
+                br {
+                    display: none;
+
+                    @include sm {
+                        display: block;
+                    }
+                }
+
                 .head_orange {
                     margin-right: -10px;
+
+                    @include sm {
+                        margin-right: 0px;
+                        // display: block;
+                    }
                 }
 
                 h3 {
                     margin-top: 1em;
 
+                    @include sm {
+                        font-size: 10pt;
+                        display: none;
+                    }
                 }
             }
 
             .jobs-cta {
                 button {
                     transform: scale(1.75);
+
+                    @include sm {
+                        margin-top: 1.5rem;
+                        transform: scale(1.45);
+                    }
                 }
             }
         }
