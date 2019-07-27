@@ -4,7 +4,6 @@ document.addEventListener('swup:contentReplaced', event => {
 });
 console.log(window.location.pathname);
 
-
 function checklocation() {
     const endpoint = window.location.pathname;
     const overviewLink = document.getElementById("overview-link");
@@ -147,9 +146,9 @@ function overview() {
 // }
 // contact form alert
 import Swal from 'sweetalert2';
-import {
-    Duplex
-} from 'stream';
+// import {
+//     Duplex
+// } from 'stream';
 
 function job() {
     function jobBenefits() {

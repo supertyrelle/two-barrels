@@ -1121,7 +1121,7 @@ header .mobile-menu {
   }
 }
 .overview .calltoaction .content-wrapper .content {
-  max-width: 800px;
+  max-width: 500px;
   padding: 2em 3em;
   border: 6px solid whitesmoke;
   background: rgba(11, 2, 55, 0.85);
