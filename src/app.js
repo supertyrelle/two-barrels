@@ -1,3 +1,25 @@
+// typing animations
+import TypeIt from 'typeit';
+// animate on scroll animations 
+import AOS from 'aos';
+// page transitions!
+import Swup from 'swup';
+import SwupScrollPlugin from '@swup/scroll-plugin';
+// custom alerts
+import Swal from 'sweetalert2';
+const options = {
+    cache: true,
+    linkSelector: 'a[href^="' + window.location.origin + '"]:not([data-no-swup]), a[href^="/"]:not([data-no-swup]), a[href^="./"]:not([data-no-swup]), a[href^="#"]:not([data-no-swup])',
+    animateHistoryBrowsing: true,
+    plugins: [new SwupScrollPlugin({
+        doScrollingRightAway: true,
+        animateScroll: true,
+        scrollFriction: 0.2,
+        scrollAcceleration: 0.06,
+    })]
+};
+const swup = new Swup(options);
+
 checklocation();
 
 // nice smooth scrolling animations!
@@ -9,8 +31,7 @@ console.log(window.location.pathname);
 document.addEventListener('swup:contentReplaced', event => {
     checklocation();
 });
-// animate on scroll animations 
-import AOS from 'aos';
+
 
 function checklocation() {
     const endpoint = window.location.pathname;
@@ -27,6 +48,7 @@ function checklocation() {
     const jobsLinkMob = document.getElementById("jobs-link-m");
     const howWeLinkMob = document.getElementById("how-we-work-link-m");
     const getALinkMob = document.getElementById("get-a-job-link-m");
+    const applyMob = document.getElementById("apply-link-m");
     const contactLinkMob = document.getElementById("contact-link-m");
 
     if (endpoint == "/index.html") {
@@ -64,8 +86,8 @@ function checklocation() {
     } else if (endpoint == "/apply.html") {
         removeactive();
         apply();
-        jobsLink.classList.add("active");
-        jobsLinkMob.classList.add("active");
+        // jobsLink.classList.add("active");
+        applyMob.classList.add("active");
     } else if (endpoint == "/contact.html") {
         removeactive();
         contact();
@@ -90,12 +112,13 @@ function checklocation() {
         jobsLinkMob.classList.remove("active");
         getALinkMob.classList.remove("active");
         howWeLinkMob.classList.remove("active");
+        applyMob.classList.remove("active");
         contactLinkMob.classList.remove("active");
     };
 
     function animateOnScroll() {
-
-        AOS.init();
+        console.log("animate on scroll activated");
+        // AOS.init();
         AOS.init({
             // Global settings:
             disable: false, // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function
@@ -119,24 +142,8 @@ function checklocation() {
     animateOnScroll();
 }
 
-// page transitions!
-import Swup from 'swup';
-import SwupScrollPlugin from '@swup/scroll-plugin';
-const options = {
-    // cache: true,
-    animateHistoryBrowsing: true,
-    plugins: [new SwupScrollPlugin({
-        doScrollingRightAway: true,
-        animateScroll: true,
-        scrollFriction: 0.2,
-        scrollAcceleration: 0.06,
-    })]
-};
-const swup = new Swup(options);
-// typing animation for the front page!
-import TypeIt from 'typeit';
-
 function overview() {
+    // typing animation for the front page!
     function jobText() {
         const instance = new TypeIt('#replace', {
             strings: ["Work", "Create", "Succeed"],
@@ -185,9 +192,6 @@ function jobs() {
         });
     }
 }
-
-// custom alerts
-import Swal from 'sweetalert2';
 
 function job() {
     function jobBenefits() {

@@ -1,12 +1,12 @@
 .overview {
     position: relative;
     height: auto;
-    background: $blue;
+    // background: $blue;
 
     .calltoaction {
         position: relative;
         margin-top: -7.5em;
-        min-height: 108vh;
+        min-height: 120vh;
         z-index: 2;
         top: 0px;
         width: 100%;
@@ -16,10 +16,25 @@
         align-items: flex-end;
         justify-content: center;
         background: url('./img/bridge_v2-min.jpg') no-repeat;
-        background-size: 100%;
-        background-position: bottom left;
+        background-size: cover;
+        background-position: bottom center;
 
         @include sm {
+            min-height: 100px;
+            height: auto;
+            align-items: flex-start;
+            background: none;
+            margin-top: 0;
+            padding-top: 1em;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+        }
+
+        @include md {
+            // background-position: center center;
+            // min-height: 90vh;
+
             min-height: 100px;
             height: auto;
             align-items: flex-start;
@@ -49,6 +64,12 @@
             display: flex;
             justify-content: flex-start;
 
+            @include md {
+                justify-content: center;
+                margin-bottom: 6rem;
+                margin-top: 1em;
+            }
+
             @include lg {
                 width: 90vw;
             }
@@ -67,9 +88,10 @@
                     position: relative;
                     z-index: 1;
                     padding: 5em 2em 5em 2em;
-                    width:90vw;
+                    width: 90vw;
                     margin: 0 auto;
-                border: 4px solid $white;
+                    border: 4px solid $white;
+                    height: auto;
 
                     &::before {
                         content: '';
@@ -87,7 +109,42 @@
                     }
 
                     h1 {
-                        font-size:24pt;
+                        font-size: 24pt;
+                    }
+                }
+
+                @include md {
+                    justify-content: center;
+                    background: url('./img/bridge_v2-min.jpg') no-repeat;
+                    background-size: cover;
+                    background-position: center center;
+                    position: relative;
+                    z-index: 1;
+                    padding: 4em;
+                    width: 90vw;
+                    margin: 0 auto;
+                    border: 4px solid $white;
+                    height: auto;
+                    max-width: inherit;
+
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        height: 100%;
+                        width: 100%;
+                        background: rgba($blue, 35%);
+                        top: 0px;
+                        left: 0px;
+                        z-index: 0;
+                    }
+
+                    #more-cta {
+                        display: none;
+                    }
+
+                    h1 {
+                        font-size: 28pt;
+                        margin-bottom: 0.5rem;
                     }
                 }
 
@@ -106,7 +163,7 @@
     }
 
     .main-cards {
-        margin-top: -5em;
+        margin-top: -4em;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -117,7 +174,16 @@
 
         @include sm {
             margin-top: 2em;
-        padding-bottom: 0em;
+            padding-bottom: 0em;
+
+            h2 {
+                text-align: center;
+                font-size: 22pt;
+                margin-bottom: 0.5em;
+            }
+        }
+
+        @include md {
 
             h2 {
                 text-align: center;
@@ -137,8 +203,6 @@
             align-items: stretch;
             justify-content: space-around;
             width: 100%;
-
-            @include sm {}
 
             .card {
                 flex-grow: 1;
@@ -161,6 +225,14 @@
                     border: none;
                 }
 
+                @include md {
+                    flex: 1 1 30%;
+                    border: none;
+                    // width:10%;
+                    min-width: 50px;
+                    padding: 1em;
+                }
+
                 h4 {
                     font-size: 20pt;
                     line-height: 10pt;
@@ -177,9 +249,13 @@
                         margin: 0;
                     }
 
+                    @include md {
+                        margin: 0;
+                        font-size: 11pt;
+                    }
+
                     @include lg {
                         margin: 0 1em;
-
                     }
                 }
 
@@ -266,6 +342,11 @@
                         margin-left: 0px;
                         margin-top: 1em;
                     }
+
+                    @include md {
+                        // margin-left: 0px;
+                        // margin-top: 1em;
+                    }
                 }
             }
         }
@@ -302,6 +383,26 @@
                 }
             }
 
+            @include md {
+                z-index: 2;
+                flex-wrap: wrap;
+                background: rgba($blue, 85%);
+
+
+                &::before {
+                    content: '';
+                    width: 100%;
+                    height: 100%;
+                    position: absolute;
+                    background: url('./img/front-min.jpg') no-repeat;
+                    background-size: cover;
+                    background-position: top center;
+                    background-attachment: scroll;
+                    z-index: 0;
+                    filter: opacity(.15);
+                }
+            }
+
             .pics {
                 top: 0px;
                 background: $orange;
@@ -317,6 +418,10 @@
                 background-attachment: scroll;
 
                 @include sm {
+                    display: none;
+                }
+
+                @include md {
                     display: none;
                 }
 
@@ -378,6 +483,23 @@
                     }
                 }
 
+                @include md {
+                    max-width: inherit;
+
+                    h2 {
+                        text-align: center;
+                    }
+
+                    p {
+                        padding: 0 1em;
+                    }
+
+                    p,
+                    h2 {
+                        margin-right: 0px;
+                    }
+                }
+
             }
 
             &::after {
@@ -425,6 +547,24 @@
                 flex-wrap: wrap;
                 background: rgba($blue, 85%);
 
+                &::before {
+                    content: '';
+                    width: 100%;
+                    height: 100%;
+                    position: absolute;
+                    background: url('./img/randy-min.jpg') no-repeat;
+                    background-size: cover;
+                    background-position: top center;
+                    background-attachment: scroll;
+                    z-index: 0;
+                    filter: opacity(.15);
+                }
+            }
+
+            @include md {
+                z-index: 2;
+                flex-wrap: wrap;
+                background: rgba($blue, 85%);
 
                 &::before {
                     content: '';
@@ -457,6 +597,10 @@
                 background-attachment: scroll;
 
                 @include sm {
+                    display: none;
+                }
+
+                @include md {
                     display: none;
                 }
 
@@ -517,6 +661,23 @@
                         margin-left: 0px;
                     }
                 }
+
+                @include md {
+                    max-width: inherit;
+
+                    h2 {
+                        text-align: center;
+                    }
+
+                    p {
+                        padding: 0 1em;
+                    }
+
+                    p,
+                    h2 {
+                        margin-left: 0px;
+                    }
+                }
             }
 
             &::after {
@@ -546,6 +707,11 @@
             padding: 1.5em 0em 2.5em 0;
         }
 
+        @include md {
+            border: 2px solid $orange;
+            padding: 2em 0em 3em 0;
+        }
+
         .jobs-wrapper {
             display: inherit;
             flex-direction: row;
@@ -555,13 +721,38 @@
 
             @include sm {
                 flex-wrap: wrap;
+                width: 90vw;
+                flex-direction: column;
 
                 h2 {
                     font-size: 18pt;
                     margin-bottom: 0.6rem;
-                    margin-top:0px;
+                    margin-top: 0px;
                     padding: 0em 0em;
 
+                }
+            }
+
+            @include md {
+                flex-wrap: wrap;
+
+                h2 {
+                    font-size: 24pt;
+                    margin-bottom: 1rem;
+                    margin-top: 0px;
+                    padding: 0em 0em;
+
+                }
+
+                h3 {
+                    font-size: 14pt;
+                    margin: 0 auto;
+                    padding: 0em 1em;
+                }
+
+                hr {
+                    width: 80%;
+                    margin: 0 auto;
                 }
             }
 
@@ -601,6 +792,11 @@
 
                     @include sm {
                         margin-top: 1.5rem;
+                        transform: scale(1.45);
+                    }
+
+                    @include md {
+                        margin-top: 2rem;
                         transform: scale(1.45);
                     }
                 }

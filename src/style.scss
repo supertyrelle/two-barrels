@@ -9,7 +9,12 @@ main {
     @include sm {
         padding-top: 0em;
         // overflow-x: hidden;
+    }
 
+    @include md {
+        padding-top: 0em;
+        // overflow-x: hidden;
+        width: 100vw;
     }
 }
 
@@ -26,6 +31,10 @@ main {
 
     @include sm {
         min-height: auto;
+        padding-top: 1em;
+    }
+    @include md {
+        min-height: 0px;
         padding-top: 1em;
     }
 
@@ -45,6 +54,14 @@ main {
             min-height: 400px;
         }
 
+        @include md {
+            top: 0rem;
+            min-height: 400px;
+            width: 100vw;
+            overflow-x: hidden;
+
+        }
+
         &::before {
             content: "";
             position: absolute;
@@ -62,6 +79,11 @@ main {
             @include sm {
                 background-position: top center;
             }
+
+            @include md {
+                background-position: center center;
+                width: 110vw;
+            }
         }
 
         &::after {
@@ -69,7 +91,7 @@ main {
             position: absolute;
             z-index: -2;
             left: 0;
-            width: 100%;
+            width: 100vw;
             height: 100%;
             background: -moz-linear-gradient(to bottom, rgba($blue, 00%) 100%, $blue);
             background: -webkit-linear-gradient(to bottom, rgba($blue, 00%) 100%, $blue);
@@ -116,8 +138,12 @@ main {
 
                 @include sm {
                     flex: 1;
-                    max-width: 100;
+                    max-width: 100%;
                     margin: 1em auto;
+                }
+
+                @include md {
+                    flex: 1 45%;
                 }
 
                 @include lg {
@@ -135,7 +161,10 @@ main {
 
                     @include sm {
                         transform: translateY(-30px);
+                    }
 
+                    @include md {
+                        transform: translateY(-30px);
                     }
                 }
 
@@ -151,6 +180,10 @@ main {
                     text-shadow: 2px 2px black;
 
                     @include sm {
+                        transform: none;
+                    }
+
+                    @include md {
                         transform: none;
                     }
                 }
@@ -169,12 +202,20 @@ main {
                         @include sm {
                             transform: none;
                         }
+
+                        @include md {
+                            transform: none;
+                        }
                     }
 
                     h5 {
                         transform: translateY(0px);
 
                         @include sm {
+                            transform: none;
+                        }
+
+                        @include md {
                             transform: none;
                         }
                     }
@@ -199,7 +240,10 @@ main {
         min-height: 0px;
         padding-top: 1em;
     }
-
+    @include md {
+        min-height: 0px;
+        padding-top: 1em;
+    }
     .bg {
         position: absolute;
         z-index: -4;
@@ -213,6 +257,13 @@ main {
         @include sm {
             top: 0rem;
             min-height: 400px;
+        }
+
+        @include md {
+            top: 0rem;
+            min-height: 400px;
+            width: 100vw;
+            overflow-x: hidden;
         }
 
         &::before {
@@ -232,6 +283,11 @@ main {
             @include sm {
                 background-position: top center;
                 background-size: cover;
+            }
+
+            @include md {
+                background-position: center center;
+                width: 110vw;
             }
         }
 
@@ -278,6 +334,10 @@ main {
             margin: 0 auto;
 
             @include sm {
+                width: 100%;
+            }
+
+            @include md {
                 width: 100%;
             }
 
@@ -510,6 +570,10 @@ main {
         @include sm {
             width: 100%;
         }
+        @include md {
+            max-width: inherit;
+            width: 100%;
+        }
 
         .talent-jobs {
             display: flex;
@@ -519,6 +583,10 @@ main {
             margin: 0 auto;
 
             @include sm {
+                width: 90vw;
+            }
+
+            @include md {
                 width: 90vw;
             }
 
@@ -651,7 +719,10 @@ main {
         min-height: 0px;
         padding-top: 1em;
     }
-
+    @include md {
+        min-height: 0px;
+        padding-top: 1em;
+    }
     .bg {
         position: absolute;
         z-index: -4;
@@ -665,6 +736,13 @@ main {
         @include sm {
             top: 0rem;
             min-height: 400px;
+        }
+
+        @include md {
+            top: 0rem;
+            min-height: 400px;
+            width: 100vw;
+            overflow-x: hidden;
         }
 
         &::before {
@@ -684,6 +762,11 @@ main {
             @include sm {
                 background-position: top center;
                 background-size: cover;
+            }
+
+            @include md {
+                background-position: center center;
+                width: 110vw;
             }
         }
 
@@ -751,7 +834,7 @@ main {
             margin-top: 1em;
             align-items: flex-start;
             background: $white;
-            padding: 2em 3em 3em 3em;
+            padding: 2em 3em 2em 3em;
 
             @include sm {
                 padding: 1em;
@@ -859,14 +942,24 @@ main {
 
 
                 @include sm {
+                    margin-top: 0px;
                     p {
                         margin-bottom: 0.5em;
                     }
 
                     .jobs-cta {
-                        margin-top: 0.5em;
+                        margin-bottom: 0.5em;
                     }
                 }
+                 @include md {
+                     p {
+                         margin-bottom: 0.5em;
+                     }
+
+                     .jobs-cta {
+                         margin-top: 0.5em;
+                     }
+                 }
             }
         }
     }
@@ -889,6 +982,10 @@ main {
         min-height: 0px;
         padding-top: 1em;
     }
+    @include md {
+        min-height: 0px;
+        padding-top: 1em;
+    }
 
     .bg {
         position: absolute;
@@ -903,6 +1000,13 @@ main {
         @include sm {
             top: 0rem;
             min-height: 400px;
+        }
+
+        @include md {
+            top: 0rem;
+            min-height: 400px;
+            width: 100vw;
+            overflow-x: hidden;
         }
 
         &::before {
@@ -923,6 +1027,11 @@ main {
                 background-position: top center;
                 background-size: cover;
             }
+
+            @include md {
+                background-position: center center;
+                width: 110vw;
+            }
         }
 
         &::after {
@@ -936,6 +1045,7 @@ main {
             background: linear-gradient(to bottom, rgba($blue, 00%) 100%, $blue);
         }
     }
+
 
     .position-info {
         padding-top: 4.5rem;
@@ -989,7 +1099,7 @@ main {
             margin-top: 1em;
             align-items: flex-start;
             background: $white;
-            padding: 2em 3em 3em 3em;
+            padding: 2em 3em 2em 3em;
 
             @include sm {
                 padding: 1em;
@@ -1104,7 +1214,7 @@ main {
                     }
 
                     .jobs-cta {
-                        margin-top: 0.5em;
+                        margin-bottom: 0.5em;
                     }
                 }
             }
@@ -1130,6 +1240,11 @@ main {
         padding-top: 1em;
     }
 
+    @include md {
+        min-height: 0px;
+        padding-top: 1em;
+    }
+
     .bg {
         position: absolute;
         z-index: -4;
@@ -1143,6 +1258,13 @@ main {
         @include sm {
             top: 0rem;
             min-height: 400px;
+        }
+
+        @include md {
+            top: 0rem;
+            min-height: 400px;
+            width: 100vw;
+            overflow-x: hidden;
         }
 
         &::before {
@@ -1163,6 +1285,11 @@ main {
                 background-position: top center;
                 background-size: cover;
             }
+
+            @include md {
+                background-position: center center;
+                width: 110vw;
+            }
         }
 
         &::after {
@@ -1176,6 +1303,7 @@ main {
             background: linear-gradient(to bottom, rgba($blue, 00%) 100%, $blue);
         }
     }
+
 
     .apply {
         padding-top: 4.5rem;
@@ -1865,6 +1993,10 @@ main {
         min-height: 0px;
         padding-top: 1em;
     }
+    @include md {
+        min-height: 0px;
+        padding-top: 1em;
+    }
 
     .bg {
         position: absolute;
@@ -1880,7 +2012,12 @@ main {
             top: 0rem;
             min-height: 400px;
         }
-
+ @include md {
+     top: 0rem;
+     min-height: 400px;
+     width: 100vw;
+     overflow-x: hidden;
+ }
         &::before {
             content: "";
             position: absolute;
@@ -1896,6 +2033,11 @@ main {
 
             @include sm {
                 background-size: cover;
+            }
+
+            @include md {
+                background-position: center center;
+                width: 110vw;
             }
         }
 
@@ -2112,6 +2254,7 @@ main {
                     line-height: 5pt;
                 }
             }
+            
 
             h2 {
                 margin-top: 1em;
@@ -2135,6 +2278,10 @@ main {
                     color: rgba(138, 138, 138, 0.6);
 
                     @include sm {
+                        font-size: 14pt;
+                        // line-height: 15pt;
+                    }
+                    @include md {
                         font-size: 14pt;
                         // line-height: 15pt;
                     }

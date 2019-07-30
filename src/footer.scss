@@ -26,6 +26,10 @@ footer {
                 display: none;
             }
 
+            @include md {
+                display: none;
+            }
+
             img {
                 max-width: 80px;
             }

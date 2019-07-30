@@ -10,7 +10,7 @@
     "zlibMemLevel": 9
   },
   "brotli": {
-    "enabled": true,
+    "enabled": false,
     "mode": 0,
     "quality": 11,
     "lgwin": 22,
