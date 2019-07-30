@@ -4,9 +4,12 @@
 @import 'footer';
 
 main {
-    min-height: 600px;
+    // min-height: 600px;
+
     @include sm {
-        padding-top:0em;
+        padding-top: 0em;
+        // overflow-x: hidden;
+
     }
 }
 
@@ -21,6 +24,11 @@ main {
     justify-content: center;
     background: $blue;
 
+    @include sm {
+        min-height: auto;
+        padding-top: 1em;
+    }
+
     .bg {
         position: absolute;
         z-index: -4;
@@ -31,6 +39,11 @@ main {
         filter: opacity(1);
         background: $blue;
         border-bottom: 1px solid darken($orange, 15%);
+
+        @include sm {
+            top: 0rem;
+            min-height: 400px;
+        }
 
         &::before {
             content: "";
@@ -45,6 +58,10 @@ main {
             background-position: top -40em center;
             background-attachment: absolute;
             filter: opacity(0.3);
+
+            @include sm {
+                background-position: top center;
+            }
         }
 
         &::after {
@@ -84,6 +101,11 @@ main {
             flex-wrap: wrap;
             justify-content: center;
 
+            @include sm {
+                flex-direction: column;
+                justify-content: center;
+            }
+
             .card {
                 position: relative;
                 flex: 1 33%;
@@ -91,6 +113,12 @@ main {
                 overflow: hidden;
                 max-width: 330px;
                 margin: 1em;
+
+                @include sm {
+                    flex: 1;
+                    max-width: 100;
+                    margin: 1em auto;
+                }
 
                 @include lg {
                     flex: 1 30%;
@@ -104,6 +132,11 @@ main {
                     transition: ease all 230ms;
                     background: $orange;
                     padding: 10px;
+
+                    @include sm {
+                        transform: translateY(-30px);
+
+                    }
                 }
 
                 h5 {
@@ -116,6 +149,10 @@ main {
                     transform: translateY(130px);
                     transition: ease all 230ms;
                     text-shadow: 2px 2px black;
+
+                    @include sm {
+                        transform: none;
+                    }
                 }
 
                 img {
@@ -128,10 +165,18 @@ main {
                 &:hover {
                     h3 {
                         transform: translateY(-30px);
+
+                        @include sm {
+                            transform: none;
+                        }
                     }
 
                     h5 {
                         transform: translateY(0px);
+
+                        @include sm {
+                            transform: none;
+                        }
                     }
                 }
             }
@@ -150,6 +195,11 @@ main {
     flex-direction: column;
     background: $blue;
 
+    @include sm {
+        min-height: 0px;
+        padding-top: 1em;
+    }
+
     .bg {
         position: absolute;
         z-index: -4;
@@ -159,6 +209,11 @@ main {
         min-height: 550px;
         filter: opacity(1);
         border-bottom: 1px solid darken($orange, 15%);
+
+        @include sm {
+            top: 0rem;
+            min-height: 400px;
+        }
 
         &::before {
             content: "";
@@ -173,6 +228,11 @@ main {
             background-position: top -70px right;
             filter: opacity(0.3);
             background-attachment: absolute;
+
+            @include sm {
+                background-position: top center;
+                background-size: cover;
+            }
         }
 
         &::after {
@@ -217,7 +277,9 @@ main {
             width: 1050px;
             margin: 0 auto;
 
-
+            @include sm {
+                width: 100%;
+            }
 
             .job {
                 position: relative;
@@ -225,7 +287,7 @@ main {
                 flex-direction: row;
                 justify-content: space-between;
                 align-items: center;
-                background: white;
+                background: $white;
                 color: $blue;
                 width: 100%;
                 padding: 1.5em 1.5em;
@@ -272,6 +334,51 @@ main {
                     }
                 }
 
+                @include sm {
+                    flex-direction: column;
+                    flex-wrap: wrap;
+                    padding: 1em 1em;
+
+                    &:nth-child(2n) {
+                        background: $white;
+                    }
+
+                    &+.job {
+                        margin-top: 1em;
+                    }
+
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        z-index: -1;
+                        top: 0px;
+                        left: 0px;
+                        width: 100%;
+                        height: 100%;
+                        box-shadow: 0px 0px;
+                        transition: ease all 200ms;
+                        box-shadow: 6px 6px $lavender;
+                    }
+
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        z-index: -2;
+                        top: 0px;
+                        left: 0px;
+                        box-shadow: 10px 10px $orange;
+                        width: 100%;
+                        height: 100%;
+                        transition: ease all 200ms;
+                    }
+
+                    &:hover {
+                        transform: none;
+                    }
+                }
+
+
+
                 .job-left {
                     display: flex;
                     flex-direction: row;
@@ -279,12 +386,23 @@ main {
                     justify-content: space-between;
                     align-content: center;
 
+                    @include sm {
+                        flex-direction: column;
+                        flex-wrap: wrap;
+                        align-self: stretch;
+                    }
+
                     span {
                         background: rgba($lighter-blue, 75%);
                         color: $white;
                         padding: 5px 8px;
                         margin: 10px 0px;
                         font-size: 10pt;
+
+                        @include sm {
+                            margin: 5px 0;
+                            // align-self: stretch;
+                        }
 
                         i {
                             font-size: inherit;
@@ -294,10 +412,16 @@ main {
                             border: none;
                             margin-right: 5px;
                             color: rgba($orange, 85%);
+
                         }
 
                         &+span {
                             margin-left: 10px;
+
+                            @include sm {
+                                margin: 5px 0;
+                                // align-self: stretch;
+                            }
                         }
                     }
 
@@ -321,6 +445,53 @@ main {
                             margin-top: 0px;
                             margin-bottom: 10px;
                             font-size: 15pt;
+
+                            @include sm {
+                                display: block;
+                                margin: 0.5em 0;
+                                text-align: center;
+
+                            }
+                        }
+
+                        .factors {
+                            display: flex;
+                            flex-direction: row;
+                            justify-content: flex-start;
+
+                            @include sm {
+                                justify-content: center;
+                                margin-bottom: 0.5em;
+
+                                span {
+                                    font-size: 9pt;
+                                    padding: 5px 4px;
+
+                                    i {
+                                        margin-right: 3px;
+                                    }
+
+                                    &+span {
+                                        margin-left: 5px;
+                                    }
+                                }
+                            }
+                        }
+
+                        @include sm {
+                            display: flex;
+                            flex-direction: column;
+                            align-content: center;
+                        }
+                    }
+                }
+
+                .job-right {
+                    .learnmore {
+                        @include sm {
+                            button {
+                                align-self: stretch;
+                            }
                         }
                     }
                 }
@@ -336,6 +507,10 @@ main {
         max-width: 1050px;
         margin: 0 auto;
 
+        @include sm {
+            width: 100%;
+        }
+
         .talent-jobs {
             display: flex;
             flex-direction: column;
@@ -343,133 +518,123 @@ main {
             width: 1050px;
             margin: 0 auto;
 
+            @include sm {
+                width: 90vw;
+            }
+
             .subheader {
                 width: 100%;
                 margin: 1em 0 0.5em 0;
                 text-align: left;
             }
 
-            .tabs {
-                width: 100%;
-                position: relative;
+
+            .accordion {
                 background: linear-gradient(140deg, $lighter-blue, lighten($blue, 5%));
+                color: $white;
+                border: 2px rgba(255, 255, 255, 0.351) solid;
+                cursor: pointer;
+                padding: 18px;
+                width: 100%;
+                border: none;
+                text-align: left;
+                outline: none;
+                font-size: 15px;
+                transition: ease all;
 
-                .tab {
-                    width: 100%;
-                    overflow: hidden;
-
-                    input {
-                        position: absolute;
-                        opacity: 0;
-                        z-index: -1;
-                    }
-
-                    &-label {
-                        display: flex;
-                        justify-content: space-between;
-                        padding: 1em;
-                        // background: $lighter-blue;
-                        background: transparent;
-                        font-weight: bold;
-                        cursor: pointer;
-                        border: 1px rgba(255, 255, 255, 0.098) solid;
-
-                        &:hover {
-                            background: rgba($lighter-blue, 95%);
-                        }
-
-                        &::after {
-                            content: "\276F";
-                            width: 1em;
-                            height: 1em;
-                            text-align: center;
-                            transition: ease all 230ms;
-                        }
-                    }
-
-                    &-content {
-                        display: flex;
-                        flex-wrap: wrap;
-                        align-items: stretch;
-
-                        max-height: 0;
-
-                        padding: 0 1em;
-                        color: $blue;
-                        background: white;
-                        transition: ease all 500ms;
-
-                        a {
-                            flex: 1 30%;
-                            font-size: 10pt;
-                            font-weight: 400;
-                            padding: 10px;
-                            background: rgb(210, 210, 210);
-                            color: $blue;
-                            margin: 10px;
-
-                            &:hover {
-                                background: rgb(225, 225, 225);
-                            }
-                        }
-                    }
-
-                    &-close {
-                        display: flex;
-                        justify-content: flex-end;
-                        padding: 1em;
-                        font-size: 0.75em;
-                        background: $blue;
-                        cursor: pointer;
-
-                        &:hover {
-                            background: darken($orange, 10%);
-                        }
-                    }
-                }
-
-                &::before {
-                    content: "";
-                    position: absolute;
-                    z-index: -1;
-                    top: 0px;
-                    left: 0px;
-                    width: 100%;
-                    height: 100%;
-                    // box-shadow: 6px 6px $lavender;
-                    transition: ease all 200ms;
-
-                }
-
-                &::after {
-                    content: "";
-                    position: absolute;
-                    z-index: -2;
-                    top: 0px;
-                    left: 0px;
-                    width: 100%;
-                    height: 100%;
-                    // box-shadow: 10px 10px $orange;
-                    transition: ease all 200ms;
+                &:hover {
+                    background: linear-gradient(140deg, lighten($lighter-blue, 5%), lighten($blue, 10%));
                 }
             }
 
-            input:checked {
-                +.tab-label {
-                    background: rgba($lighter-blue, 95%);
+            .active,
+            .accordion:hover {
+                background: linear-gradient(140deg, lighten($lighter-blue, 5%), lighten($blue, 10%));
+            }
 
-                    &::after {
-                        transform: rotate(90deg);
+            .accordion:after {
+                content: '\002B';
+                color: rgba($white, 75%);
+                font-weight: bold;
+                float: right;
+                margin-left: 5px;
+            }
+
+            .active:after {
+                content: "\2212";
+            }
+
+            .panel {
+                display: flex;
+                flex-wrap: wrap;
+                align-items: stretch;
+                background-color: $white;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.4s ease-out;
+                width: 100%;
+
+
+                a {
+                    flex: 1 30%;
+                    font-size: 10pt;
+                    font-weight: 400;
+                    padding: 10px;
+                    background: rgb(210, 210, 210);
+                    color: $blue;
+                    margin: 10px;
+
+                    &:hover {
+                        background: rgb(225, 225, 225);
+
+                    }
+
+                    @include sm {
+                        flex: 1 100%;
+                        margin: 5px 10px;
+
+                        &:first-child {
+                            margin: 10px 10px 5px 10px;
+                        }
+
+                        &:last-child {
+                            margin: 5px 10px 10px 10px;
+                        }
                     }
                 }
 
-                ~.tab-content {
-                    max-height: 100vh;
-                    padding: 1em;
+                &:nth-child(2) {
+                    transition: max-height 0.3s ease-out;
                 }
             }
 
+            &::before {
+                content: "";
+                position: absolute;
+                z-index: -1;
+                top: 0px;
+                left: 0px;
+                width: 100%;
+                height: 100%;
+                // box-shadow: 6px 6px $lavender;
+                transition: ease all 200ms;
+
+            }
+
+            &::after {
+                content: "";
+                position: absolute;
+                z-index: -2;
+                top: 0px;
+                left: 0px;
+                width: 100%;
+                height: 100%;
+                // box-shadow: 10px 10px $orange;
+                transition: ease all 200ms;
+            }
         }
+
+
     }
 }
 
@@ -482,6 +647,11 @@ main {
     flex-direction: column;
     background: $blue;
 
+    @include sm {
+        min-height: 0px;
+        padding-top: 1em;
+    }
+
     .bg {
         position: absolute;
         z-index: -4;
@@ -492,9 +662,15 @@ main {
         filter: opacity(1);
         border-bottom: 1px solid darken($orange, 15%);
 
+        @include sm {
+            top: 0rem;
+            min-height: 400px;
+        }
+
         &::before {
             content: "";
             position: absolute;
+            // z-index: -3;
             top: 0;
             left: 0;
             width: 100%;
@@ -504,6 +680,11 @@ main {
             background-position: top -70px right;
             filter: opacity(0.3);
             background-attachment: absolute;
+
+            @include sm {
+                background-position: top center;
+                background-size: cover;
+            }
         }
 
         &::after {
@@ -572,6 +753,11 @@ main {
             background: $white;
             padding: 2em 3em 3em 3em;
 
+            @include sm {
+                padding: 1em;
+                width: 90vw;
+            }
+
             h2,
             p {
                 text-align: left;
@@ -627,6 +813,10 @@ main {
             ol {
                 margin-top: 0px;
 
+                @include sm {
+                    padding-left: 1.5em;
+                }
+
                 li {
                     margin: 1em 0 0.5em 0;
                     font-size: 13pt;
@@ -645,6 +835,37 @@ main {
 
                 p {
                     margin-left: 1em;
+
+                    @include sm {
+                        margin-left: 0em;
+                    }
+                }
+            }
+
+            .apply-cta {
+                margin-top: 10px;
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-around;
+                align-items: center;
+                flex-wrap: wrap;
+
+                h2,
+                p {
+                    text-align: center;
+                }
+
+
+
+                @include sm {
+                    p {
+                        margin-bottom: 0.5em;
+                    }
+
+                    .jobs-cta {
+                        margin-top: 0.5em;
+                    }
                 }
             }
         }
@@ -664,6 +885,11 @@ main {
     flex-direction: column;
     background: $blue;
 
+    @include sm {
+        min-height: 0px;
+        padding-top: 1em;
+    }
+
     .bg {
         position: absolute;
         z-index: -4;
@@ -674,9 +900,15 @@ main {
         filter: opacity(1);
         border-bottom: 1px solid darken($orange, 15%);
 
+        @include sm {
+            top: 0rem;
+            min-height: 400px;
+        }
+
         &::before {
             content: "";
             position: absolute;
+            // z-index: -3;
             top: 0;
             left: 0;
             width: 100%;
@@ -686,6 +918,11 @@ main {
             background-position: top -70px right;
             filter: opacity(0.3);
             background-attachment: absolute;
+
+            @include sm {
+                background-position: top center;
+                background-size: cover;
+            }
         }
 
         &::after {
@@ -754,6 +991,11 @@ main {
             background: $white;
             padding: 2em 3em 3em 3em;
 
+            @include sm {
+                padding: 1em;
+                width: 90vw;
+            }
+
             h2,
             p {
                 text-align: left;
@@ -807,10 +1049,15 @@ main {
                 list-style-type: square;
                 margin-top: 0px;
 
+                @include sm {
+                    padding-left: 1.5em;
+                }
+
                 li {
                     margin: 0.5em 0 1em 0;
                     font-weight: 300;
                     font-size: 13pt;
+
                 }
             }
 
@@ -848,6 +1095,18 @@ main {
                 p {
                     text-align: center;
                 }
+
+
+
+                @include sm {
+                    p {
+                        margin-bottom: 0.5em;
+                    }
+
+                    .jobs-cta {
+                        margin-top: 0.5em;
+                    }
+                }
             }
         }
     }
@@ -866,6 +1125,11 @@ main {
     flex-direction: column;
     background: $blue;
 
+    @include sm {
+        min-height: 0px;
+        padding-top: 1em;
+    }
+
     .bg {
         position: absolute;
         z-index: -4;
@@ -874,8 +1138,12 @@ main {
         width: 100%;
         min-height: 550px;
         filter: opacity(1);
-        // mix-blend-mode: darken;
         border-bottom: 1px solid darken($orange, 15%);
+
+        @include sm {
+            top: 0rem;
+            min-height: 400px;
+        }
 
         &::before {
             content: "";
@@ -891,21 +1159,18 @@ main {
             filter: opacity(0.3);
             background-attachment: absolute;
 
-            // filter: grayscale(100%);
-            // filter: hue-rotate(240deg);
+            @include sm {
+                background-position: top center;
+                background-size: cover;
+            }
         }
 
         &::after {
             content: "";
             position: absolute;
-            // z-index: -2;
-            // top: -15.5em;
             left: 0;
             width: 100%;
             height: 100%;
-            // background: -moz-linear-gradient(to bottom, rgba($blue, 00%) 60%, $blue);
-            // background: -webkit-linear-gradient(to bottom, rgba($blue, 00%) 60%, $blue);
-            // background: linear-gradient(to bottom, rgba($blue, 00%) 60%, $blue);
             background: -moz-linear-gradient(to bottom, rgba($blue, 00%) 100%, $blue);
             background: -webkit-linear-gradient(to bottom, rgba($blue, 00%) 100%, $blue);
             background: linear-gradient(to bottom, rgba($blue, 00%) 100%, $blue);
@@ -1129,11 +1394,20 @@ main {
                     margin-bottom: 5px;
                     padding-left: 10px;
                     text-transform: capitalize;
+
+                    @include sm {
+                        font-size: 13pt;
+                    }
                 }
 
                 .dual-inputs {
                     display: flex;
                     flex-direction: row;
+
+                    @include sm {
+                        flex-direction: column;
+                        flex-wrap: wrap;
+                    }
 
                     .user-input {
                         position: relative;
@@ -1141,10 +1415,19 @@ main {
 
                         &:nth-child(1) {
                             margin-right: 5px;
+
+                            @include sm {
+                                margin-right: 0px;
+                                margin-bottom: 0.5em;
+                            }
                         }
 
                         &:nth-child(2) {
                             margin-left: 5px;
+
+                            @include sm {
+                                margin-left: 0px;
+                            }
                         }
 
                         input[type=text] {
@@ -1156,6 +1439,10 @@ main {
                             border: 2px solid transparent;
                             border-bottom-color: rgba($orange, 0.2);
                             margin-left: 0px;
+
+                            @include sm {
+                                font-size: 16pt;
+                            }
 
                             &:focus {
                                 outline: none;
@@ -1222,6 +1509,9 @@ main {
                             color: hsla(0, 0%, 51%, 0.7);
                         }
 
+                        @include sm {
+                            font-size: 16pt;
+                        }
                     }
 
                     select {
@@ -1236,8 +1526,13 @@ main {
                         border-bottom-color: rgba($orange, 0.2) !important;
                         border-radius: 0px !important;
                         background: transparent;
+
+                        @include sm {
+                            height: auto !important;
+                        }
+
                         @include lg {
-                            height:auto !important;
+                            height: auto !important;
                         }
                     }
 
@@ -1298,6 +1593,10 @@ main {
 
                     input {
                         font-size: 16pt;
+
+                        @include sm {
+                            font-size: 16pt;
+                        }
                     }
 
                     .message {
@@ -1310,6 +1609,10 @@ main {
                             font-size: 16pt;
                             border-left: 0px solid transparent;
                             border-right: 0px solid transparent;
+
+                            @include sm {
+                                font-size: 16pt;
+                            }
                         }
                     }
 
@@ -1352,6 +1655,10 @@ main {
 
                         transition: background-color 0.3s ease-in-out;
                         resize: vertical;
+
+                        @include sm {
+                            font-size: 16pt;
+                        }
 
                         &:focus {
                             outline: none;
@@ -1554,6 +1861,11 @@ main {
     flex-direction: column;
     background: $blue;
 
+    @include sm {
+        min-height: 0px;
+        padding-top: 1em;
+    }
+
     .bg {
         position: absolute;
         z-index: -4;
@@ -1563,6 +1875,11 @@ main {
         min-height: 550px;
         filter: opacity(1);
         border-bottom: 1px solid darken($orange, 15%);
+
+        @include sm {
+            top: 0rem;
+            min-height: 400px;
+        }
 
         &::before {
             content: "";
@@ -1576,6 +1893,10 @@ main {
             background-position: top center;
             filter: opacity(0.3);
             background-attachment: absolute;
+
+            @include sm {
+                background-size: cover;
+            }
         }
 
         &::after {
@@ -1620,6 +1941,11 @@ main {
             color: $blue;
             margin-top: 1em;
 
+            @include sm {
+                flex-direction: column;
+                flex-wrap: wrap;
+            }
+
             .address,
             .phone-number {
                 background: $white;
@@ -1629,6 +1955,11 @@ main {
                 width: 230px;
                 overflow: hidden;
                 flex: 1;
+
+                @include sm {
+                    width: 100%;
+                    align-items: flex-start;
+                }
 
                 i {
                     position: absolute;
@@ -1648,19 +1979,35 @@ main {
                 &:hover {
                     i {
                         transform: translateY(0px);
+
+                        @include sm {
+                            transform: none;
+                        }
                     }
 
                     color: $white;
                     transition: ease all 100ms;
 
+                    @include sm {
+                        color: inherit;
+                    }
+
                     &::after {
                         width: 600px;
                         transition-delay: 100ms;
+
+                        @include sm {
+                            width: 0px;
+                        }
 
                     }
 
                     &::before {
                         width: 600px;
+
+                        @include sm {
+                            width: 0px;
+                        }
 
                     }
 
@@ -1671,6 +2018,11 @@ main {
             .phone-number {
                 padding: 1em 2em 0em 3em;
 
+                @include sm {
+                    padding: 1em;
+                    margin-bottom: 0.5em;
+                }
+
                 &::before {
                     position: absolute;
                     content: '';
@@ -1681,6 +2033,10 @@ main {
                     height: 100%;
                     background: $orange;
                     transition: ease all 400ms;
+
+                    @include sm {
+                        width: 0px;
+                    }
                 }
 
                 &::after {
@@ -1694,12 +2050,21 @@ main {
                     background: $blue;
                     transition: ease all 600ms;
                     transition-delay: 100ms;
+
+                    @include sm {
+                        width: 0px;
+                    }
                 }
             }
 
             .address {
                 padding: 1em 2em 0em 1.5em;
 
+                @include sm {
+                    padding: 1em;
+                    margin-bottom: 0.75em;
+                }
+
                 &::before {
                     position: absolute;
                     content: '';
@@ -1710,6 +2075,10 @@ main {
                     height: 100%;
                     background: $orange;
                     transition: ease all 400ms;
+
+                    @include sm {
+                        width: 0px;
+                    }
                 }
 
                 &::after {
@@ -1723,6 +2092,10 @@ main {
                     background: $blue;
                     transition: ease all 600ms;
                     transition-delay: 100ms;
+
+                    @include sm {
+                        width: 0px;
+                    }
                 }
             }
 
@@ -1734,19 +2107,37 @@ main {
                 cursor: default;
             }
 
+            @include sm {
+                p {
+                    line-height: 5pt;
+                }
+            }
+
             h2 {
                 margin-top: 1em;
                 font-size: 20pt;
                 line-height: 8pt;
 
+                @include sm {
+                    font-size: 16pt;
+                }
 
                 &+h2 {
                     margin-top: 0em;
+
+                    @include sm {
+                        margin: 0em;
+                    }
 
                 }
 
                 &.hours {
                     color: rgba(138, 138, 138, 0.6);
+
+                    @include sm {
+                        font-size: 14pt;
+                        // line-height: 15pt;
+                    }
                 }
             }
 
@@ -1772,11 +2163,19 @@ main {
             padding: 2em;
             background: $white;
 
+            @include sm {
+                padding: 1em;
+            }
+
             .form-top {
                 color: $blue;
                 font-weight: 300;
                 font-size: 18pt;
                 margin-bottom: 0.5em;
+
+                @include sm {
+                    font-size: 14pt;
+                }
             }
 
             .name {
@@ -1805,6 +2204,10 @@ main {
                     font-size: 14pt;
                     margin-bottom: 5px;
 
+                    @include sm {
+                        font-size: 13pt;
+                    }
+
                 }
 
                 .user-input {
@@ -1828,6 +2231,9 @@ main {
                             color: hsla(0, 0%, 51%, 0.7);
                         }
 
+                        @include sm {
+                            font-size: 16pt;
+                        }
                     }
 
                     span {
@@ -1876,6 +2282,10 @@ main {
                         border: 2px solid rgba($orange, 0.2);
                         transition: background-color 0.3s ease-in-out;
                         resize: vertical;
+
+                        @include sm {
+                            font-size: 16pt;
+                        }
 
                         &:focus {
                             outline: none;

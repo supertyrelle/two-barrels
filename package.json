@@ -22,30 +22,27 @@
     },
     "homepage": "https://github.com/supertyrelle/nw-counseling#readme",
     "devDependencies": {
-        "@babel/cli": "^7.5.0",
-        "@babel/core": "^7.5.4",
+        "@babel/cli": "^7.5.5",
+        "@babel/core": "^7.5.5",
         "cssnano": "^4.1.10",
         "parcel-plugin-compress": "^1.0.10",
         "parcel-plugin-imagemin": "^3.0.0",
         "postcss-modules": "^1.4.1",
-        "sass": "^1.22.3"
+        "sass": "^1.22.7"
     },
     "dependencies": {
         "@swup/scroll-plugin": "^1.0.6",
         "aos": "^3.0.0-beta.6",
         "autoprefixer": "^9.6.1",
-        "awesomplete-es6": "^1.2.2",
-        "bodymovin": "^4.13.0",
         "ease-component": "^1.0.0",
         "footer": "^1.0.0",
         "freezeframe": "^4.0.0-alpha.7",
-        "lottie-web": "^5.5.6",
         "postcss": "^7.0.17",
         "scroll": "^3.0.1",
         "scroll-doc": "^0.2.1",
         "style.css": "^1.0.0",
         "sweetalert2": "^8.14.0",
-        "swup": "^2.0.4",
+        "swup": "^2.0.5",
         "typeit": "^6.0.3"
     }
 }

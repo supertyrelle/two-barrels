@@ -19,40 +19,26 @@
     <!-- <script src="./lottie.js"></script> -->
     <header>
         <div class="mobile-menu">
-            <a href="/index.html">
-                <img src="/logo.f1d8a4c6.svg" alt="Two Barrels">
-            </a>
+            <a href="/index.html"><img src="/logo.f1d8a4c6.svg" alt="Two Barrels"></a>
 
-            <nav class="main">
+            <div class="bontainer">
+                <input id="mobtoggle" type="checkbox">
+                <label class="toggle-bontainer" for="mobtoggle">
 
-                <div class="mobile-menu-btn">
-                    <span></span>
+                    <span class="button button-toggle"></span>
+                </label>
+                <div class="nav-m">
+                    <a class="nav-item" id="overview-link-m" href="/index.html">Overview</a>
+                    <a class="nav-item" id="who-link-m" href="/who-we-are.html">Who We Are</a>
+                    <a class="nav-item" id="jobs-link-m" href="/jobs.html">Jobs</a>
+                    <a class="nav-item sub" id="how-we-work-link-m" href="/how-we-hire.html">How We Work</a>
+                    <a class="nav-item sub" id="get-a-job-link-m" href="/get-a-job.html">How to Get a Job</a>
+                    <a class="nav-item" id="contact-link-m" href="/contact.html">Contact Us</a>
                 </div>
-                <ul class="menu-items">
-                    <div class="bang">
-                        <li>
-                            <a class="page-link-m" id="overview-link-m" href="/index.html">Overview</a>
-                        </li>
-                        <li>
-                            <a class="page-link-m" href="/jobs.html" id="jobs-link-m">Jobs</a>
-                            <a href="/how-we-hire.html">How We Work</a>
-                            <a href="/get-a-job.html">How to Get a Job</a>
-                        </li>
-                        <li>
-                            <a class="page-link-m" id="who-link-m" href="/who-we-are.html">Who We Are</a>
-                        </li>
-                        <li>
-                            <a class="page-link-m" href="/apply.html" id="apply-link-m"><i class="fas fa-file-import"></i>Apply Now</a>
-                        </li>
-                        <li>
-                            <a class="page-link-m" id="contact-link-m" href="/contact.html">Contact Us</a>
-                        </li>
-
-                    </div>
-                </ul>
-            </nav>
+            </div>
         </div>
-        <div class="container-head header-wrapper" id="main-navigation">
+
+        <div class="container-head header-wrapper">
             <nav>
                 <a class="page-link" id="overview-link" href="/index.html">Overview</a>
                 <a class="page-link" id="who-link" href="/who-we-are.html">Who We Are</a>
@@ -60,13 +46,13 @@
                     <a href="/jobs.html" id="jobs-link">Jobs</a>
                     <div class="dropdown-wrapper">
                         <div class="jobs-menu">
-                            <a href="/how-we-hire.html">How We Work</a>
-                            <a href="/get-a-job.html">How to Get a Job</a>
+                            <a id="how-we-work-link" href="/how-we-hire.html">How We Work</a>
+                            <a id="get-a-job-link" href="/get-a-job.html">How to Get a Job</a>
                         </div>
                     </div>
                 </div>
             </nav>
-            <img src="/logo.f1d8a4c6.svg" alt="Two Barrels">
+            <a href="/index.html"><img src="/logo.f1d8a4c6.svg" alt="Two Barrels"></a>
             <!-- <div class="menu">
                 <a href=""><i class="fas fa-phone-alt"></i>Give us a call</a>
                 <a href="mailto:hello@twobarrels.com"><i class="fas fa-envelope"></i>Send an email</a>
@@ -116,14 +102,14 @@
         <section class="main-cards container-home transition-corn" id="content-top">
             <h2>Two Barrels: Where one isn't enough</h2>
             <div class="cards">
-                <a class="card" href="/jobs.html" onclick="binky();">
+                <a class="card" href="/jobs.html" onclick="">
                     <h4>Systems</h4>
                     <p>Are You Passionate About Turning Things Off
                         And On Again? Are You Naturally Tech-Savvy?
                         Let's Talk!</p>
                     <i class="fas fa-cog"></i>
                 </a>
-                <a class="card" href="/jobs.html" onclick="binky();">
+                <a class="card" href="/jobs.html" onclick="">
                     <h4>Software</h4>
                     <p>Got Code? Is It Logical And Clean? Do You Feel Passionate About Tabs Or Spaces? If So, We Want
                         Your Skills!</p>
@@ -131,7 +117,7 @@
                         <span>&lt;</span><span>/</span><span>&gt;</span>
                     </div>
                 </a>
-                <a class="card" href="/jobs.html" onclick="binky();">
+                <a class="card" href="/jobs.html" onclick="">
                     <h4>Creative</h4>
                     <p> Are You Smart? A Little Competitive? Do You Care About Sentences And The Way A Page Looks?
                         Talk To Us!</p>
@@ -270,6 +256,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tilt.js/1.2.1/tilt.jquery.js"
     integrity="sha256-bmKpMw7nqXQNfuc0qs7O7grVJjmr06o/cYJAINQiMXc=" crossorigin="anonymous"></script> -->
     <!-- <script src="./illustration.js"></script> -->
+    <script>
+
+    </script>
     <script type="text/javascript" src="/app.c328ef1a.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.min.js"></script>
 

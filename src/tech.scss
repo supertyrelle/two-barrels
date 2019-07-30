@@ -14,42 +14,44 @@ $orange: #e37038;
 $white: rgb(245, 245, 245);
 
 // responsive mixins
-    // define variables
-    $screen-sm-max: 768px;
-    $screen-md-min: 769px;
-    $screen-md-max: 1199px;
-    $screen-lg-min: 1200px;
-    $screen-lg-max: 1600px;
-    $screen-xl-min: 1601px;
-    // specify mixins
-    @mixin sm {
-        @media (max-width: #{$screen-sm-max}) {
-            @content;
-        }
-    }
+// define variables
+$screen-sm-max: 768px;
+$screen-md-min: 769px;
+$screen-md-max: 1199px;
+$screen-lg-min: 1200px;
+$screen-lg-max: 1600px;
+$screen-xl-min: 1601px;
 
-    @mixin md {
-        @media (min-width: #{$screen-md-min}) and (max-width: #{$screen-md-max}) {
-            @content;
-        }
+// specify mixins
+@mixin sm {
+    @media (max-width: #{$screen-sm-max}) {
+        @content;
     }
+}
 
-    @mixin lg {
-        @media (min-width: #{$screen-lg-min}) and (max-width: #{$screen-lg-max}) {
-            @content;
-        }
+@mixin md {
+    @media (min-width: #{$screen-md-min}) and (max-width: #{$screen-md-max}) {
+        @content;
     }
+}
 
-    @mixin xl {
-        @media (min-width: #{$screen-xl-min}) {
-            @content;
-        }
+@mixin lg {
+    @media (min-width: #{$screen-lg-min}) and (max-width: #{$screen-lg-max}) {
+        @content;
     }
-    @mixin tab {
-        @media (min-width: 1023px) and (min-height:800px) {
-            @content;
-        }
+}
+
+@mixin xl {
+    @media (min-width: #{$screen-xl-min}) {
+        @content;
     }
+}
+
+@mixin tab {
+    @media (min-width: 1023px) and (min-height:800px) {
+        @content;
+    }
+}
 
 // page transitions!
 .transition-fade {
@@ -106,9 +108,11 @@ body {
     margin: 0 auto;
     overflow-y: scroll;
     position: relative;
+    overflow-x: hidden;
+
     @include sm {
-        max-width:100vw;
-        overflow-x:hidden;
+        max-width: 100vw;
+        overflow-x: hidden;
     }
 }
 
@@ -222,6 +226,7 @@ section+section {
 
 
 }
+
 .apply-cta {
     margin-top: 10px;
     width: 100%;
@@ -230,17 +235,23 @@ section+section {
     justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
+
     h2,
     p {
         text-align: center;
     }
 
 }
+
 .loading {
     position: absolute;
     z-index: -10 !important;
     top: 40vh;
     left: 48%;
+
+    @include sm {
+        left: 40%;
+    }
 
     svg {
         width: 3.75em;
@@ -450,16 +461,18 @@ section+section {
     z-index: 3;
     transform: scale(0.65);
     pointer-events: none;
-    overflow-x: hidden !important;
-@include sm {
-    display: none;
-}
+    // overflow-x: hidden !important;
+
+    @include sm {
+        display: none;
+    }
 }
 
 // popup styles!
 
 .job-popup {
     border-radius: 0px !important;
+
     .popup-title,
     h2 {
         font-family: 'Lato',
@@ -467,8 +480,8 @@ section+section {
         text-transform: uppercase;
         color: $blue;
         // background: $orange;
-        padding:5px 8px;
-        font-size:20pt !important;
+        padding: 5px 8px;
+        font-size: 20pt !important;
         text-align: center !important;
         align-self: center;
     }
@@ -481,6 +494,7 @@ section+section {
     .popup-content {
         .paragraph {
             text-align: left;
+
             &+.paragraph {
                 margin-top: 10px;
             }
@@ -535,7 +549,8 @@ section+section {
 .contact-popup {
     border-radius: 0px !important;
     background: $white !important;
-// border: 4px solid $orange !important;
+
+    // border: 4px solid $orange !important;
     .popup-title,
     h2 {
         font-family: 'Raleway',

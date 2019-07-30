@@ -1,56 +1,122 @@
 checklocation();
+
+// nice smooth scrolling animations!
+// checks location on load.
+// if user changes pages, the check location function,
+// re-assigns the active link on the top navigation and runs
+// corresponding functions to align with the page that the user is on.
+console.log(window.location.pathname);
 document.addEventListener('swup:contentReplaced', event => {
     checklocation();
 });
-console.log(window.location.pathname);
+// animate on scroll animations 
+import AOS from 'aos';
 
 function checklocation() {
     const endpoint = window.location.pathname;
+    // declaring breakdown of links
     const overviewLink = document.getElementById("overview-link");
     const whoLink = document.getElementById("who-link");
     const jobsLink = document.getElementById("jobs-link");
+    const howWeLink = document.getElementById("how-we-work-link");
+    const getALink = document.getElementById("get-a-job-link");
     const contactLink = document.getElementById("contact-link");
+    // mobile links
+    const overviewLinkMob = document.getElementById("overview-link-m");
+    const whoLinkMob = document.getElementById("who-link-m");
+    const jobsLinkMob = document.getElementById("jobs-link-m");
+    const howWeLinkMob = document.getElementById("how-we-work-link-m");
+    const getALinkMob = document.getElementById("get-a-job-link-m");
+    const contactLinkMob = document.getElementById("contact-link-m");
 
     if (endpoint == "/index.html") {
         removeactive();
         overview();
         overviewLink.classList.add("active");
-    } else if (endpoint == "/who-we-are.html") {
+        overviewLinkMob.classList.add("active");
+    } else
+    if (endpoint == "/who-we-are.html") {
         removeactive();
         whoLink.classList.add("active");
+        whoLinkMob.classList.add("active");
     } else if (endpoint == "/jobs.html") {
         removeactive();
+        jobs();
         jobsLink.classList.add("active");
+        jobsLinkMob.classList.add("active");
     } else if (endpoint == "/get-a-job.html") {
         removeactive();
         jobsLink.classList.add("active");
+        jobsLinkMob.classList.add("active");
+        getALink.classList.add("active");
+        getALinkMob.classList.add("active");
     } else if (endpoint == "/how-we-hire.html") {
         removeactive();
         jobsLink.classList.add("active");
+        jobsLinkMob.classList.add("active");
+        howWeLink.classList.add("active");
+        howWeLinkMob.classList.add("active");
     } else if (endpoint == "/job.html") {
         removeactive();
         job();
         jobsLink.classList.add("active");
+        jobsLinkMob.classList.add("active");
     } else if (endpoint == "/apply.html") {
         removeactive();
         apply();
         jobsLink.classList.add("active");
+        jobsLinkMob.classList.add("active");
     } else if (endpoint == "/contact.html") {
         removeactive();
         contact();
         contactLink.classList.add("active");
+        contactLinkMob.classList.add("active");
     } else {
         removeactive();
         overview();
         overviewLink.classList.add("active");
+        overviewLinkMob.classList.add("active");
     }
 
     function removeactive() {
         overviewLink.classList.remove("active");
         whoLink.classList.remove("active");
         jobsLink.classList.remove("active");
+        getALink.classList.remove("active");
+        howWeLink.classList.remove("active");
         contactLink.classList.remove("active");
+        overviewLinkMob.classList.remove("active");
+        whoLinkMob.classList.remove("active");
+        jobsLinkMob.classList.remove("active");
+        getALinkMob.classList.remove("active");
+        howWeLinkMob.classList.remove("active");
+        contactLinkMob.classList.remove("active");
+    };
+
+    function animateOnScroll() {
+
+        AOS.init();
+        AOS.init({
+            // Global settings:
+            disable: false, // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function
+            startEvent: 'DOMContentLoaded', // name of the event dispatched on the document, that AOS should initialize on
+            initClassName: 'aos-init', // class applied after initialization
+            animatedClassName: 'aos-animate', // class applied on animation
+            useClassNames: false, // if true, will add content of `data-aos` as classes on scroll
+            disableMutationObserver: false, // disables automatic mutations' detections (advanced)
+            debounceDelay: 50, // the delay on debounce used while resizing window (advanced)
+            throttleDelay: 99, // the delay on throttle used while scrolling the page (advanced)
+            // Settings that can be overridden on per-element basis, by `data-aos-*` attributes:
+            offset: 0, // offset (in px) from the original trigger point
+            delay: 0, // values from 0 to 3000, with step 50ms
+            duration: 400, // values from 0 to 3000, with step 50ms
+            easing: 'ease', // default easing for AOS animations
+            once: true, // whether animation should happen only once - while scrolling down
+            mirror: false, // whether elements should animate out while scrolling past them
+            anchorPlacement: 'top-bottom', // defines which position of the element regarding to window should trigger the animation
+        });
     }
+    animateOnScroll();
 }
 
 // page transitions!
@@ -67,31 +133,6 @@ const options = {
     })]
 };
 const swup = new Swup(options);
-// nice smooth scrolling animations!
-import AOS from 'aos';
-AOS.init();
-
-
-AOS.init({
-    // Global settings:
-    disable: false, // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function
-    startEvent: 'DOMContentLoaded', // name of the event dispatched on the document, that AOS should initialize on
-    initClassName: 'aos-init', // class applied after initialization
-    animatedClassName: 'aos-animate', // class applied on animation
-    useClassNames: false, // if true, will add content of `data-aos` as classes on scroll
-    disableMutationObserver: false, // disables automatic mutations' detections (advanced)
-    debounceDelay: 50, // the delay on debounce used while resizing window (advanced)
-    throttleDelay: 99, // the delay on throttle used while scrolling the page (advanced)
-    // Settings that can be overridden on per-element basis, by `data-aos-*` attributes:
-    offset: 0, // offset (in px) from the original trigger point
-    delay: 0, // values from 0 to 3000, with step 50ms
-    duration: 400, // values from 0 to 3000, with step 50ms
-    easing: 'ease', // default easing for AOS animations
-    once: true, // whether animation should happen only once - while scrolling down
-    mirror: false, // whether elements should animate out while scrolling past them
-    anchorPlacement: 'top-bottom', // defines which position of the element regarding to window should trigger the animation
-});
-
 // typing animation for the front page!
 import TypeIt from 'typeit';
 
@@ -109,7 +150,6 @@ function overview() {
             nextStringDelay: 1950
         }).go();
     }
-    jobText();
 
     function ctaScroll() {
         const moreCTA = document.getElementById("more-cta");
@@ -124,31 +164,30 @@ function overview() {
             });
         };
     }
-    function woof() {
-        var menuButton = document.querySelector('.mobile-menu-btn');
 
-        var menu = document.querySelector('.menu-items');
-        var mainContainer = document.getElementById("more-cta")
-        var toggleMobile = function () {
-            menuButton.classList.toggle('open');
-            menu.classList.toggle('visible');
-        }
-
-        menuButton.addEventListener('click', toggleMobile);
-        menu.addEventListener('click', toggleMobile);
-        console.log("BARk");
-    }
-    woof();
+    jobText();
     ctaScroll();
 };
-// window.onload = function () {
-//     overview();
-// }
-// contact form alert
+
+function jobs() {
+    const acc = document.getElementsByClassName("accordion");
+    var i;
+
+    for (i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function () {
+            this.classList.toggle("active");
+            const panel = this.nextElementSibling;
+            if (panel.style.maxHeight) {
+                panel.style.maxHeight = null;
+            } else {
+                panel.style.maxHeight = panel.scrollHeight + "px";
+            }
+        });
+    }
+}
+
+// custom alerts
 import Swal from 'sweetalert2';
-// import {
-//     Duplex
-// } from 'stream';
 
 function job() {
     function jobBenefits() {
@@ -370,7 +409,6 @@ function job() {
 };
 
 function apply() {
-    console.log("Apply Yourself!")
     const sendAppButton = document.getElementById("send-app");
     sendAppButton.onclick = function () {
         function emptyForm() {

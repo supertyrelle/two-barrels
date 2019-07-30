@@ -11,43 +11,29 @@
     <script type="text/javascript" src="https://kit.fontawesome.com/0c82932c82.js"></script>
 </head>
 
-<body class="jobs-page">
+<body>
     <header>
         <div class="mobile-menu">
-            <a href="/index.html">
-                <img src="/logo.f1d8a4c6.svg" alt="Two Barrels">
-            </a>
+            <a href="/index.html"><img src="/logo.f1d8a4c6.svg" alt="Two Barrels"></a>
 
-            <nav class="main">
+            <div class="bontainer">
+                <input id="mobtoggle" type="checkbox">
+                <label class="toggle-bontainer" for="mobtoggle">
 
-                <div class="mobile-menu-btn">
-                    <span></span>
+                    <span class="button button-toggle"></span>
+                </label>
+                <div class="nav-m">
+                    <a class="nav-item" id="overview-link-m" href="/index.html">Overview</a>
+                    <a class="nav-item" id="who-link-m" href="/who-we-are.html">Who We Are</a>
+                    <a class="nav-item" id="jobs-link-m" href="/jobs.html">Jobs</a>
+                    <a class="nav-item sub" id="how-we-work-link-m" href="/how-we-hire.html">How We Work</a>
+                    <a class="nav-item sub" id="get-a-job-link-m" href="/get-a-job.html">How to Get a Job</a>
+                    <a class="nav-item" id="contact-link-m" href="/contact.html">Contact Us</a>
                 </div>
-                <ul class="menu-items">
-                    <div class="bang">
-                        <li>
-                            <a class="page-link-m" id="overview-link-m" href="/index.html">Overview</a>
-                        </li>
-                        <li>
-                            <a class="page-link-m" href="/jobs.html" id="jobs-link-m">Jobs</a>
-                            <a href="/how-we-hire.html">How We Work</a>
-                            <a href="/get-a-job.html">How to Get a Job</a>
-                        </li>
-                        <li>
-                            <a class="page-link-m" id="who-link-m" href="/who-we-are.html">Who We Are</a>
-                        </li>
-                        <li>
-                            <a class="page-link-m" href="/apply.html" id="apply-link-m"><i class="fas fa-file-import"></i>Apply Now</a>
-                        </li>
-                        <li>
-                            <a class="page-link-m" id="contact-link-m" href="/contact.html">Contact Us</a>
-                        </li>
-
-                    </div>
-                </ul>
-            </nav>
+            </div>
         </div>
-        <div class="container-head header-wrapper" id="main-navigation">
+
+        <div class="container-head header-wrapper">
             <nav>
                 <a class="page-link" id="overview-link" href="/index.html">Overview</a>
                 <a class="page-link" id="who-link" href="/who-we-are.html">Who We Are</a>
@@ -55,13 +41,13 @@
                     <a href="/jobs.html" id="jobs-link">Jobs</a>
                     <div class="dropdown-wrapper">
                         <div class="jobs-menu">
-                            <a href="/how-we-hire.html">How We Work</a>
-                            <a href="/get-a-job.html">How to Get a Job</a>
+                            <a id="how-we-work-link" href="/how-we-hire.html">How We Work</a>
+                            <a id="get-a-job-link" href="/get-a-job.html">How to Get a Job</a>
                         </div>
                     </div>
                 </div>
             </nav>
-            <img src="/logo.f1d8a4c6.svg" alt="Two Barrels">
+            <a href="/index.html"><img src="/logo.f1d8a4c6.svg" alt="Two Barrels"></a>
             <!-- <div class="menu">
                 <a href=""><i class="fas fa-phone-alt"></i>Give us a call</a>
                 <a href="mailto:hello@twobarrels.com"><i class="fas fa-envelope"></i>Send an email</a>
@@ -85,9 +71,11 @@
                         <i class="fas fa-lightbulb"></i>
                         <div class="job-info">
                             <h3>Technical Recruiter</h3>
-                            <span><i class="fas fa-map-marker-alt"></i>Spokane, WA</span>
-                            <span><i class="fas fa-clock"></i>Full Time</span>
-                            <span><i class="fas fa-dollar-sign"></i>65,000/year</span>
+                            <div class="factors">
+                                <span><i class="fas fa-map-marker-alt"></i>Spokane, WA</span>
+                                <span><i class="fas fa-clock"></i>Full Time</span>
+                                <span><i class="fas fa-dollar-sign"></i>65,000/year</span>
+                            </div>
                         </div>
                     </div>
                     <div class="job-right">
@@ -101,9 +89,11 @@
                         <i class="fas fa-lightbulb"></i>
                         <div class="job-info">
                             <h3>Senior Front-End Web Developer</h3>
-                            <span><i class="fas fa-map-marker-alt"></i>Spokane, WA</span>
-                            <span><i class="fas fa-clock"></i>Full Time</span>
-                            <span><i class="fas fa-dollar-sign"></i>95,000/year</span>
+                            <div class="factors">
+                                <span><i class="fas fa-map-marker-alt"></i>Spokane, WA</span>
+                                <span><i class="fas fa-clock"></i>Full Time</span>
+                                <span><i class="fas fa-dollar-sign"></i>95,000/year</span>
+                            </div>
                         </div>
                     </div>
                     <div class="job-right">
@@ -117,9 +107,11 @@
                         <i class="fas fa-lightbulb"></i>
                         <div class="job-info">
                             <h3>Front-End Developer</h3>
-                            <span><i class="fas fa-map-marker-alt"></i>Spokane, WA</span>
-                            <span><i class="fas fa-clock"></i>Full Time</span>
-                            <span><i class="fas fa-dollar-sign"></i>80,000/year</span>
+                            <div class="factors">
+                                <span><i class="fas fa-map-marker-alt"></i>Spokane, WA</span>
+                                <span><i class="fas fa-clock"></i>Full Time</span>
+                                <span><i class="fas fa-dollar-sign"></i>80,000/year</span>
+                            </div>
                         </div>
                     </div>
                     <div class="job-right">
@@ -134,9 +126,10 @@
                         <div class="job-info">
                             <h3>Ruby on Rails Software Engineer
                             </h3>
-                            <span><i class="fas fa-map-marker-alt"></i>Spokane, WA</span>
-                            <span><i class="fas fa-clock"></i>Full Time</span>
-                            <span><i class="fas fa-dollar-sign"></i>80,000/year</span>
+                            <div class="factors">
+                                <span><i class="fas fa-map-marker-alt"></i>Spokane, WA</span>
+                                <span><i class="fas fa-clock"></i>Full Time</span>
+                                <span><i class="fas fa-dollar-sign"></i>80,000/year</span></div>
                         </div>
                     </div>
                     <div class="job-right">
@@ -150,9 +143,10 @@
                         <i class="fas fa-code"></i>
                         <div class="job-info">
                             <h3>Ruby on Rails Senior Software Engineer</h3>
-                            <span><i class="fas fa-map-marker-alt"></i>Spokane, WA</span>
-                            <span><i class="fas fa-clock"></i>Full Time</span>
-                            <span><i class="fas fa-dollar-sign"></i>130,000/year DOE</span>
+                            <div class="factors">
+                                <span><i class="fas fa-map-marker-alt"></i>Spokane, WA</span>
+                                <span><i class="fas fa-clock"></i>Full Time</span>
+                                <span><i class="fas fa-dollar-sign"></i>130,000/year DOE</span></div>
                         </div>
                     </div>
                     <div class="job-right">
@@ -166,9 +160,10 @@
                         <i class="fas fa-cog"></i>
                         <div class="job-info">
                             <h3>Senior Linux Systems Engineer</h3>
-                            <span><i class="fas fa-map-marker-alt"></i>Spokane, WA</span>
-                            <span><i class="fas fa-clock"></i>Full Time</span>
-                            <span><i class="fas fa-dollar-sign"></i>140,000/year</span>
+                            <div class="factors">
+                                <span><i class="fas fa-map-marker-alt"></i>Spokane, WA</span>
+                                <span><i class="fas fa-clock"></i>Full Time</span>
+                                <span><i class="fas fa-dollar-sign"></i>140,000/year</span></div>
                         </div>
                     </div>
                     <div class="job-right">
@@ -182,9 +177,10 @@
                         <i class="fas fa-cog"></i>
                         <div class="job-info">
                             <h3>Linux Systems Engineer</h3>
-                            <span><i class="fas fa-map-marker-alt"></i>Spokane, WA</span>
-                            <span><i class="fas fa-clock"></i>Full Time</span>
-                            <span><i class="fas fa-dollar-sign"></i>100,000/year</span>
+                            <div class="factors">
+                                <span><i class="fas fa-map-marker-alt"></i>Spokane, WA</span>
+                                <span><i class="fas fa-clock"></i>Full Time</span>
+                                <span><i class="fas fa-dollar-sign"></i>100,000/year</span></div>
                         </div>
                     </div>
                     <div class="job-right">
@@ -198,9 +194,10 @@
                         <i class="fas fa-cog"></i>
                         <div class="job-info">
                             <h3>Senior Infrastructure Architect</h3>
-                            <span><i class="fas fa-map-marker-alt"></i>Spokane, WA</span>
-                            <span><i class="fas fa-clock"></i>Full Time</span>
-                            <span><i class="fas fa-dollar-sign"></i>150,000/year</span>
+                            <div class="factors">
+                                <span><i class="fas fa-map-marker-alt"></i>Spokane, WA</span>
+                                <span><i class="fas fa-clock"></i>Full Time</span>
+                                <span><i class="fas fa-dollar-sign"></i>150,000/year</span></div>
                         </div>
                     </div>
                     <div class="job-right">
@@ -214,43 +211,34 @@
         <section class="container talent" data-aos="fade-up">
             <div class="talent-jobs">
                 <h3 class="subheader">Always looking for talent</h3>
-                <div class="tabs">
-                    <div class="tab">
-                        <input type="checkbox" id="chck1">
-                        <label class="tab-label" for="chck1">Software</label>
-                        <div class="tab-content">
-                            <a href="/job.html">Scrum Master/IT Project Manager</a>
-                            <a href="/job.html">Junior Software Engineer</a>
-                            <a href="/job.html">Product Owner</a>
-                            <a href="/job.html">UI/UX Front-End Developer</a>
-                            <a href="/job.html">Senior UI/UX Front-End Developer</a>
-                            <a href="/job.html">Ruby on Rails Software Development Manager</a>
-                        </div>
-                    </div>
-                    <div class="tab">
-                        <input type="checkbox" id="chck2">
-                        <label class="tab-label" for="chck2">Systems</label>
-                        <div class="tab-content">
-                            <a href="/job.html">Junior Linux Systems Engineer</a>
-                            <a href="/job.html">Systems and Networking Manager</a>
-                        </div>
-                    </div>
-                    <div class="tab">
-                        <input type="checkbox" id="chck3">
-                        <label class="tab-label" for="chck3">Digital Marketing Annihilation Team</label>
-                        <div class="tab-content">
-                            <a href="/job.html">Graphic Designer</a>
-                            <a href="/job.html">Junior Front-End Web Developer</a>
-                            <a href="/job.html">PPC Management Specialist</a>
-                            <a href="/job.html">Marketing Content Writer</a>
-                            <a href="/job.html">Technical Writer</a>
-                            <a href="/job.html">Search Engine Marketing Specialist</a>
-                            <a href="/job.html">SEO Ranking Scientist</a>
-                            <a href="/job.html">Outbound Digital Marketing Specialist</a>
-                            <a href="/job.html">Web Development Project Manager</a>
-                            <a href="/job.html">Web Development Manager</a>
-                        </div>
-                    </div>
+                <label class="accordion">Software</label>
+                <div class="panel">
+                    <a href="/job.html">Scrum Master/IT Project Manager</a>
+                    <a href="/job.html">Junior Software Engineer</a>
+                    <a href="/job.html">Product Owner</a>
+                    <a href="/job.html">UI/UX Front-End Developer</a>
+                    <a href="/job.html">Senior UI/UX Front-End Developer</a>
+                    <a href="/job.html">Ruby on Rails Software Development Manager</a>
+                </div>
+
+                <label class="accordion">Systems</label>
+                <div class="panel">
+                    <a href="/job.html">Junior Linux Systems Engineer</a>
+                    <a href="/job.html">Systems and Networking Manager</a>
+                </div>
+
+                <label class="accordion">Digital Marketing Annihilation Team</label>
+                <div class="panel">
+                    <a href="/job.html">Graphic Designer</a>
+                    <a href="/job.html">Junior Front-End Web Developer</a>
+                    <a href="/job.html">PPC Management Specialist</a>
+                    <a href="/job.html">Marketing Content Writer</a>
+                    <a href="/job.html">Technical Writer</a>
+                    <a href="/job.html">Search Engine Marketing Specialist</a>
+                    <a href="/job.html">SEO Ranking Scientist</a>
+                    <a href="/job.html">Outbound Digital Marketing Specialist</a>
+                    <a href="/job.html">Web Development Project Manager</a>
+                    <a href="/job.html">Web Development Manager</a>
                 </div>
 
             </div>

@@ -13,7 +13,7 @@ module.exports = {
     },
     "svgo": {
         "plugins": [{
-                "removeViewBox": false
+                "removeViewBox": true
             },
             {
                 "cleanupIDs": true
