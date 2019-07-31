@@ -16,6 +16,6 @@ There are a few libraries and resources that helped me execute my ideas:
 <li><a target="_blank" href="https://sweetalert2.github.io/">SweetAlert2</a>: a popup library used to replace standard alerts</li>
 <li><a target="_blank" href="https://cssfx.dev/">CSSFX</a>: button and input styles</li>
  <li><a target="_blank" href="https://fontawesome.com/">Font Awesome</a>: cool icons, including brand icons</li>
-<li><a target="_blank" href="https://developer.mozilla.org/en-US/">MDN</a> and <a target="_blank" href="https://www.w3schools.com/">W3</a>: general resource and code starters (I use MDN a <strong>lot</strong> more 😅</li>
+<li><a target="_blank" href="https://developer.mozilla.org/en-US/">MDN</a> and <a target="_blank" href="https://www.w3schools.com/">W3</a>: general resource and code starters (I use MDN a <strong>lot</strong> more 😅)</li>
 <br>
 <p>Happy coding!</p>
