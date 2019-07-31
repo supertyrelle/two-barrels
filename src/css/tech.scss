@@ -61,7 +61,7 @@ $screen-xl-min: 1601px;
 
 .transition-corn,
 .transition-dog {
-    transition: 0.4s;
+    transition: 0.6s;
     opacity: 1;
 
 }
@@ -74,6 +74,7 @@ html.is-animating {
     .transition-fade {
         opacity: 0;
         transform: translateY(40px);
+
         // .bg {
         //     transform: translateY(-40px) !important;
         // }
@@ -82,11 +83,13 @@ html.is-animating {
     .transition-corn {
         opacity: 0;
         transform: translateY(40px);
+
     }
 
     .transition-dog {
         opacity: 0;
-        transform: translateY(40px);
+        transform: translateY(-200px);
+
     }
 }
 
@@ -242,7 +245,7 @@ section+section {
     }
 
 }
-
+// loading animation for page transitions
 .loading {
     position: absolute;
     z-index: -10 !important;
@@ -297,7 +300,7 @@ section+section {
     }
 }
 
-/* KEYFRAMES */
+// cloud keyframes
 @keyframes spin {
 
     50%,
@@ -409,8 +412,7 @@ section+section {
 
 }
 
-/* OBJECTS */
-
+// cloud classes
 .cloud {
     filter: opacity(10%);
     background: #fff;
@@ -454,7 +456,7 @@ section+section {
         top: -90px;
     }
 }
-
+// clouds container
 .clouds {
     top: 20px !important;
     left: 0;
@@ -477,7 +479,6 @@ section+section {
 }
 
 // popup styles!
-
 .job-popup {
     border-radius: 0px !important;
 

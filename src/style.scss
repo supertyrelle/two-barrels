@@ -1,3 +1,16 @@
+// project root 
+// └── src/style.scss // base style control file. pages will use this to pull classes for the entire site.
+//// ├──css/tech.scss // modular & universal classes
+//// ├──css/header.scss // css rules for header area and menu/mobile menu
+//// ├──css/overview.scss // overview page classes
+//// ├──css/who-we-are.scss // who we are page classes
+//// ├──css/jobs.scss // jobs page classes
+//// ├──css/office-culture.scss // two office culture/project management page classes
+//// ├──css/job.scss // job page classes
+//// ├──css/apply.scss // apply page classes
+//// ├──css/contact.scss // contact page classes
+//// ├──css/footer.scss // footer area classes
+
 // import global variable classes
 @import 'css/tech';
 // import header area classes
@@ -10,7 +23,7 @@
 @import 'css/jobs';
 // import the two office culture/project management page classes
 @import 'css/office-culture';
-// import jobs page classes
+// import job page classes
 @import 'css/job';
 // import apply page classes
 @import 'css/apply';

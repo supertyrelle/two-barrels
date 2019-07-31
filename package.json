@@ -1,11 +1,11 @@
 {
-    "name": "nw-counseling",
-    "version": "0.1.0",
-    "description": "Functional two-page website mockup based on Serhii Polyvanyi's NCWC shot on Dribbble.",
+    "name": "two-barrels",
+    "version": "1.0.0",
+    "description": "Static prototype for the wonderful software/web design company Two Barrels based in Spokane, WA",
     "main": "index.html",
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/supertyrelle/nw-counseling.git"
+        "url": "git+https://github.com/supertyrelle/two-barrels.git"
     },
     "scripts": {
         "dev": "parcel src/index.html --port 444",
@@ -13,14 +13,14 @@
     },
     "keywords": [
         "supertyrelle",
-        "northwest counseling"
+        "two barrels"
     ],
     "author": "Tyrelle Phillips",
     "license": "ISC",
     "bugs": {
-        "url": "https://github.com/supertyrelle/nw-counseling/issues"
+        "url": "https://github.com/supertyrelle/two-barrels/issues"
     },
-    "homepage": "https://github.com/supertyrelle/nw-counseling#readme",
+    "homepage": "https://github.com/supertyrelle/two-barrels#readme",
     "devDependencies": {
         "@babel/cli": "^7.5.5",
         "@babel/core": "^7.5.5",
