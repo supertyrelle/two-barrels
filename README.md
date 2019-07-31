@@ -1,7 +1,7 @@
 <p align="center"><img width="420" alt="superbarrels" src="https://raw.githubusercontent.com/supertyrelle/two-barrels/master/github-top.png"></p>
 
 <h1 align="">Two Barrels Prototype (Unaffiliated)</h1>
-<p align="">A flexible and static website prototype for Two Barrels, a Software, Networking, Engineering, and Web Design company based in Spokane, Washington.<p>
+<p align="">A flexible and static website prototype for Two Barrels- a Software, Networking, Engineering, and Web Design company based in Spokane, Washington.<p>
 <h4>Live site is at <a target="_blank" href="https://shuffo.com/">https://shuffo.com</a>.</h4>
 <p>You can also download the project folder, & type "npm run dev" for a dev server preview, given you have NPM & Parcel.</p>
 <p>The idea behind this project was to re-imagine this brand's web presence by centering the main colors/theme around an original illustration and also display the skills and overall methods that I bring to front-end development.</p>
