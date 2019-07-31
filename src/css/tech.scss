@@ -4,7 +4,7 @@
 @import url('https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/8.11.8/sweetalert2.min.css');
 // @import url('https://cdnjs.cloudflare.com/ajax/libs/awesomplete/1.1.4/awesomplete.css');
 // fonts!
-@import url('https://fonts.googleapis.com/css?family=Lato:100,300,400|Raleway:300,400,500,600i&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Lato:100,300,400|Raleway:300,400,500,600,700,800&display=swap');
 
 // colors!
 $blue: #0b0237;
@@ -245,6 +245,7 @@ section+section {
     }
 
 }
+
 // loading animation for page transitions
 .loading {
     position: absolute;
@@ -456,6 +457,7 @@ section+section {
         top: -90px;
     }
 }
+
 // clouds container
 .clouds {
     top: 20px !important;

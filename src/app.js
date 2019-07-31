@@ -5,6 +5,8 @@ import AOS from 'aos';
 // page transitions!
 import Swup from 'swup';
 import SwupScrollPlugin from '@swup/scroll-plugin';
+// import SwupHeadPlugin from '@swup/head-plugin';
+
 // custom alerts
 import Swal from 'sweetalert2';
 

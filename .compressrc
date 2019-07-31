@@ -1,6 +1,6 @@
 {
   "gzip": {
-    "enabled": true,
+    "enabled": false,
     "numiterations": 15,
     "blocksplitting": true,
     "blocksplittinglast": false,
@@ -10,10 +10,10 @@
     "zlibMemLevel": 9
   },
   "brotli": {
-    "enabled": false,
+    "enabled": true,
     "mode": 0,
     "quality": 11,
-    "lgwin": 22,
+    "lgwin": 24,
     "lgblock": 0,
     "enable_dictionary": true,
     "enable_transforms": false,
