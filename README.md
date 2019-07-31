@@ -3,6 +3,7 @@
 <h1 align="">Two Barrels Prototype (Unaffiliated)</h1>
 <p align="">A flexible and static website prototype for Two Barrels, a Software, Networking, Engineering, and Web Design company based in Spokane, Washington.<p>
 <h4>Live site is at <a target="_blank" href="https://shuffo.com/">https://shuffo.com</a>.</h4>
+<p>You can also download the project folder and type "npm run dev" for a dev server preview, given you have NPM.</p>
 <p>The idea behind this project was to re-imagine this brand's web presence by centering the main colors/theme around an original illustration and also display the skills and overall methods that I bring to front-end development.</p>
 <p>I created this project using HTML, SCSS (no frameworks) and vanilla javascript, in tandem with Parcel as my bundler of choice. The website itself is hosted through DigitalOcean on a standard LAMP-stack droplet.</p>
 <h4>Quick shoutout to Zach Thomson for making an amazing illustration that features the Monroe Street Bridge! He's a UX Designer, check out this work <a target="_blank" href="https://dribbble.com/zthomsondesigns/">here</a>.</h4>
