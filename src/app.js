@@ -7,9 +7,11 @@ import Swup from 'swup';
 import SwupScrollPlugin from '@swup/scroll-plugin';
 // custom alerts
 import Swal from 'sweetalert2';
+
+// initiate smooth page transitions and dom manipulation with swup.js
 const options = {
     cache: true,
-    linkSelector: 'a[href^="' + window.location.origin + '"]:not([data-no-swup]), a[href^="/"]:not([data-no-swup]), a[href^="./"]:not([data-no-swup]), a[href^="#"]:not([data-no-swup])',
+    linkSelector: 'a[href^="' + window.location.origin + '"]:not([data-no-swup]), a[href^="/"]:not([data-no-swup]), a[href^="./"]:not([data-no-swup]), a[href^=""]:not([data-no-swup]), a[href^="#"]:not([data-no-swup])',
     animateHistoryBrowsing: true,
     plugins: [new SwupScrollPlugin({
         doScrollingRightAway: true,
@@ -20,18 +22,16 @@ const options = {
 };
 const swup = new Swup(options);
 
+// checks location on load.
 checklocation();
 
-// nice smooth scrolling animations!
-// checks location on load.
 // if user changes pages, the check location function,
 // re-assigns the active link on the top navigation and runs
 // corresponding functions to align with the page that the user is on.
-console.log(window.location.pathname);
+// console.log(window.location.pathname);
 document.addEventListener('swup:contentReplaced', event => {
     checklocation();
 });
-
 
 function checklocation() {
     const endpoint = window.location.pathname;
@@ -51,6 +51,8 @@ function checklocation() {
     const applyMob = document.getElementById("apply-link-m");
     const contactLinkMob = document.getElementById("contact-link-m");
 
+    // if endpoint is of a specific page, remove the current menu class, 
+    // assign the active class on the menu to the page and run that page's script.
     if (endpoint == "/index.html") {
         removeactive();
         overview();
@@ -86,7 +88,7 @@ function checklocation() {
     } else if (endpoint == "/apply.html") {
         removeactive();
         apply();
-        // jobsLink.classList.add("active");
+        jobsLink.classList.add("active");
         applyMob.classList.add("active");
     } else if (endpoint == "/contact.html") {
         removeactive();
@@ -117,7 +119,6 @@ function checklocation() {
     };
 
     function animateOnScroll() {
-        console.log("animate on scroll activated");
         // AOS.init();
         AOS.init({
             // Global settings:
@@ -130,7 +131,7 @@ function checklocation() {
             debounceDelay: 50, // the delay on debounce used while resizing window (advanced)
             throttleDelay: 99, // the delay on throttle used while scrolling the page (advanced)
             // Settings that can be overridden on per-element basis, by `data-aos-*` attributes:
-            offset: 0, // offset (in px) from the original trigger point
+            offset: 95, // offset (in px) from the original trigger point
             delay: 0, // values from 0 to 3000, with step 50ms
             duration: 400, // values from 0 to 3000, with step 50ms
             easing: 'ease', // default easing for AOS animations
@@ -157,7 +158,7 @@ function overview() {
             nextStringDelay: 1950
         }).go();
     }
-
+    // when user clicks the call to action button, scroll to second area of index page
     function ctaScroll() {
         const moreCTA = document.getElementById("more-cta");
         moreCTA.onclick = function () {
@@ -175,7 +176,8 @@ function overview() {
     jobText();
     ctaScroll();
 };
-
+// accordion interactivity for bottom of page, derived from 
+// the deprecated w3 schools resource: https://www.w3schools.com/howto/howto_js_accordion.asp
 function jobs() {
     const acc = document.getElementsByClassName("accordion");
     var i;
@@ -194,6 +196,7 @@ function jobs() {
 }
 
 function job() {
+    // use sweetalert to generate popups for each job benefit on the job listings page
     function jobBenefits() {
         const greatWage = document.getElementById("great-wage");
         const paidTime = document.getElementById("paid-time");
@@ -413,6 +416,8 @@ function job() {
 };
 
 function apply() {
+    // use sweetalert to generate a popup for when the user submits the 
+    // form on the appply page, scroll to top afterward
     const sendAppButton = document.getElementById("send-app");
     sendAppButton.onclick = function () {
         function emptyForm() {
@@ -447,6 +452,8 @@ function apply() {
 };
 
 function contact() {
+    // use sweetalert to generate a popup for when the user submits the 
+    // form on the appply page, scroll to top afterward
     const sendMsgButton = document.getElementById("send-msg");
     sendMsgButton.onclick = function () {
         function emptyForm() {

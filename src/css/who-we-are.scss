@@ -1,0 +1,212 @@
+.who-we-are {
+    position: relative;
+    min-height: 100vh;
+    z-index: 2;
+    top: 0px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: $blue;
+
+    @include sm {
+        min-height: auto;
+        padding-top: 1em;
+    }
+
+    @include md {
+        min-height: 0px;
+        padding-top: 1em;
+    }
+
+    .bg {
+        position: absolute;
+        z-index: -4;
+        top: -7rem;
+        left: 0;
+        width: 100%;
+        min-height: 550px;
+        filter: opacity(1);
+        border-bottom: 1px solid darken($orange, 15%);
+
+        @include sm {
+            top: 0rem;
+            min-height: 400px;
+        }
+
+        @include md {
+            top: 0rem;
+            min-height: 400px;
+            width: 100vw;
+            overflow-x: hidden;
+        }
+
+        &::before {
+            content: "";
+            position: absolute;
+            // z-index: -3;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('./img/groundfloor-min.jpg') no-repeat;
+            background-size: 100%;
+            background-position: bottom -70em right;
+            filter: opacity(0.3);
+            background-attachment: absolute;
+            overflow-x: hidden;
+
+            @include sm {
+                background-position: right center;
+                background-size: cover;
+                background: url('./img/groundfloor-min.jpg') no-repeat;
+
+            }
+
+            @include md {
+                background-position: center center;
+                width: 110vw;
+                background-size: cover;
+                // background: url('./img/groundfloor-m-min.jpg') no-repeat;
+            }
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: -moz-linear-gradient(to bottom, rgba($blue, 00%) 100%, $blue);
+            background: -webkit-linear-gradient(to bottom, rgba($blue, 00%) 100%, $blue);
+            background: linear-gradient(to bottom, rgba($blue, 00%) 100%, $blue);
+        }
+    }
+
+    .staff {
+        position: relative;
+        margin-top: 5em !important;
+        display: flex;
+        flex-direction: column;
+        max-width: 1100px;
+        margin: 0 auto;
+
+        hr {
+            width: 90%;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+            align-self: center;
+        }
+
+        .staff-cards {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+
+            @include sm {
+                flex-direction: column;
+                justify-content: center;
+            }
+
+            .card {
+                position: relative;
+                flex: 1 33%;
+                height: 300px;
+                overflow: hidden;
+                max-width: 330px;
+                margin: 1em;
+
+                @include sm {
+                    flex: 1;
+                    max-width: 100%;
+                    margin: 1em auto;
+                }
+
+                @include md {
+                    flex: 1 45%;
+                }
+
+                @include lg {
+                    flex: 1 30%;
+                }
+
+                h3 {
+                    position: absolute;
+                    z-index: 2;
+                    bottom: 20px;
+                    left: 20px;
+                    transition: ease all 230ms;
+                    background: $orange;
+                    padding: 10px;
+
+                    @include sm {
+                        transform: translateY(-30px);
+                    }
+
+                    @include md {
+                        transform: translateY(-30px);
+                    }
+                }
+
+                h5 {
+                    font-size: 11pt;
+                    font-weight: 200;
+                    position: absolute;
+                    z-index: 3;
+                    bottom: 20px;
+                    left: 20px;
+                    transform: translateY(130px);
+                    transition: ease all 230ms;
+                    text-shadow: 2px 2px black;
+
+                    @include sm {
+                        transform: none;
+                    }
+
+                    @include md {
+                        transform: none;
+                    }
+                }
+
+                img {
+                    position: relative;
+                    z-index: 1;
+                    object-fit: contain;
+                    width: 100%;
+                }
+
+                &:hover {
+                    h3 {
+                        transform: translateY(-30px);
+
+                        @include sm {
+                            transform: none;
+                        }
+
+                        @include md {
+                            transform: none;
+                        }
+                    }
+
+                    h5 {
+                        transform: translateY(0px);
+
+                        @include sm {
+                            transform: none;
+                        }
+
+                        @include md {
+                            transform: none;
+                        }
+                    }
+                }
+            }
+        }
+
+
+    }
+}

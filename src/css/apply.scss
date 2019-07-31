@@ -1,0 +1,753 @@
+.apply-wrapper {
+    position: relative;
+    z-index: 2;
+    top: 0px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background: $blue;
+
+    @include sm {
+        min-height: 0px;
+        padding-top: 1em;
+    }
+
+    @include md {
+        min-height: 0px;
+        padding-top: 1em;
+    }
+
+    .bg {
+        position: absolute;
+        z-index: -4;
+        top: -7rem;
+        left: 0;
+        width: 100%;
+        min-height: 550px;
+        filter: opacity(1);
+        border-bottom: 1px solid darken($orange, 15%);
+
+        @include sm {
+            top: 0rem;
+            min-height: 400px;
+        }
+
+        @include md {
+            top: 0rem;
+            min-height: 400px;
+            width: 100vw;
+            overflow-x: hidden;
+        }
+
+        &::before {
+            content: "";
+            position: absolute;
+            // z-index: -3;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('./img/front-full-min.jpg') no-repeat;
+            background-size: 100%;
+            background-position: top -70px right;
+            filter: opacity(0.3);
+            background-attachment: absolute;
+
+            @include sm {
+                background-position: top center;
+                background-size: cover;
+            }
+
+            @include md {
+                background-position: center center;
+                width: 110vw;
+            }
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: -moz-linear-gradient(to bottom, rgba($blue, 00%) 100%, $blue);
+            background: -webkit-linear-gradient(to bottom, rgba($blue, 00%) 100%, $blue);
+            background: linear-gradient(to bottom, rgba($blue, 00%) 100%, $blue);
+        }
+    }
+
+
+    .apply {
+        padding-top: 4.5rem;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        max-width: 1050px;
+        margin: 0 auto;
+
+        hr {
+            width: 90%;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+            align-self: center;
+        }
+
+        p {
+            text-align: center;
+            font-weight: 300;
+        }
+
+        .apply-info {
+            // margin: 0 2em;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            color: $blue;
+            margin-top: 1em;
+
+            .address,
+            .phone-number {
+                background: $white;
+                display: flex;
+                flex-direction: column;
+                // align-self: stretch;
+                position: relative;
+                width: 230px;
+                overflow: hidden;
+                flex: 1;
+
+                i {
+                    position: absolute;
+                    right: 3rem;
+                    top: 2rem;
+                    z-index: 6;
+                    font-size: 50pt;
+                    //    margin-right:4.5rem;
+                    transform: translateY(-100px);
+                    transition: ease all 230ms;
+                    color: rgba($white, 60%);
+                }
+
+                .fa-map-marker-alt {
+                    margin-right: 2rem;
+                }
+
+                &:hover {
+                    i {
+                        transform: translateY(0px);
+                    }
+
+                    // mix-blend-mode: difference;
+                    color: $white;
+                    transition: ease all 100ms;
+
+                    &::after {
+                        width: 600px;
+                        transition-delay: 100ms;
+
+                    }
+
+                    &::before {
+                        width: 600px;
+
+                    }
+
+                }
+
+            }
+
+            .phone-number {
+                padding: 1em 2em 0em 3em;
+
+                &::before {
+                    position: absolute;
+                    content: '';
+                    z-index: 3;
+                    top: 0px;
+                    left: 0px;
+                    width: 30px;
+                    height: 100%;
+                    background: $orange;
+                    transition: ease all 400ms;
+                }
+
+                &::after {
+                    position: absolute;
+                    content: '';
+                    z-index: 4;
+                    top: 0px;
+                    left: 0px;
+                    width: 10px;
+                    height: 100%;
+                    background: $blue;
+                    transition: ease all 600ms;
+                    transition-delay: 100ms;
+                }
+            }
+
+            .address {
+                padding: 1em 2em 0em 1.5em;
+
+                &::before {
+                    position: absolute;
+                    content: '';
+                    z-index: 3;
+                    top: 0px;
+                    right: 0px;
+                    width: 30px;
+                    height: 100%;
+                    background: $orange;
+                    transition: ease all 400ms;
+                }
+
+                &::after {
+                    position: absolute;
+                    content: '';
+                    z-index: 4;
+                    top: 0px;
+                    right: 0px;
+                    width: 10px;
+                    height: 100%;
+                    background: $blue;
+                    transition: ease all 600ms;
+                    transition-delay: 100ms;
+                }
+            }
+
+            h2,
+            p {
+                position: relative;
+                z-index: 5;
+                transition: ease all 370ms;
+                cursor: default;
+            }
+
+            h2 {
+                margin-top: 1em;
+                font-size: 20pt;
+                line-height: 8pt;
+
+
+                &+h2 {
+                    margin-top: 0em;
+
+                }
+
+                &.hours {
+                    color: rgba(138, 138, 138, 0.6);
+                }
+            }
+
+            p {
+                text-align: left;
+
+            }
+        }
+    }
+
+    .apply-form {
+        margin-top: 1em !important;
+        padding-bottom: 2.5rem;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            padding: 2em;
+            background: $white;
+
+            .form-top {
+                color: $blue;
+                font-weight: 300;
+                font-size: 18pt;
+                margin-bottom: 0.5em;
+            }
+
+            .name,
+            .email,
+            .phone,
+            .position-select,
+            .code-links,
+            .upload-area,
+            .projects,
+            .project {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                margin: 0.5em 0;
+                background: darken($white, 1%);
+                border: 2px solid darken($white, 8%);
+                color: $blue;
+                padding: 1em;
+
+                p {
+                    font-weight: 400;
+                    font-size: 14pt;
+                    margin-bottom: 5px;
+                    padding-left: 10px;
+                    text-transform: capitalize;
+
+                    @include sm {
+                        font-size: 13pt;
+                    }
+                }
+
+                .dual-inputs {
+                    display: flex;
+                    flex-direction: row;
+
+                    @include sm {
+                        flex-direction: column;
+                        flex-wrap: wrap;
+                    }
+
+                    .user-input {
+                        position: relative;
+                        flex: 1;
+
+                        &:nth-child(1) {
+                            margin-right: 5px;
+
+                            @include sm {
+                                margin-right: 0px;
+                                margin-bottom: 0.5em;
+                            }
+                        }
+
+                        &:nth-child(2) {
+                            margin-left: 5px;
+
+                            @include sm {
+                                margin-left: 0px;
+                            }
+                        }
+
+                        input[type=text] {
+                            width: 100%;
+                            color: $blue;
+                            font-size: 20pt;
+                            font-family: inherit;
+                            background-color: transparent;
+                            border: 2px solid transparent;
+                            border-bottom-color: rgba($orange, 0.2);
+                            margin-left: 0px;
+
+                            @include sm {
+                                font-size: 16pt;
+                            }
+
+                            &:focus {
+                                outline: none;
+                            }
+
+                            &::placeholder {
+                                color: hsla(0, 0%, 51%, 0.4);
+                            }
+
+                        }
+
+                        span {
+                            position: absolute;
+                            bottom: 0;
+                            left: 0;
+                            right: 0;
+                            height: 3px;
+                            background-color: $orange;
+                            transform-origin: bottom right;
+                            transform: scaleX(0);
+                            transition: transform 0.5s ease;
+                        }
+
+                        input:focus~span {
+                            transform-origin: bottom left;
+                            transform: scaleX(1);
+                        }
+
+                    }
+                }
+
+                .upload {
+                    border-bottom: none;
+                }
+
+                .upload-wrapper {
+
+                    input[type=file] {
+                        font-size: 14pt !important;
+                        border-bottom: none;
+                        border-bottom-color: transparent;
+
+                    }
+                }
+
+                .user-input {
+                    position: relative;
+
+                    input {
+                        padding-left: 10px;
+                        width: 100%;
+                        color: $blue;
+                        font-size: 20pt;
+                        font-family: inherit;
+                        background-color: transparent;
+                        border: 2px solid transparent;
+                        border-bottom-color: rgba($orange, 0.2);
+
+                        &:focus {
+                            outline: none;
+                        }
+
+                        &::placeholder {
+                            color: hsla(0, 0%, 51%, 0.4);
+                        }
+
+                        @include sm {
+                            font-size: 16pt;
+                        }
+                    }
+
+                    select {
+                        margin-left: 10px;
+                        width: 100%;
+                        height: 70px !important;
+                        padding: 1em 0;
+                        color: $blue;
+                        font-size: 13pt;
+                        font-family: inherit;
+                        border: 2px solid transparent !important;
+                        border-bottom-color: rgba($orange, 0.2) !important;
+                        border-radius: 0px !important;
+                        background: transparent;
+
+                        @include sm {
+                            height: auto !important;
+                        }
+
+                        @include lg {
+                            height: auto !important;
+                        }
+                    }
+
+
+                    span {
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        right: 0;
+                        height: 3px;
+                        background-color: $orange;
+                        transform-origin: bottom right;
+                        transform: scaleX(0);
+                        transition: transform 0.5s ease;
+                    }
+
+                    input:focus~span {
+                        transform-origin: bottom left;
+                        transform: scaleX(1);
+                    }
+                }
+            }
+
+            .projects {
+                position: relative;
+
+                #add-project,
+                #del-project {
+                    position: absolute;
+
+                    padding: 10px;
+                    background: $orange;
+                    cursor: pointer;
+                    transition: ease all 230ms;
+
+                    &:hover {
+                        background: lighten($orange, 1%);
+                    }
+                }
+
+                #add-project {
+                    bottom: 1em;
+                    left: 1em;
+                    z-index: 3;
+                }
+
+                #del-project {
+                    bottom: 1em;
+                    right: 1em;
+                }
+
+                .project {
+                    background: rgba($white, 1%);
+
+                    p {
+                        font-size: 12pt;
+                    }
+
+                    input {
+                        font-size: 16pt;
+
+                        @include sm {
+                            font-size: 16pt;
+                        }
+                    }
+
+                    .message {
+                        background: none;
+                        padding: 0px;
+
+                        textarea {
+                            border-top: 2px solid rgba($orange, 0.2);
+                            border-bottom: 2px solid rgba($orange, 0.2);
+                            font-size: 16pt;
+                            border-left: 0px solid transparent;
+                            border-right: 0px solid transparent;
+
+                            @include sm {
+                                font-size: 16pt;
+                            }
+                        }
+                    }
+
+                }
+            }
+
+            .name {
+                .user-input {
+                    position: relative;
+
+                }
+            }
+
+            .message {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                margin: 1em 0 0.5em 0;
+                background: darken($white, 1%);
+                color: $blue;
+                padding: 1em;
+                position: relative;
+
+                p {
+                    font-weight: 400;
+                    font-size: 14pt;
+                    margin-bottom: 5px;
+                }
+
+                .user-input {
+                    position: relative;
+
+                    textarea {
+                        width: 100%;
+                        color: $blue;
+                        font-size: 20pt;
+                        background-color: transparent;
+                        padding: 0.35em 0.45em;
+                        border: 2px solid rgba($orange, 0.2);
+
+                        transition: background-color 0.3s ease-in-out;
+                        resize: vertical;
+
+                        @include sm {
+                            font-size: 16pt;
+                        }
+
+                        &:focus {
+                            outline: none;
+                        }
+
+                        &::placeholder {
+                            color: hsla(0, 0%, 51%, 0.4);
+                        }
+
+                    }
+
+                    span {
+                        position: absolute;
+                        background-color: $orange;
+                        transform-origin: center;
+                        transition: transform 0.5s ease;
+
+                        &.bottom,
+                        &.top {
+                            height: 3px;
+                            left: 0;
+                            right: 0;
+                            transform: scaleX(0);
+                        }
+
+                        &.left,
+                        &.right {
+                            width: 3px;
+                            top: 0;
+                            bottom: 0;
+                            transform: scaleY(0);
+                        }
+
+                        &.bottom {
+                            bottom: 0;
+                        }
+
+                        &.right {
+                            right: 0;
+                        }
+
+                        &.top {
+                            top: 0;
+                        }
+
+                        &.left {
+                            left: 0;
+                        }
+                    }
+
+                    textarea:focus~.top,
+                    textarea:focus~.bottom {
+                        transform: scaleX(1);
+                    }
+
+                    textarea:focus~.left,
+                    textarea:focus~.right {
+                        transform: scaleY(1);
+                    }
+
+                }
+            }
+
+            .anything-else {
+                border: 2px solid darken($white, 8%);
+
+                p {
+                    padding-left: 10px;
+                }
+            }
+
+            button {
+                margin-top: 1em;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+
+                i {
+                    font-size: 18pt;
+                    position: relative;
+                    margin-left: 15px;
+                    transition: ease all 230ms;
+                }
+
+                &:hover {
+                    i {
+                        transform: translateX(10px);
+                    }
+
+                    &::after {
+                        transition: transform 0.50s ease-in-out;
+                        transform: translate3d(500%, 0, 0) rotate(35deg);
+                    }
+                }
+            }
+        }
+
+        .checkboxes {
+            margin-top: 1em;
+
+            label {
+                display: block;
+                position: relative;
+                padding-left: 35px;
+                margin-bottom: 12px;
+                cursor: pointer;
+                font-size: 22px;
+                user-select: none;
+                color: $blue;
+
+                a {
+                    color: $lighter-blue;
+                    transition: ease all 230ms;
+
+                    &:hover {
+                        color: $orange;
+                    }
+                }
+            }
+
+            label input {
+                position: absolute;
+                opacity: 0;
+                cursor: pointer;
+                height: 0;
+                width: 0;
+            }
+
+            .checkmark {
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 25px;
+                width: 25px;
+                background-color: darken($white, 10%);
+            }
+
+            label:hover input~.checkmark {
+                background-color: darken($white, 15%);
+            }
+
+            label input:checked~.checkmark {
+                background-color: $lighter-blue;
+            }
+
+            .checkmark:after {
+                content: "";
+                position: absolute;
+                display: none;
+            }
+
+            label input:checked~.checkmark:after {
+                display: block;
+            }
+
+            label .checkmark:after {
+                left: 9px;
+                top: 5px;
+                width: 5px;
+                height: 10px;
+                border: solid white;
+                border-width: 0 3px 3px 0;
+                -webkit-transform: rotate(45deg);
+                -ms-transform: rotate(45deg);
+                transform: rotate(45deg);
+            }
+        }
+    }
+
+    .subheader {
+        margin-top: 0px;
+        margin-bottom: 10px;
+
+        a {
+            color: $white;
+            transition: ease all 230ms;
+
+            i {
+                margin-right: 10px;
+                transition: ease transform 230ms;
+            }
+
+            &:hover {
+
+                i {
+                    color: $orange;
+                    transform: translateX(-5px);
+                }
+            }
+        }
+    }
+}

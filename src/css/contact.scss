@@ -1,0 +1,567 @@
+.contact-wrapper {
+    position: relative;
+    z-index: 2;
+    top: 0px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background: $blue;
+
+    @include sm {
+        min-height: 0px;
+        padding-top: 1em;
+    }
+
+    @include md {
+        min-height: 0px;
+        padding-top: 1em;
+    }
+
+    .bg {
+        position: absolute;
+        z-index: -4;
+        top: -7rem;
+        left: 0;
+        width: 100%;
+        min-height: 550px;
+        filter: opacity(1);
+        border-bottom: 1px solid darken($orange, 15%);
+
+        @include sm {
+            top: 0rem;
+            min-height: 400px;
+        }
+
+        @include md {
+            top: 0rem;
+            min-height: 400px;
+            width: 100vw;
+            overflow-x: hidden;
+        }
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('./img/spokane-min.jpg') no-repeat;
+            background-size: 100%;
+            background-position: top center;
+            filter: opacity(0.3);
+            background-attachment: absolute;
+
+            @include sm {
+                background-size: cover;
+            }
+
+            @include md {
+                background-position: center center;
+                width: 110vw;
+            }
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: -moz-linear-gradient(to bottom, rgba($blue, 00%) 100%, $blue);
+            background: -webkit-linear-gradient(to bottom, rgba($blue, 00%) 100%, $blue);
+            background: linear-gradient(to bottom, rgba($blue, 00%) 100%, $blue);
+        }
+    }
+
+    .contact-us {
+        padding-top: 4.5rem;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        max-width: 1050px;
+        margin: 0 auto;
+
+        hr {
+            width: 90%;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+            align-self: center;
+        }
+
+        p {
+            text-align: center;
+            font-weight: 300;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            color: $blue;
+            margin-top: 1em;
+
+            @include sm {
+                flex-direction: column;
+                flex-wrap: wrap;
+            }
+
+            .address,
+            .phone-number {
+                background: $white;
+                display: flex;
+                flex-direction: column;
+                position: relative;
+                width: 230px;
+                overflow: hidden;
+                flex: 1;
+
+                @include sm {
+                    width: 100%;
+                    align-items: flex-start;
+                }
+
+                i {
+                    position: absolute;
+                    right: 3rem;
+                    top: 2rem;
+                    z-index: 6;
+                    font-size: 50pt;
+                    transform: translateY(-100px);
+                    transition: ease all 230ms;
+                    color: rgba($white, 60%);
+                }
+
+                .fa-map-marker-alt {
+                    margin-right: 2rem;
+                }
+
+                &:hover {
+                    i {
+                        transform: translateY(0px);
+
+                        @include sm {
+                            transform: none;
+                        }
+                    }
+
+                    color: $white;
+                    transition: ease all 100ms;
+
+                    @include sm {
+                        color: inherit;
+                    }
+
+                    &::after {
+                        width: 600px;
+                        transition-delay: 100ms;
+
+                        @include sm {
+                            width: 0px;
+                        }
+
+                    }
+
+                    &::before {
+                        width: 600px;
+
+                        @include sm {
+                            width: 0px;
+                        }
+
+                    }
+
+                }
+
+            }
+
+            .phone-number {
+                padding: 1em 2em 0em 3em;
+
+                @include sm {
+                    padding: 1em;
+                    margin-bottom: 0.5em;
+                }
+
+                &::before {
+                    position: absolute;
+                    content: '';
+                    z-index: 3;
+                    top: 0px;
+                    left: 0px;
+                    width: 30px;
+                    height: 100%;
+                    background: $orange;
+                    transition: ease all 400ms;
+
+                    @include sm {
+                        width: 0px;
+                    }
+                }
+
+                &::after {
+                    position: absolute;
+                    content: '';
+                    z-index: 4;
+                    top: 0px;
+                    left: 0px;
+                    width: 10px;
+                    height: 100%;
+                    background: $blue;
+                    transition: ease all 600ms;
+                    transition-delay: 100ms;
+
+                    @include sm {
+                        width: 0px;
+                    }
+                }
+            }
+
+            .address {
+                padding: 1em 2em 0em 1.5em;
+
+                @include sm {
+                    padding: 1em;
+                    margin-bottom: 0.75em;
+                }
+
+                &::before {
+                    position: absolute;
+                    content: '';
+                    z-index: 3;
+                    top: 0px;
+                    right: 0px;
+                    width: 30px;
+                    height: 100%;
+                    background: $orange;
+                    transition: ease all 400ms;
+
+                    @include sm {
+                        width: 0px;
+                    }
+                }
+
+                &::after {
+                    position: absolute;
+                    content: '';
+                    z-index: 4;
+                    top: 0px;
+                    right: 0px;
+                    width: 10px;
+                    height: 100%;
+                    background: $blue;
+                    transition: ease all 600ms;
+                    transition-delay: 100ms;
+
+                    @include sm {
+                        width: 0px;
+                    }
+                }
+            }
+
+            h2,
+            p {
+                position: relative;
+                z-index: 5;
+                transition: ease all 370ms;
+                cursor: default;
+            }
+
+            @include sm {
+                p {
+                    line-height: 5pt;
+                }
+            }
+
+
+            h2 {
+                margin-top: 1em;
+                font-size: 20pt;
+                line-height: 8pt;
+
+                @include sm {
+                    font-size: 16pt;
+                }
+
+                &+h2 {
+                    margin-top: 0em;
+
+                    @include sm {
+                        margin: 0em;
+                    }
+
+                }
+
+                &.hours {
+                    color: rgba(138, 138, 138, 0.6);
+
+                    @include sm {
+                        font-size: 14pt;
+                        // line-height: 15pt;
+                    }
+
+                    @include md {
+                        font-size: 14pt;
+                        // line-height: 15pt;
+                    }
+                }
+            }
+
+            p {
+                text-align: left;
+
+            }
+        }
+    }
+
+    .contact-form {
+        margin-top: 1em !important;
+
+        padding-bottom: 2.5rem;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2em;
+            background: $white;
+
+            @include sm {
+                padding: 1em;
+            }
+
+            .form-top {
+                color: $blue;
+                font-weight: 300;
+                font-size: 18pt;
+                margin-bottom: 0.5em;
+
+                @include sm {
+                    font-size: 14pt;
+                }
+            }
+
+            .name {
+                .user-input {
+                    position: relative;
+
+                    input {
+                        text-transform: capitalize;
+
+                    }
+                }
+            }
+
+            .name,
+            .email {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                margin: 0.5em 0;
+                background: darken($white, 1%);
+                color: $blue;
+                padding: 1em;
+
+                p {
+                    font-weight: 400;
+                    font-size: 14pt;
+                    margin-bottom: 5px;
+
+                    @include sm {
+                        font-size: 13pt;
+                    }
+
+                }
+
+                .user-input {
+                    position: relative;
+
+                    input {
+                        padding-left: 10px;
+                        width: 100%;
+                        color: $blue;
+                        font-size: 20pt;
+                        font-family: inherit;
+                        background-color: transparent;
+                        border: 2px solid transparent;
+                        border-bottom-color: rgba($orange, 0.2);
+
+                        &:focus {
+                            outline: none;
+                        }
+
+                        &::placeholder {
+                            color: hsla(0, 0%, 51%, 0.4);
+                        }
+
+                        @include sm {
+                            font-size: 16pt;
+                        }
+                    }
+
+                    span {
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        right: 0;
+                        height: 3px;
+                        background-color: $orange;
+                        transform-origin: bottom right;
+                        transform: scaleX(0);
+                        transition: transform 0.5s ease;
+                    }
+
+                    input:focus~span {
+                        transform-origin: bottom left;
+                        transform: scaleX(1);
+                    }
+                }
+            }
+
+            .message {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                margin: 0.5em 0;
+                background: darken($white, 1%);
+                color: $blue;
+                padding: 1em;
+
+                p {
+                    font-weight: 400;
+                    font-size: 14pt;
+                    margin-bottom: 5px;
+                }
+
+                .user-input {
+                    position: relative;
+
+                    textarea {
+                        width: 100%;
+                        color: $blue;
+                        font-size: 20pt;
+                        background: transparent;
+                        padding: 0.35em 0.45em;
+                        border: 2px solid rgba($orange, 0.2);
+                        transition: background-color 0.3s ease-in-out;
+                        resize: vertical;
+
+                        @include sm {
+                            font-size: 16pt;
+                        }
+
+                        &:focus {
+                            outline: none;
+                        }
+
+                        &::placeholder {
+                            color: hsla(0, 0%, 51%, 0.4);
+                        }
+
+                    }
+
+                    span {
+                        position: absolute;
+                        background-color: $orange;
+                        transition: transform 0.1s ease;
+
+                        &.bottom,
+                        &.top {
+                            height: 3px;
+                            left: 0;
+                            right: 0;
+                            transform: scaleX(0);
+                        }
+
+                        &.left,
+                        &.right {
+                            width: 3px;
+                            top: 0;
+                            bottom: 0;
+                            transform: scaleY(0);
+                        }
+
+                        &.bottom {
+                            bottom: 0;
+                            transform-origin: bottom right;
+                        }
+
+                        &.right {
+                            right: 0;
+                            transform-origin: top right;
+                            transition-delay: 0.05s;
+                        }
+
+                        &.top {
+                            top: 0;
+                            transform-origin: top left;
+                            transition-delay: 0.15s;
+                        }
+
+                        &.left {
+                            left: 0;
+                            transform-origin: bottom left;
+                            transition-delay: 0.25s;
+                        }
+                    }
+
+                    textarea:focus~.bottom {
+                        transform-origin: bottom left;
+                        transform: scaleX(1);
+                    }
+
+                    textarea:focus~.right {
+                        transform-origin: bottom right;
+                        transform: scaleY(1);
+                    }
+
+                    textarea:focus~.top {
+                        transform-origin: top right;
+                        transform: scaleX(1);
+                    }
+
+                    textarea:focus~.left {
+                        transform-origin: top left;
+                        transform: scaleY(1);
+                    }
+
+                }
+            }
+
+            button {
+                margin-top: 1em;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+
+                i {
+                    font-size: 18pt;
+                    position: relative;
+                    margin-left: 15px;
+                    transition: ease all 230ms;
+                }
+
+                &:hover {
+                    i {
+                        transform: translateX(10px);
+                    }
+
+                    &::after {
+                        transition: transform 0.50s ease-in-out;
+                        transform: translate3d(500%, 0, 0) rotate(35deg);
+                    }
+                }
+            }
+        }
+    }
+
+    h3 {
+        margin-bottom: 10px;
+    }
+}

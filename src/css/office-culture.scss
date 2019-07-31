@@ -1,0 +1,266 @@
+.office-culture-wrapper {
+    position: relative;
+    z-index: 2;
+    top: 0px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background: $blue;
+
+    @include sm {
+        min-height: 0px;
+        padding-top: 1em;
+    }
+
+    @include md {
+        min-height: 0px;
+        padding-top: 1em;
+    }
+
+    .bg {
+        position: absolute;
+        z-index: -4;
+        top: -7rem;
+        left: 0;
+        width: 100%;
+        min-height: 550px;
+        filter: opacity(1);
+        border-bottom: 1px solid darken($orange, 15%);
+
+        @include sm {
+            top: 0rem;
+            min-height: 400px;
+        }
+
+        @include md {
+            top: 0rem;
+            min-height: 400px;
+            width: 100vw;
+            overflow-x: hidden;
+        }
+
+        &::before {
+            content: "";
+            position: absolute;
+            // z-index: -3;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('./img/front-full-min.jpg') no-repeat;
+            background-size: 100%;
+            background-position: top -70px right;
+            filter: opacity(0.3);
+            background-attachment: absolute;
+
+            @include sm {
+                background-position: top center;
+                background-size: cover;
+            }
+
+            @include md {
+                background-position: center center;
+                width: 110vw;
+            }
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: -moz-linear-gradient(to bottom, rgba($blue, 00%) 100%, $blue);
+            background: -webkit-linear-gradient(to bottom, rgba($blue, 00%) 100%, $blue);
+            background: linear-gradient(to bottom, rgba($blue, 00%) 100%, $blue);
+        }
+    }
+
+    .content {
+        padding-top: 4.5rem;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        max-width: 1050px;
+        margin: 0 auto;
+
+        hr {
+            width: 90%;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+            align-self: center;
+        }
+
+        p {
+            text-align: center;
+            font-weight: 300;
+        }
+
+        .subheader {
+            margin-bottom: 0px;
+
+            a {
+                color: $white;
+                transition: ease all 230ms;
+
+                i {
+                    margin-right: 10px;
+                    transition: ease transform 230ms;
+                }
+
+                &:hover {
+                    i {
+                        color: $orange;
+                        transform: translateX(-5px);
+                    }
+                }
+            }
+        }
+
+        .details {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            color: $blue;
+            margin-top: 1em;
+            align-items: flex-start;
+            background: $white;
+            padding: 2em 3em 2em 3em;
+
+            @include sm {
+                padding: 1em;
+                width: 90vw;
+            }
+
+            h2,
+            p {
+                text-align: left;
+
+
+            }
+
+            .white-text {
+                h2 {
+                    color: $white;
+                }
+            }
+
+            h2 {
+                margin: 0.5em 0 0.5em 0;
+                font-family: 'Lato', sans-serif;
+                // font-weight: 600;
+                font-size: 21pt;
+                position: relative;
+                z-index: 5;
+                padding: 5px 10px;
+
+                .h2-bg {
+                    position: absolute;
+                    content: '';
+                    width: 100%;
+                    height: 100%;
+                    bottom: 0px;
+                    left: 0px;
+                    padding: 10px;
+                    background: $orange;
+                    z-index: -1;
+                }
+            }
+
+            p {
+                font-weight: 300;
+                font-size: 13pt;
+                line-height: 18pt;
+
+                &+p {
+                    margin-top: 0.5em;
+                }
+            }
+
+            hr {
+                margin: 1em 0;
+                width: 100%;
+                border-color: rgba($lighter-blue, 20%);
+            }
+
+            ul,
+            ol {
+                margin-top: 0px;
+
+                @include sm {
+                    padding-left: 1.5em;
+                }
+
+                li {
+                    margin: 1em 0 0.5em 0;
+                    font-size: 13pt;
+                    font-weight: 300;
+                }
+            }
+
+            .bold-ul {
+                li {
+                    font-weight: 400;
+                }
+            }
+
+            ul {
+                list-style-type: square;
+
+                p {
+                    margin-left: 1em;
+
+                    @include sm {
+                        margin-left: 0em;
+                    }
+                }
+            }
+
+            .apply-cta {
+                margin-top: 10px;
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-around;
+                align-items: center;
+                flex-wrap: wrap;
+
+                h2,
+                p {
+                    text-align: center;
+                }
+
+
+
+                @include sm {
+                    margin-top: 0px;
+
+                    p {
+                        margin-bottom: 0.5em;
+                    }
+
+                    .jobs-cta {
+                        margin-bottom: 0.5em;
+                    }
+                }
+
+                @include md {
+                    p {
+                        margin-bottom: 0.5em;
+                    }
+
+                    .jobs-cta {
+                        margin-top: 0.5em;
+                    }
+                }
+            }
+        }
+    }
+
+    h3 {
+        margin: 1.5em 0 0.2em 0;
+    }
+}

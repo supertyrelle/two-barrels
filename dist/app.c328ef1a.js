@@ -4560,9 +4560,10 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
+// initiate smooth page transitions and dom manipulation with swup.js
 var options = {
   cache: true,
-  linkSelector: 'a[href^="' + window.location.origin + '"]:not([data-no-swup]), a[href^="/"]:not([data-no-swup]), a[href^="./"]:not([data-no-swup]), a[href^="#"]:not([data-no-swup])',
+  linkSelector: 'a[href^="' + window.location.origin + '"]:not([data-no-swup]), a[href^="/"]:not([data-no-swup]), a[href^="./"]:not([data-no-swup]), a[href^=""]:not([data-no-swup]), a[href^="#"]:not([data-no-swup])',
   animateHistoryBrowsing: true,
   plugins: [new _scrollPlugin.default({
     doScrollingRightAway: true,
@@ -4571,14 +4572,13 @@ var options = {
     scrollAcceleration: 0.06
   })]
 };
-var swup = new _swup.default(options);
-checklocation(); // nice smooth scrolling animations!
-// checks location on load.
-// if user changes pages, the check location function,
+var swup = new _swup.default(options); // checks location on load.
+
+checklocation(); // if user changes pages, the check location function,
 // re-assigns the active link on the top navigation and runs
 // corresponding functions to align with the page that the user is on.
+// console.log(window.location.pathname);
 
-console.log(window.location.pathname);
 document.addEventListener('swup:contentReplaced', function (event) {
   checklocation();
 });
@@ -4599,7 +4599,8 @@ function checklocation() {
   var howWeLinkMob = document.getElementById("how-we-work-link-m");
   var getALinkMob = document.getElementById("get-a-job-link-m");
   var applyMob = document.getElementById("apply-link-m");
-  var contactLinkMob = document.getElementById("contact-link-m");
+  var contactLinkMob = document.getElementById("contact-link-m"); // if endpoint is of a specific page, remove the current menu class, 
+  // assign the active class on the menu to the page and run that page's script.
 
   if (endpoint == "/index.html") {
     removeactive();
@@ -4634,8 +4635,8 @@ function checklocation() {
     jobsLinkMob.classList.add("active");
   } else if (endpoint == "/apply.html") {
     removeactive();
-    apply(); // jobsLink.classList.add("active");
-
+    apply();
+    jobsLink.classList.add("active");
     applyMob.classList.add("active");
   } else if (endpoint == "/contact.html") {
     removeactive();
@@ -4668,8 +4669,7 @@ function checklocation() {
   ;
 
   function animateOnScroll() {
-    console.log("animate on scroll activated"); // AOS.init();
-
+    // AOS.init();
     _aos.default.init({
       // Global settings:
       disable: false,
@@ -4689,7 +4689,7 @@ function checklocation() {
       throttleDelay: 99,
       // the delay on throttle used while scrolling the page (advanced)
       // Settings that can be overridden on per-element basis, by `data-aos-*` attributes:
-      offset: 0,
+      offset: 95,
       // offset (in px) from the original trigger point
       delay: 0,
       // values from 0 to 3000, with step 50ms
@@ -4723,7 +4723,8 @@ function overview() {
       loop: true,
       loopDelay: 3000
     }, _defineProperty(_ref, "waitUntilVisible", true), _defineProperty(_ref, "nextStringDelay", 1950), _ref)).go();
-  }
+  } // when user clicks the call to action button, scroll to second area of index page
+
 
   function ctaScroll() {
     var moreCTA = document.getElementById("more-cta");
@@ -4743,7 +4744,8 @@ function overview() {
   ctaScroll();
 }
 
-;
+; // accordion interactivity for bottom of page, derived from 
+// the deprecated w3 schools resource: https://www.w3schools.com/howto/howto_js_accordion.asp
 
 function jobs() {
   var acc = document.getElementsByClassName("accordion");
@@ -4764,6 +4766,7 @@ function jobs() {
 }
 
 function job() {
+  // use sweetalert to generate popups for each job benefit on the job listings page
   function jobBenefits() {
     var greatWage = document.getElementById("great-wage");
     var paidTime = document.getElementById("paid-time");
@@ -4999,6 +5002,8 @@ function job() {
 ;
 
 function apply() {
+  // use sweetalert to generate a popup for when the user submits the 
+  // form on the appply page, scroll to top afterward
   var sendAppButton = document.getElementById("send-app");
 
   sendAppButton.onclick = function () {
@@ -5038,6 +5043,8 @@ function apply() {
 ;
 
 function contact() {
+  // use sweetalert to generate a popup for when the user submits the 
+  // form on the appply page, scroll to top afterward
   var sendMsgButton = document.getElementById("send-msg");
 
   sendMsgButton.onclick = function () {
@@ -5103,7 +5110,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59940" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62085" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
