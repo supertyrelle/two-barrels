@@ -38,7 +38,7 @@
         "ease-component": "^1.0.0",
         "footer": "^1.0.0",
         "freezeframe": "^4.0.0-alpha.7",
-        "postcss": "^7.0.17",
+        "postcss": "^7.0.36",
         "scroll": "^3.0.1",
         "scroll-doc": "^0.2.1",
         "style.css": "^1.0.0",
