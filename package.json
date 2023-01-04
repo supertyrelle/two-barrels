@@ -27,7 +27,7 @@
         "cssnano": "^4.1.10",
         "parcel-plugin-compress": "^1.0.10",
         "parcel-plugin-imagemin": "^3.0.0",
-        "postcss-modules": "^1.4.1",
+        "postcss-modules": "^1.5.0",
         "sass": "^1.22.7"
     },
     "dependencies": {
